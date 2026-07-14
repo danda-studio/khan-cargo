@@ -1,0 +1,69 @@
+﻿using Khan_cargo.Services;
+using Khan_cargo.Services.Models;
+using Microsoft.Extensions.FileProviders;
+using Scalar.AspNetCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers();
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+}
+
+
+builder.Services.Configure<WASettings>(builder.Configuration.GetSection("WASettings"));
+
+
+builder.Services.AddScoped<IContactService, ContactService>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin", policy =>
+    {
+        policy.WithOrigins("https://danda-studio.github.io", "https://rcc-hrmo.vercel.app")
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
+    });
+
+    options.AddPolicy("AllowLocalhost3000", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
+
+
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseCors("AllowLocalhost3000");
+    app.UseSwagger();
+    app.MapScalarApiReference(options =>
+    {
+        options.OpenApiRoutePattern = "/swagger/v1/swagger.json";
+        options.Title = "RCK API Documentation";
+    });
+
+    app.MapGet("/", context =>
+    {
+        context.Response.Redirect("/scalar");
+        return Task.CompletedTask;
+    });
+}
+else
+{
+    app.UseCors("AllowSpecificOrigin");
+    app.MapGet("/", () => "RCK API is running");
+}
+
+app.UseHttpsRedirection();
+
+app.MapControllers();
+app.Run();
