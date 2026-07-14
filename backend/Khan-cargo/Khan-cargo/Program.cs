@@ -16,7 +16,6 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.Configure<WASettings>(builder.Configuration.GetSection("WASettings"));
 
-
 builder.Services.AddScoped<IContactService, ContactService>();
 
 builder.Services.AddCors(options =>
@@ -48,7 +47,7 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference(options =>
     {
         options.OpenApiRoutePattern = "/swagger/v1/swagger.json";
-        options.Title = "RCK API Documentation";
+        options.Title = "Cargo API Documentation";
     });
 
     app.MapGet("/", context =>
@@ -60,7 +59,7 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseCors("AllowSpecificOrigin");
-    app.MapGet("/", () => "RCK API is running");
+    app.MapGet("/", () => "Cargo API is running");
 }
 
 app.UseHttpsRedirection();
