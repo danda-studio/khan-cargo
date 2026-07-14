@@ -8,11 +8,11 @@
         /// <summary>
         /// Код страны или региона (например, 7 для России).
         /// </summary>
-        public string Code { get; set; } = string.Empty;
+        public int Code { get; set; } 
 
         /// <summary>
         /// Основной номер телефона клиента.
         /// </summary>
-        public string Number { get; set; } = string.Empty;
+        public int Number { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Khan_cargo.Services
         {
             if (!ContactValidator.ValidateName(request.Name, out var nameError))
                 return new SendContactResponse { Success = false, Message = nameError };
-            if (!ContactValidator.ValidatePhone(request.Phone.Code, request.Phone.Number, out var phoneError))
+            if (!ContactValidator.ValidatePhone(request.Phone.Code.ToString(), request.Phone.Number.ToString(), out var phoneError))
                 return new SendContactResponse { Success = false, Message = phoneError };
 
             return new SendContactResponse()
