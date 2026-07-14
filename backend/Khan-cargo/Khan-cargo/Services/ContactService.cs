@@ -1,5 +1,6 @@
 ﻿using Khan_cargo.Services.Models;
 using Khan_cargo.Validator;
+using Microsoft.Extensions.Options;
 
 namespace Khan_cargo.Services
 {
@@ -8,9 +9,9 @@ namespace Khan_cargo.Services
         private readonly WASettings _settings;
         private readonly HttpClient _httpClient;
 
-        public ContactService(WASettings settings, HttpClient httpClient)
+        public ContactService(IOptions<WASettings> options, HttpClient httpClient)
         {
-            _settings = settings;
+            _settings = options.Value;
             _httpClient = httpClient;
         }
 
