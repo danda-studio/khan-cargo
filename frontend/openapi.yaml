@@ -1,0 +1,73 @@
+openapi: 3.1.0
+info:
+  title: Khan Cargo API
+  version: 1.0.0
+servers:
+  - url: /api
+paths:
+  /contact-requests:
+    post:
+      operationId: createContactRequest
+      summary: Submit a "calculate shipping cost" request from the landing page
+      tags:
+        - contact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactRequestInput"
+      responses:
+        "201":
+          description: Request accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactRequest"
+components:
+  schemas:
+    ContactRequestInput:
+      type: object
+      required:
+        - name
+        - phone
+        - pickupLocation
+        - cargoType
+        - consent
+      properties:
+        name:
+          type: string
+          minLength: 2
+        phone:
+          type: string
+          minLength: 9
+        pickupLocation:
+          type: string
+          minLength: 1
+        cargoType:
+          type: string
+          minLength: 1
+        consent:
+          type: boolean
+    ContactRequest:
+      type: object
+      required:
+        - id
+        - name
+        - phone
+        - pickupLocation
+        - cargoType
+        - consent
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        phone:
+          type: string
+        pickupLocation:
+          type: string
+        cargoType:
+          type: string
+        consent:
+          type: boolean

@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page: #131313;
+  --color-surface-1: #151515;
+  --color-surface-2: #1c1c1c;
+  --color-surface-3: #2b2b2b;
+  --color-accent: #ffdd00;
+  --color-accent-input: #e8c900;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
+}
+
+/*
+ * Fully fluid (rubber) root font-size.
+ * 1rem == 16px at the 360px (mobile) and 1920px (desktop) reference viewports;
+ * everything else in the app is sized in rem so the whole layout scales
+ * linearly with the viewport width between and beyond those references.
+ */
+@layer base {
+  html {
+    @apply text-[calc((16/(360/100))*1vw)] md:text-[calc((16/(1920/100))*1vw)];
+  }
+
+  body {
+    @apply bg-page font-sans text-white;
+  }
+}
