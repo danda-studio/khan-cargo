@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           az: siteUrl,
           en: `${siteUrl}?lang=en`,
+          ru: `${siteUrl}?lang=ru`,
         },
       },
     },

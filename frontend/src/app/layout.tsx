@@ -7,14 +7,14 @@ import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin", "latin-ext", "cyrillic"],
   display: "swap",
   preload: true,
 });
 
 const geist = Geist({
   variable: "--font-geist",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin", "latin-ext", "cyrillic"],
   display: "swap",
   preload: false,
 });
@@ -62,13 +62,14 @@ export const metadata: Metadata = {
     languages: {
       az: "/",
       en: "/?lang=en",
+      ru: "/?lang=ru",
       "x-default": "/",
     },
   },
   openGraph: {
     type: "website",
     locale: "az_AZ",
-    alternateLocale: ["en_US"],
+    alternateLocale: ["en_US", "ru_RU"],
     url: siteUrl,
     siteName: "Khan Cargo",
     title: "Khan Cargo — Beynəlxalq yükdaşıma",
