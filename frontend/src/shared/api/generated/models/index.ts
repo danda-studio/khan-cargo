@@ -7,3 +7,5 @@
 
 export * from './contactRequest';
 export * from './contactRequestInput';
+export * from './countryCode';
+export * from './phone';

@@ -10,28 +10,23 @@ import * as zod from 'zod';
 /**
  * @summary Submit a "calculate shipping cost" request from the landing page
  */
-export const createContactRequestBodyNameMin = 2;
-
-export const createContactRequestBodyPhoneMin = 9;
 
 
 
 
 
 export const CreateContactRequestBody = zod.object({
-  "name": zod.string().min(createContactRequestBodyNameMin),
-  "phone": zod.string().min(createContactRequestBodyPhoneMin),
-  "pickupLocation": zod.string().min(1),
-  "cargoType": zod.string().min(1),
-  "consent": zod.boolean()
+  "name": zod.string().min(1),
+  "address": zod.string().min(1),
+  "phone": zod.object({
+  "code": zod.number(),
+  "number": zod.number()
+}),
+  "cargoType": zod.string().min(1)
 })
 
 export const CreateContactRequestResponse = zod.object({
-  "id": zod.string(),
-  "name": zod.string(),
-  "phone": zod.string(),
-  "pickupLocation": zod.string(),
-  "cargoType": zod.string(),
-  "consent": zod.boolean()
+  "success": zod.boolean(),
+  "message": zod.string().optional()
 })
 

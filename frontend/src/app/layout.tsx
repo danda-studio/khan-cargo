@@ -1,27 +1,96 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Inter } from "next/font/google";
 import { QueryProvider } from "@/app/providers/query-provider";
 import { LanguageProvider } from "@/shared/config/i18n/language-provider";
+import { OrganizationJsonLd } from "@/shared/ui/seo/organization-json-ld";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  preload: true,
 });
 
 const geist = Geist({
   variable: "--font-geist",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  preload: false,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://khan.az";
 
 export const metadata: Metadata = {
-  title: "Khan Cargo",
-  description: "Khan Cargo beynəlxalq yükdaşımalarını sürətli, təhlükəsiz və sərfəli şəkildə həyata keçirir",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Khan Cargo — Beynəlxalq yükdaşıma",
+    template: "%s | Khan Cargo",
+  },
+  description:
+    "Khan Cargo beynəlxalq yükdaşımalarını sürətli, təhlükəsiz və sərfəli şəkildə həyata keçirir. Azərbaycan, Türkiyə və Çin arasında etibarlı logistika xidmətləri.",
+  keywords: [
+    "Khan Cargo",
+    "yükdaşıma",
+    "logistika",
+    "kargo",
+    "Azərbaycan",
+    "Türkiyə",
+    "Çin",
+    "beynəlxalq daşıma",
+    "freight",
+    "shipping",
+    "cargo Azerbaijan",
+  ],
+  authors: [{ name: "Khan Cargo", url: siteUrl }],
+  creator: "Khan Cargo",
+  publisher: "Khan Cargo",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  icons: {
+    icon: [{ url: "/images/logo-sm.webp", type: "image/webp" }],
+    apple: [{ url: "/images/logo-sm.webp", type: "image/webp" }],
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      az: "/",
+      en: "/?lang=en",
+      "x-default": "/",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "az_AZ",
+    alternateLocale: ["en_US"],
+    url: siteUrl,
+    siteName: "Khan Cargo",
+    title: "Khan Cargo — Beynəlxalq yükdaşıma",
+    description:
+      "Khan Cargo beynəlxalq yükdaşımalarını sürətli, təhlükəsiz və sərfəli şəkildə həyata keçirir. Azərbaycan, Türkiyə və Çin arasında etibarlı logistika xidmətləri.",
+    // Prefer /images/og.webp when available; until then use hero (or logo) webp.
+    images: [
+      {
+        url: "/images/hero-img-sm.webp",
+        width: 900,
+        height: 925,
+        alt: "Khan Cargo — beynəlxalq yükdaşıma",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Khan Cargo — Beynəlxalq yükdaşıma",
+    description:
+      "Khan Cargo beynəlxalq yükdaşımalarını sürətli, təhlükəsiz və sərfəli şəkildə həyata keçirir.",
+    images: ["/images/hero-img-sm.webp"],
+  },
 };
 
 export default function RootLayout({
@@ -30,8 +99,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="az" className={`${inter.variable} ${geist.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen">
+    <html lang="az" className={`${inter.variable} ${geist.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-img-sm.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </head>
+      <body className="min-h-screen overflow-x-hidden">
+        <OrganizationJsonLd />
         <LanguageProvider>
           <QueryProvider>{children}</QueryProvider>
         </LanguageProvider>

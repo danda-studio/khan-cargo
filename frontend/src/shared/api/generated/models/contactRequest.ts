@@ -6,10 +6,6 @@
  */
 
 export interface ContactRequest {
-  id: string;
-  name: string;
-  phone: string;
-  pickupLocation: string;
-  cargoType: string;
-  consent: boolean;
+  success: boolean;
+  message?: string;
 }

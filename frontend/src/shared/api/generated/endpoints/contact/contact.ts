@@ -23,12 +23,12 @@ import type {
 
 
 
-export type createContactRequestResponse201 = {
+export type createContactRequestResponse200 = {
   data: ContactRequest
-  status: 201
+  status: 200
 }
 
-export type createContactRequestResponseSuccess = (createContactRequestResponse201) & {
+export type createContactRequestResponseSuccess = (createContactRequestResponse200) & {
   headers: Headers;
 };
 ;
@@ -40,7 +40,7 @@ export const getCreateContactRequestUrl = () => {
 
 
 
-  return `/api/contact-requests`
+  return `/api/Contact/contact`
 }
 
 /**

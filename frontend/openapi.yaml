@@ -5,7 +5,7 @@ info:
 servers:
   - url: /api
 paths:
-  /contact-requests:
+  /Contact/contact:
     post:
       operationId: createContactRequest
       summary: Submit a "calculate shipping cost" request from the landing page
@@ -18,56 +18,77 @@ paths:
             schema:
               $ref: "#/components/schemas/ContactRequestInput"
       responses:
-        "201":
+        "200":
           description: Request accepted
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/ContactRequest"
+  /Country/codes:
+    get:
+      operationId: getCountryCodes
+      summary: Country phone codes and input masks
+      tags:
+        - country
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CountryCode"
 components:
   schemas:
+    CountryCode:
+      type: object
+      properties:
+        region:
+          type: string
+        countryPhoneCode:
+          type: string
+        countryName:
+          type: string
+        mask:
+          type: string
+    Phone:
+      type: object
+      required:
+        - code
+        - number
+      properties:
+        code:
+          type: integer
+          format: int32
+        number:
+          type: integer
+          format: int32
     ContactRequestInput:
       type: object
       required:
         - name
+        - address
         - phone
-        - pickupLocation
         - cargoType
-        - consent
       properties:
         name:
           type: string
-          minLength: 2
-        phone:
-          type: string
-          minLength: 9
-        pickupLocation:
+          minLength: 1
+        address:
           type: string
           minLength: 1
+        phone:
+          $ref: "#/components/schemas/Phone"
         cargoType:
           type: string
           minLength: 1
-        consent:
-          type: boolean
     ContactRequest:
       type: object
       required:
-        - id
-        - name
-        - phone
-        - pickupLocation
-        - cargoType
-        - consent
+        - success
       properties:
-        id:
-          type: string
-        name:
-          type: string
-        phone:
-          type: string
-        pickupLocation:
-          type: string
-        cargoType:
-          type: string
-        consent:
+        success:
           type: boolean
+        message:
+          type: string

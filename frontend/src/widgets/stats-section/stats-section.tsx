@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { Button } from "@/shared/ui/button/button";
@@ -10,40 +11,48 @@ export function StatsSection() {
   const t = useTranslations();
 
   return (
-    <section className="bg-page pt-[5rem] pb-[2.25rem]">
-      <Container className="flex flex-col gap-[3.5rem]">
-        <div className="flex flex-col items-center gap-[4rem] lg:flex-row lg:items-start lg:justify-between">
-          <div className="relative z-20 flex w-full max-w-[49.6667rem] flex-col gap-[3.3333rem]">
-            <div className="flex flex-col gap-[1.3333rem]">
+    <section id="sirket" className="scroll-mt-[4rem] bg-page pt-[3.25rem] pb-[2.25rem] md:scroll-mt-[6rem] md:pt-[5rem]">
+      <Container className="flex flex-col gap-0 md:gap-[3.5rem]">
+        <div className="flex flex-col gap-[2.25rem] md:flex-row md:items-start md:justify-between md:gap-[2rem] xl:gap-[4rem]">
+          {/* Title + copy stay one column so the headline can use full left width and scale with rem. */}
+          <div className="relative z-20 flex w-full min-w-0 flex-col gap-[1.5rem] md:max-w-[49.6667rem] md:flex-1 md:gap-[2.25rem]">
+            <div className="flex flex-col gap-[1rem] md:gap-[1.3333rem]">
               <SectionEyebrow>{t.stats.eyebrow}</SectionEyebrow>
-              <h2 className="text-[3rem] leading-[1.1] tracking-[-0.0167rem]">
+              <h2 className="text-[1.5rem] leading-[1.1] tracking-[-0.0125rem] md:text-[2.5vw] md:tracking-[-0.0167rem]">
                 <span className="text-accent">{t.stats.titleHighlight}</span>
                 <span className="text-white">{t.stats.titleRest}</span>
               </h2>
             </div>
 
-            <div className="mt-[13.2rem] flex flex-col gap-[2.25rem]">
-              <p className="max-w-[30.3333rem] text-[1.3333rem] leading-[1.2] text-white/48">
+            <div className="flex flex-col gap-[1.5rem] md:gap-[2.25rem]">
+              <p className="max-w-[30.3333rem] text-[1rem] leading-[1.2] text-white/48 md:text-[1.3333rem]">
                 {t.stats.paragraph}
               </p>
-              <ContactFormDialog trigger={<Button className="w-fit">{t.stats.cta}</Button>} />
+              <ContactFormDialog trigger={<Button className="w-full md:w-fit">{t.stats.cta}</Button>} />
             </div>
           </div>
 
-          <div className="relative aspect-[779/668] w-full max-w-[64.9167rem] shrink-0">
-            <img src="/images/map-image.png" alt={t.stats.mapAlt} className="absolute inset-0 size-full object-contain" />
+          <div className="relative mx-auto aspect-[779/668] w-full max-w-[22.5rem] shrink-0 sm:max-w-[28rem] md:mx-0 md:w-[48%] md:max-w-[64.9167rem] md:flex-1">
+            <Image
+              src="/images/map-image-sm.webp"
+              alt={t.stats.mapAlt}
+              fill
+              sizes="(max-width: 768px) 360px, 700px"
+              loading="lazy"
+              className="object-contain"
+            />
             <img src="/images/map-pin-illustration.svg" alt="" className="absolute top-[23%] left-[21%] h-[55.11%] w-[59%]" />
           </div>
         </div>
 
-        <div className="relative z-10 mt-[-8.0833rem] flex flex-col gap-[0.6667rem] lg:flex-row">
+        <div className="relative z-10 mt-[2.5rem] flex flex-col gap-[0.5rem] md:mt-[-8.0833rem] md:flex-row md:gap-[0.6667rem]">
           {t.stats.items.map((stat, index) => (
-            <div key={stat.label} className="relative flex h-[9.6667rem] flex-1 items-center overflow-hidden rounded-[0.6667rem] bg-surface-2 px-[2rem]">
-              <div className="flex flex-col gap-[0.6667rem]">
-                <span className="text-[3rem] leading-[1.1] font-medium tracking-[-0.0167rem] text-white">{stat.value}</span>
-                <span className="text-[1.3333rem] leading-[1.24] text-white/48">{stat.label}</span>
+            <div key={stat.label} className="relative flex min-h-[9.25rem] flex-1 items-center overflow-hidden rounded-[0.5rem] bg-surface-2 px-[1.5rem] py-[1.5rem] md:min-h-[9.6667rem] md:rounded-[0.6667rem] md:px-[2rem] md:py-[2rem]">
+              <div className="flex flex-col gap-[0.5rem] md:gap-[0.6667rem]">
+                <span className="text-[2.75rem] leading-[1.1] font-medium tracking-[-0.0167rem] text-white md:text-[3rem]">{stat.value}</span>
+                <span className="text-[1.125rem] leading-[1.24] text-white/48 md:text-[1.3333rem]">{stat.label}</span>
               </div>
-              <span className="absolute top-[1.6667rem] right-[1.6667rem] font-mono text-[1rem] tracking-[-0.1rem] text-white/12 uppercase">
+              <span className="absolute top-[1.5rem] right-[1.5rem] font-mono text-[1rem] tracking-[-0.1rem] text-white/12 uppercase md:top-[1.6667rem] md:right-[1.6667rem]">
                 {"/".repeat(index + 1)}
               </span>
             </div>

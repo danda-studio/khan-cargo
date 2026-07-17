@@ -82,6 +82,15 @@ export const dictionary = {
       submitting: "Göndərilir...",
       success: "Sorğunuz qəbul edildi",
       note: "İş günü ərzində sizinlə əlaqə saxlayacağıq",
+      error: "Göndərmə alınmadı. Bir az sonra yenidən cəhd edin.",
+      errors: {
+        name: "Adınızı daxil edin",
+        phoneCode: "Ölkə kodunu seçin",
+        phone: "Telefon nömrəsini tam daxil edin",
+        pickup: "Çatdırılma yerini qeyd edin",
+        cargo: "Yük növünü qeyd edin",
+        consent: "Şərtləri qəbul etməlisiniz",
+      },
     },
     footer: {
       eyebrow: "Əlaqə məlumatları",
@@ -169,6 +178,15 @@ export const dictionary = {
       submitting: "Sending...",
       success: "Your request has been received",
       note: "We'll contact you within one business day",
+      error: "Something went wrong. Please try again later.",
+      errors: {
+        name: "Please enter your name",
+        phoneCode: "Select a country code",
+        phone: "Enter a complete phone number",
+        pickup: "Enter the pickup location",
+        cargo: "Enter the cargo type",
+        consent: "You must accept the terms",
+      },
     },
     footer: {
       eyebrow: "Contacts",
@@ -229,6 +247,15 @@ export interface Dictionary {
     submitting: string;
     success: string;
     note: string;
+    error: string;
+    errors: {
+      name: string;
+      phoneCode: string;
+      phone: string;
+      pickup: string;
+      cargo: string;
+      consent: string;
+    };
   };
   footer: {
     eyebrow: string;

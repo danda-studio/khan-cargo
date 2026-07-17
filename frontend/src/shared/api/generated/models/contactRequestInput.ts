@@ -4,15 +4,14 @@
  * Khan Cargo API
  * OpenAPI spec version: 1.0.0
  */
+import type { Phone } from './phone';
 
 export interface ContactRequestInput {
-  /** @minLength 2 */
-  name: string;
-  /** @minLength 9 */
-  phone: string;
   /** @minLength 1 */
-  pickupLocation: string;
+  name: string;
+  /** @minLength 1 */
+  address: string;
+  phone: Phone;
   /** @minLength 1 */
   cargoType: string;
-  consent: boolean;
 }
