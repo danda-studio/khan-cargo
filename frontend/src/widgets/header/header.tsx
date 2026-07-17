@@ -9,10 +9,10 @@ export function Header() {
   const t = useTranslations();
 
   const navLinks = [
-    { label: t.nav.services, href: "#xidmetler", active: false },
-    { label: t.nav.delivery, href: "#catdirilma", active: true },
-    { label: t.nav.company, href: "#sirket", active: false },
-    { label: t.nav.contacts, href: "#elaqe", active: false },
+    { label: t.nav.services, href: "#xidmetler" },
+    { label: t.nav.delivery, href: "#catdirilma" },
+    { label: t.nav.company, href: "#sirket" },
+    { label: t.nav.contacts, href: "#elaqe" },
   ];
 
   return (
@@ -34,7 +34,7 @@ export function Header() {
             <a
               key={link.label}
               href={link.href}
-              className={link.active ? "text-accent" : "text-white/70 transition-colors hover:text-white"}
+              className="text-white/70 transition-colors hover:text-accent"
             >
               {link.label}
             </a>

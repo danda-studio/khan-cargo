@@ -9,7 +9,7 @@ export function Footer() {
   const t = useTranslations();
 
   return (
-    <footer id="elaqe" className="relative scroll-mt-[4rem] overflow-hidden bg-page pt-0 pb-[1.75rem] md:scroll-mt-[6rem] md:pt-[6.6667rem] md:pb-[3.3333rem]">
+    <footer id="elaqe" className="relative scroll-mt-[4rem] overflow-hidden bg-page pt-0 pb-[6.5rem] md:scroll-mt-[6rem] md:pt-[6.6667rem] md:pb-[3.3333rem]">
       <div className="pointer-events-none absolute right-[-20%] bottom-0 h-[18rem] w-[23rem] opacity-90 md:top-[3.25rem] md:right-auto md:bottom-auto md:left-[55.833rem] md:h-[63.667rem] md:w-[84rem] md:opacity-100">
         <Image
           src="/images/image-bg-sm.webp"
