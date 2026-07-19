@@ -7,12 +7,12 @@ namespace Khan_cargo.Services
     public class ContactService : IContactService
     {
         private readonly WASettings _settings;
+        private readonly HttpClient _httpClient;
 
-
-        public ContactService(IOptions<WASettings> options)
+        public ContactService(IOptions<WASettings> options, HttpClient httpClient)
         {
             _settings = options.Value;
-
+            _httpClient = httpClient;
         }
 
         public async Task<SendContactResponse> SendContact(SendContactRequest request)

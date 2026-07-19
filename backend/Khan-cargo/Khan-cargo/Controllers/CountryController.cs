@@ -1,6 +1,7 @@
 ﻿using CountryData.Standard;
 using Khan_cargo.Services.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using PhoneNumbers;
 using System.Text.RegularExpressions;
 
@@ -21,6 +22,7 @@ namespace Khan_cargo.Controllers
         /// содержащих код страны, название, регион и маску номера.
         /// </returns>
         [HttpGet("codes")]
+        [EnableRateLimiting("CountryCodesLimit")]
         public ActionResult<IEnumerable<CountryCodeResponse>> GetCountryCodes()
         {
             var phoneUtil = PhoneNumberUtil.GetInstance();
