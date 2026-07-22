@@ -8,6 +8,12 @@ import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 export function Footer() {
   const t = useTranslations();
 
+  const navLinks = [
+    { label: t.footer.linkAbout, href: "/company" },
+    { label: t.footer.linkTurkey, href: "/turkey-delivery" },
+    { label: t.footer.linkChina, href: "/china-delivery" },
+  ];
+
   return (
     <footer id="elaqe" className="relative scroll-mt-[4rem] overflow-hidden bg-page pt-0 pb-[6.5rem] md:scroll-mt-[6rem] md:pt-[6.6667rem] md:pb-[3.3333rem]">
       <div className="pointer-events-none absolute right-[-20%] bottom-0 h-[18rem] w-[23rem] opacity-90 md:top-[3.25rem] md:right-auto md:bottom-auto md:left-[55.833rem] md:h-[63.667rem] md:w-[84rem] md:opacity-100">
@@ -32,7 +38,7 @@ export function Footer() {
           <div className="flex flex-col gap-[0.5rem] md:contents">
             <a
               href="tel:+994702101039"
-              className="flex h-[4.25rem] w-full flex-row items-center justify-between rounded-[0.5rem] bg-accent p-[1.5rem] md:h-[21rem] md:max-w-[28rem] md:flex-col md:items-stretch md:justify-between md:rounded-[0.6667rem] md:p-[2rem]"
+              className="group flex h-[4.25rem] w-full flex-row items-center justify-between rounded-[0.5rem] bg-accent p-[1.5rem] transition-colors hover:bg-white md:h-[21rem] md:max-w-[28rem] md:flex-col md:items-stretch md:justify-between md:rounded-[0.6667rem] md:p-[2rem]"
             >
               <span className="text-[1rem] font-medium text-black md:text-[1.3333rem]">{t.footer.contactCard}</span>
               <img src="/images/arrow-top-right-1.svg" alt="" className="size-[1.25rem] md:size-[1.6667rem] md:self-end" />
@@ -42,18 +48,43 @@ export function Footer() {
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t.footer.addressCard)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-[5.375rem] w-full flex-row items-center justify-between rounded-[0.5rem] bg-surface-2 p-[1.5rem] transition-opacity hover:opacity-90 md:h-[21rem] md:max-w-[28rem] md:flex-col md:items-stretch md:justify-between md:rounded-[0.6667rem] md:p-[2rem]"
+              className="group flex h-[5.375rem] w-full flex-row items-center justify-between rounded-[0.5rem] bg-surface-2 p-[1.5rem] transition-colors hover:bg-accent md:h-[21rem] md:max-w-[28rem] md:flex-col md:items-stretch md:justify-between md:rounded-[0.6667rem] md:p-[2rem]"
             >
-              <span className="max-w-[12.125rem] text-[1rem] font-medium text-white md:max-w-[19.25rem] md:text-[1.3333rem]">
+              <span className="max-w-[12.125rem] text-[1rem] font-medium text-white transition-colors group-hover:text-black md:max-w-[19.25rem] md:text-[1.3333rem]">
                 {t.footer.addressCard}
               </span>
-              <img src="/images/arrow-top-right-2.svg" alt="" className="size-[1.25rem] md:size-[1.6667rem] md:self-end" />
+              <span className="relative size-[1.25rem] md:size-[1.6667rem] md:self-end">
+                <img
+                  src="/images/arrow-top-right-2.svg"
+                  alt=""
+                  className="absolute inset-0 size-full transition-opacity group-hover:opacity-0"
+                />
+                <img
+                  src="/images/arrow-top-right-1.svg"
+                  alt=""
+                  className="absolute inset-0 size-full opacity-0 transition-opacity group-hover:opacity-100"
+                />
+              </span>
             </a>
           </div>
 
-          <div className="flex flex-col gap-[1rem] py-0 pl-0 text-[1.75rem] leading-[1.1] tracking-[-0.0125rem] text-white md:gap-[1.3333rem] md:py-[0.6667rem] md:pl-[1.3333rem] md:text-[2.3333rem] md:tracking-[-0.0167rem]">
-            <a href="tel:+994702101039" className="transition-opacity hover:opacity-80">{t.footer.phone}</a>
-            <a href="mailto:info@khan.az" className="transition-opacity hover:opacity-80">{t.footer.email}</a>
+          <div className="flex flex-col gap-[2rem] py-0 pl-0 md:gap-[2.3333rem] md:py-[0.6667rem] md:pl-[1.3333rem]">
+            <div className="flex flex-col gap-[1rem] text-[1.75rem] leading-[1.1] tracking-[-0.0125rem] text-white md:gap-[1.3333rem] md:text-[2.3333rem] md:tracking-[-0.0167rem]">
+              <a href="tel:+994702101039" className="transition-colors hover:text-accent">{t.footer.phone}</a>
+              <a href="mailto:info@khan.az" className="transition-colors hover:text-accent">{t.footer.email}</a>
+            </div>
+
+            <nav aria-label="Footer" className="flex flex-col gap-[1rem] text-[1rem] leading-[1.25rem] text-white md:gap-[1.75rem]">
+              {navLinks.map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="transition-colors hover:text-accent"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
           </div>
         </div>
 

@@ -1,3 +1,7 @@
+import { aboutCompanyByLocale, type AboutCompanyDict } from "./about-company";
+import { chinaDeliveryByLocale, type ChinaDeliveryDict } from "./china-delivery";
+import { turkeyDeliveryByLocale, type TurkeyDeliveryDict } from "./turkey-delivery";
+
 export const locales = ["az", "en", "ru"] as const;
 export type Locale = (typeof locales)[number];
 
@@ -13,9 +17,10 @@ export const dictionary = {
   az: {
     nav: {
       services: "Xidmətlər",
-      delivery: "Çatdırılma üsulları",
       company: "Şirkət",
       contacts: "Əlaqə məlumatları",
+      chinaDelivery: "Çindən çatdırılma",
+      turkeyDelivery: "Türkiyədən çatdırılma",
       cta: "Dəyəri hesablayın",
     },
     hero: {
@@ -100,18 +105,25 @@ export const dictionary = {
       addressCard: "Abşeron T/M sıra 2, korpus 2, Mağaza 10",
       phone: "(+994) 70 210 10 39",
       email: "info@khan.az",
+      linkAbout: "Şirkət haqqında",
+      linkTurkey: "Türkiyədən çatdırılma",
+      linkChina: "Çindən çatdırılma",
       legalNotice: "Bu saytdan istifadəni davam etdirməklə, siz kukilərin istifadəsinə razılıq verirsiniz. Bu sayt açıq oferta hesab olunmur.",
       privacyPolicy: "Məxfilik Siyasəti",
       dataConsent: "Fərdi məlumatların emalına razılıq",
       credit: "Veb-saytların hazırlanması",
     },
+    chinaDelivery: chinaDeliveryByLocale.az,
+    turkeyDelivery: turkeyDeliveryByLocale.az,
+    aboutCompany: aboutCompanyByLocale.az,
   },
   en: {
     nav: {
       services: "Services",
-      delivery: "Delivery methods",
       company: "Company",
       contacts: "Contacts",
+      chinaDelivery: "Delivery from China",
+      turkeyDelivery: "Delivery from Turkey",
       cta: "Calculate the cost",
     },
     hero: {
@@ -196,18 +208,25 @@ export const dictionary = {
       addressCard: "Absheron Shopping Mall, row 2, block 2, Store 10",
       phone: "(+994) 70 210 10 39",
       email: "info@khan.az",
+      linkAbout: "About the company",
+      linkTurkey: "Delivery from Turkey",
+      linkChina: "Delivery from China",
       legalNotice: "By continuing to use this site, you agree to the use of cookies. This site is not considered a public offer.",
       privacyPolicy: "Privacy Policy",
       dataConsent: "Consent to personal data processing",
       credit: "Website development",
     },
+    chinaDelivery: chinaDeliveryByLocale.en,
+    turkeyDelivery: turkeyDeliveryByLocale.en,
+    aboutCompany: aboutCompanyByLocale.en,
   },
   ru: {
     nav: {
       services: "Услуги",
-      delivery: "Способы доставки",
       company: "Компания",
       contacts: "Контакты",
+      chinaDelivery: "Доставка из Китая",
+      turkeyDelivery: "Доставка из Турции",
       cta: "Рассчитать стоимость",
     },
     hero: {
@@ -292,16 +311,29 @@ export const dictionary = {
       addressCard: "Absheron T/M, ряд 2, корпус 2, магазин 10",
       phone: "(+994) 70 210 10 39",
       email: "info@khan.az",
+      linkAbout: "О компании",
+      linkTurkey: "Доставка из Турции",
+      linkChina: "Доставка из Китая",
       legalNotice: "Продолжая пользоваться сайтом, вы соглашаетесь с использованием cookie. Сайт не является публичной офертой.",
       privacyPolicy: "Политика конфиденциальности",
       dataConsent: "Согласие на обработку персональных данных",
       credit: "Разработка сайтов",
     },
+    chinaDelivery: chinaDeliveryByLocale.ru,
+    turkeyDelivery: turkeyDeliveryByLocale.ru,
+    aboutCompany: aboutCompanyByLocale.ru,
   },
 } satisfies Record<Locale, Dictionary>;
 
 export interface Dictionary {
-  nav: { services: string; delivery: string; company: string; contacts: string; cta: string };
+  nav: {
+    services: string;
+    company: string;
+    contacts: string;
+    chinaDelivery: string;
+    turkeyDelivery: string;
+    cta: string;
+  };
   hero: { subtitle: string; title: string; cta: string; bullet: string };
   problems: {
     eyebrow: string;
@@ -361,9 +393,15 @@ export interface Dictionary {
     addressCard: string;
     phone: string;
     email: string;
+    linkAbout: string;
+    linkTurkey: string;
+    linkChina: string;
     legalNotice: string;
     privacyPolicy: string;
     dataConsent: string;
     credit: string;
   };
+  chinaDelivery: ChinaDeliveryDict;
+  turkeyDelivery: TurkeyDeliveryDict;
+  aboutCompany: AboutCompanyDict;
 }

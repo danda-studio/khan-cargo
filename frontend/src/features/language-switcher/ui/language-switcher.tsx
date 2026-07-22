@@ -20,7 +20,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
         <span className="mr-[0.5rem] md:mr-[0.6875rem]">{locale.toUpperCase()}</span>
       </Menu.Trigger>
       <Menu.Portal>
-        <Menu.Positioner side="bottom" align="end" sideOffset={12} className="z-50 outline-none">
+        <Menu.Positioner side="bottom" align="end" sideOffset={12} className="z-[70] outline-none">
           <Menu.Popup className="w-[10rem] overflow-hidden rounded-[0.3333rem] border border-dashed border-white/28 bg-page py-[0.5rem] text-[1.3333rem] text-white shadow-2xl outline-none">
             {locales.map(item => (
               <Menu.Item

@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { useTranslations } from "@/shared/config/i18n/language-context";
+import { AzerbaijanMap } from "@/shared/ui/azerbaijan-map/azerbaijan-map";
 import { Button } from "@/shared/ui/button/button";
 import { Container } from "@/shared/ui/container/container";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
@@ -32,17 +32,10 @@ export function StatsSection() {
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-[779/668] w-full max-w-[22.5rem] shrink-0 sm:max-w-[28rem] md:mx-0 md:w-[48%] md:max-w-[64.9167rem] md:flex-1">
-            <Image
-              src="/images/map-image-sm.webp"
-              alt={t.stats.mapAlt}
-              fill
-              sizes="(max-width: 768px) 360px, 700px"
-              loading="lazy"
-              className="object-contain"
-            />
-            <img src="/images/map-pin-illustration.svg" alt="" className="absolute top-[23%] left-[21%] h-[55.11%] w-[59%]" />
-          </div>
+          <AzerbaijanMap
+            alt={t.stats.mapAlt}
+            className="relative mx-auto aspect-[779/668] w-full max-w-[22.5rem] shrink-0 sm:max-w-[28rem] md:mx-0 md:w-[48%] md:max-w-[64.9167rem] md:flex-1"
+          />
         </div>
 
         <div className="relative z-10 mt-[2.5rem] flex flex-col gap-[0.5rem] md:mt-[-8.0833rem] md:flex-row md:gap-[0.6667rem]">
