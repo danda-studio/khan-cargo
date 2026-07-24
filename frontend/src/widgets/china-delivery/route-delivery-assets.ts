@@ -6,7 +6,7 @@ export const routeDeliveryAssets = {
     heroSm: "/images/china-delivery/hero-dock-sm.webp",
     warehouse: "/images/china-delivery/warehouse.webp",
     warehouseSm: "/images/china-delivery/warehouse-sm.webp",
-    local: "/images/china-delivery/local-delivery.jpg",
+    local: "/images/china-delivery/local-delivery.webp",
     localSm: "/images/china-delivery/local-delivery-sm.webp",
     truck: "/images/china-delivery/truck.webp",
     workflowIcons: [
@@ -21,7 +21,7 @@ export const routeDeliveryAssets = {
     heroSm: "/images/turkey-delivery/hero-highway-sm.webp",
     warehouse: "/images/turkey-delivery/warehouse.webp",
     warehouseSm: "/images/turkey-delivery/warehouse-sm.webp",
-    local: "/images/china-delivery/local-delivery.jpg",
+    local: "/images/china-delivery/local-delivery.webp",
     localSm: "/images/china-delivery/local-delivery-sm.webp",
     truck: "/images/turkey-delivery/truck.webp",
     workflowIcons: [

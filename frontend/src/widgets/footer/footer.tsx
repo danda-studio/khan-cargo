@@ -20,10 +20,10 @@ export function Footer() {
     <footer id="elaqe" className="relative scroll-mt-[4rem] overflow-hidden bg-page pt-0 pb-[6.5rem] md:scroll-mt-[6rem] md:pt-[6.6667rem] md:pb-[3.3333rem]">
       <div className="pointer-events-none absolute right-[-20%] bottom-0 h-[18rem] w-[23rem] opacity-90 md:top-[3.25rem] md:right-auto md:bottom-auto md:left-[55.833rem] md:h-[63.667rem] md:w-[84rem] md:opacity-100">
         <Image
-          src="/images/image-bg-sm.webp"
+          src="/images/image-bg.webp"
           alt=""
           fill
-          sizes="(max-width: 768px) 366px, 1400px"
+          sizes="(max-width: 768px) 60vw, min(1400px, 55vw)"
           loading="lazy"
           className="object-contain md:object-cover"
           style={{ maskImage: "linear-gradient(to left, black 55%, transparent 100%)" }}

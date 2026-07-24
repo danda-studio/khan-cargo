@@ -57,8 +57,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/images/logo-sm.webp", type: "image/webp" }],
-    apple: [{ url: "/images/logo-sm.webp", type: "image/webp" }],
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
   },
   alternates: {
     canonical: "/",
@@ -78,12 +82,11 @@ export const metadata: Metadata = {
     title: "Khan Cargo — Beynəlxalq yükdaşıma",
     description:
       "Khan Cargo beynəlxalq yükdaşımalarını sürətli, təhlükəsiz və sərfəli şəkildə həyata keçirir. Azərbaycan, Türkiyə və Çin arasında etibarlı logistika xidmətləri.",
-    // Prefer /images/og.webp when available; until then use hero (or logo) webp.
     images: [
       {
-        url: "/images/hero-img-sm.webp",
-        width: 900,
-        height: 925,
+        url: "/images/hero-img.webp",
+        width: 1800,
+        height: 1800,
         alt: "Khan Cargo — beynəlxalq yükdaşıma",
       },
     ],
@@ -93,7 +96,7 @@ export const metadata: Metadata = {
     title: "Khan Cargo — Beynəlxalq yükdaşıma",
     description:
       "Khan Cargo beynəlxalq yükdaşımalarını sürətli, təhlükəsiz və sərfəli şəkildə həyata keçirir.",
-    images: ["/images/hero-img-sm.webp"],
+    images: ["/images/hero-img.webp"],
   },
 };
 
@@ -119,7 +122,7 @@ export default async function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/hero-img-sm.webp"
+          href="/images/hero-img.webp"
           type="image/webp"
           fetchPriority="high"
         />

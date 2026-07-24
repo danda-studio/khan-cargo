@@ -56,7 +56,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 flex h-[3.75rem] items-center justify-between border-b border-dashed border-white/28 bg-white/4 backdrop-blur-[1.6667rem] px-[1rem] md:h-[6rem] md:px-[3rem]">
+      <header className="fixed inset-x-0 top-0 z-50 flex h-[3.75rem] items-center justify-between border-b border-dashed border-white/28 bg-white/4 backdrop-blur-[1.6667rem] px-[1rem] lg:h-[6rem] lg:px-[3rem]">
         <div className="flex items-center gap-[3.6667rem]">
           <a href={href("/")} className="shrink-0" aria-label="Khan Cargo">
             <Image
@@ -65,11 +65,11 @@ export function Header() {
               width={280}
               height={93}
               priority
-              className="h-[1.75rem] w-[5.25rem] object-contain md:h-[2.3333rem] md:w-[7rem]"
+              className="h-[1.75rem] w-[5.25rem] object-contain lg:h-[2.3333rem] lg:w-[7rem]"
             />
           </a>
 
-          <nav aria-label="Main" className="hidden items-center gap-[2.3333rem] text-[1.3333rem] leading-[1.3333rem] md:flex">
+          <nav aria-label="Main" className="hidden items-center gap-[1.5rem] text-[1.125rem] leading-none xl:gap-[2.3333rem] xl:text-[1.3333rem] xl:leading-[1.3333rem] lg:flex">
             {navLinks.map(link => (
               <a
                 key={link.label}
@@ -86,15 +86,15 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="flex h-full items-center md:gap-[1.6667rem]">
+        <div className="flex h-full items-center lg:gap-[1.6667rem]">
           <LanguageSwitcher />
 
-          {/* Mobile 98:111 — dashed strip between language and hamburger */}
-          <span aria-hidden className="mx-[0.75rem] h-full border-l border-dashed border-white/28 md:mx-0" />
+          {/* Mobile/tablet — dashed strip between language and hamburger */}
+          <span aria-hidden className="mx-[0.75rem] h-full border-l border-dashed border-white/28 lg:hidden" />
 
           <ContactFormDialog
             trigger={(
-              <button type="button" className="hidden cursor-pointer items-center gap-[2rem] text-[1.3333rem] font-medium text-white md:flex">
+              <button type="button" className="hidden cursor-pointer items-center gap-[2rem] text-[1.3333rem] font-medium text-white lg:flex">
                 <span className="size-[0.8333rem] shrink-0 bg-accent" />
                 {t.nav.cta}
               </button>
@@ -103,7 +103,7 @@ export function Header() {
 
           <button
             type="button"
-            className="flex size-[1.5rem] shrink-0 cursor-pointer items-center justify-center md:hidden"
+            className="flex size-[1.5rem] shrink-0 cursor-pointer items-center justify-center lg:hidden"
             aria-label="Open menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(true)}
@@ -114,7 +114,7 @@ export function Header() {
       </header>
 
       {menuOpen ? (
-        <div className="fixed inset-0 z-[60] md:hidden">
+        <div className="fixed inset-0 z-[60] lg:hidden">
           <button
             type="button"
             className="absolute inset-0 cursor-default bg-transparent"

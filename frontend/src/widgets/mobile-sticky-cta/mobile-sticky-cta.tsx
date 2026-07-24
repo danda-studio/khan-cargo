@@ -8,7 +8,7 @@ import { cn } from "@/shared/lib/cn";
 
 const SHOW_AFTER_PX = 800;
 
-/** Fixed mobile CTA — appears after scrolling 800px. */
+/** Fixed mobile/tablet CTA — appears after scrolling 800px, hidden from lg up. */
 export function MobileStickyCta() {
   const t = useTranslations();
   const [visible, setVisible] = useState(false);
@@ -26,7 +26,7 @@ export function MobileStickyCta() {
   return (
     <div
       className={cn(
-        "pointer-events-none fixed inset-x-0 bottom-0 z-40 px-[1rem] pb-[1rem] transition-all duration-300 md:hidden",
+        "pointer-events-none fixed inset-x-0 bottom-0 z-40 px-[1rem] pb-[1rem] transition-all duration-300 lg:hidden",
         visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0",
       )}
     >

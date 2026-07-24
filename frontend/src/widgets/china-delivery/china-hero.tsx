@@ -23,30 +23,40 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
 
   return (
     <>
-      <section className="bg-page pt-[3.75rem] md:hidden">
+      {/* Mobile + tablet (< lg): stacked layout */}
+      <section className="bg-page pt-[3.75rem] lg:hidden">
         <div className={`flex flex-col gap-[1.5rem] pt-[2.5rem] pb-[1.5rem] ${chinaPad}`}>
-          <h1 className="text-[2rem] leading-[1] font-medium text-white">{t.hero.title}</h1>
-          <p className="text-[1rem] leading-[1.2] text-white">{t.hero.lead}</p>
+          <h1 className="max-w-[28rem] text-[2rem] leading-[1] font-medium text-white md:text-[2.5rem]">
+            {t.hero.title}
+          </h1>
+          <p className="max-w-[36rem] text-[1rem] leading-[1.2] text-white md:text-[1.125rem]">
+            {t.hero.lead}
+          </p>
         </div>
-        <div className="relative aspect-[360/352] w-full">
-          <FadeImage
-            src={images.heroSm}
-            alt={alt}
-            fill
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            className="object-cover object-[center_30%]"
-          />
-          <div className={`absolute inset-x-0 bottom-0 pb-[1rem] ${chinaPad}`}>
+        <div className="relative aspect-[360/352] w-full overflow-hidden md:aspect-[16/10]">
+          <div className="absolute inset-0 overflow-hidden">
+            <FadeImage
+              src={images.hero}
+              alt={alt}
+              width={2400}
+              height={1500}
+              priority
+              fetchPriority="high"
+              sizes="100vw"
+              quality={90}
+              className="absolute top-[-4%] left-1/2 h-[126%] w-[126%] max-w-none -translate-x-1/2 object-cover object-[center_30%] md:object-center"
+            />
+          </div>
+          <div className={`absolute inset-x-0 bottom-0 z-10 pb-[1rem] ${chinaPad}`}>
             <ContactFormDialog
-              trigger={<Button className={`${chinaBtn} w-full`}>{t.hero.cta}</Button>}
+              trigger={<Button className={`${chinaBtn} w-full md:w-fit`}>{t.hero.cta}</Button>}
             />
           </div>
         </div>
       </section>
 
-      <section className="relative mt-[6rem] hidden h-[calc(100svh-6rem)] w-full overflow-hidden bg-page md:flex">
+      {/* Desktop (≥ lg): full-bleed 100svh − header */}
+      <section className="relative mt-[6rem] hidden h-[calc(100svh-6rem)] w-full overflow-hidden bg-page lg:flex">
         <div className="absolute inset-0">
           <FadeImage
             src={images.hero}
@@ -55,6 +65,7 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
             priority
             fetchPriority="high"
             sizes="100vw"
+            quality={90}
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent" />

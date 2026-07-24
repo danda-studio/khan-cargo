@@ -9,6 +9,9 @@ import {
   type RouteDeliveryVariant,
 } from "@/widgets/china-delivery/route-delivery-assets";
 
+/** Bottom padding under yellow cards so mobile sticky CTA doesn't cover copy */
+const stickySafePad = "pb-[calc(1rem+4.5rem)] lg:pb-[2.25rem]";
+
 export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryVariant }) {
   const dict = useTranslations();
   const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
@@ -16,18 +19,23 @@ export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryV
 
   return (
     <section className="relative overflow-hidden">
-      <div className="md:hidden">
-        <div className="relative aspect-[360/281] w-full">
-          <FadeImage
-            src={images.warehouseSm}
-            alt=""
-            fill
-            sizes="100vw"
-            loading="lazy"
-            className="object-cover"
-          />
+      {/* Mobile + tablet */}
+      <div className="lg:hidden">
+        <div className="relative aspect-[360/281] w-full overflow-hidden md:aspect-[16/10]">
+          <div className="absolute inset-0 overflow-hidden">
+            <FadeImage
+              src={images.warehouse}
+              alt=""
+              width={2400}
+              height={1345}
+              sizes="100vw"
+              quality={90}
+              loading="lazy"
+              className="absolute top-[-6%] left-1/2 h-[126%] w-[126%] max-w-none -translate-x-1/2 object-cover object-center"
+            />
+          </div>
         </div>
-        <div className={`relative z-10 -mt-[3.6875rem] pb-[3.25rem] ${chinaPad}`}>
+        <div className={`relative z-10 -mt-[3.6875rem] ${stickySafePad} ${chinaPad}`}>
           <div className="flex flex-col rounded-[0.375rem] bg-accent p-[1.5rem]">
             <SectionEyebrow onAccent className={`${chinaEyebrow} mb-[2rem]`}>
               {t.warehouse.eyebrow}
@@ -40,16 +48,18 @@ export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryV
         </div>
       </div>
 
-      <div className="relative hidden min-h-[47.5rem] md:flex">
+      {/* Desktop */}
+      <div className="relative hidden aspect-[1440/760] w-full lg:block">
         <FadeImage
           src={images.warehouse}
           alt=""
           fill
           sizes="100vw"
+          quality={90}
           loading="lazy"
-          className="object-cover"
+          className="object-cover object-center"
         />
-        <div className={`relative flex min-h-[47.5rem] flex-1 items-end py-[2.25rem] ${chinaPad}`}>
+        <div className={`absolute inset-0 flex items-end pb-[2.25rem] ${chinaPad}`}>
           <div className="flex w-full max-w-[47rem] flex-col rounded-[0.375rem] bg-accent p-[1.5rem]">
             <SectionEyebrow onAccent className={`${chinaEyebrow} mb-[2rem]`}>
               {t.warehouse.eyebrow}

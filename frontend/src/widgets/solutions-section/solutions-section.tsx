@@ -6,10 +6,10 @@ import { FadeImage } from "@/shared/ui/fade-image/fade-image";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 
 const IMAGES = [
-  "/images/solution-1-sm.webp",
-  "/images/solution-2-sm.webp",
-  "/images/solution-3-sm.webp",
-  "/images/solution-4-sm.webp",
+  "/images/solution-1.webp",
+  "/images/solution-2.webp",
+  "/images/solution-3.webp",
+  "/images/solution-4.webp",
 ];
 
 const INDEXES = ["01", "02", "03", "04"];
@@ -41,9 +41,9 @@ export function SolutionsSection() {
               <FadeImage
                 src={IMAGES[index]}
                 alt={solution.title}
-                width={900}
-                height={506}
-                sizes="(max-width: 768px) 100vw, 580px"
+                width={1600}
+                height={893}
+                sizes="(max-width: 768px) 100vw, min(880px, 58vw)"
                 loading="lazy"
                 className="h-[11rem] w-full rounded-[0.5rem] object-cover md:aspect-[660/302] md:h-auto md:w-[58%] md:max-w-[55rem] md:shrink-0 md:rounded-[0.6667rem]"
               />
