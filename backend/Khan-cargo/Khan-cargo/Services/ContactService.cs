@@ -20,86 +20,86 @@ namespace Khan_cargo.Services
 
         public async Task<SendContactResponse> SendContact(SendContactRequest request)
         {
-            if (!ContactValidator.ValidateName(request.Name, out var nameError))
-                return new SendContactResponse { Success = false, Message = nameError };
-            if (!ContactValidator.ValidatePhone(request.Phone.Code.ToString(), request.Phone.Number.ToString(), out var phoneError))
-                return new SendContactResponse { Success = false, Message = phoneError };
+            //if (!ContactValidator.ValidateName(request.Name, out var nameError))
+            //    return new SendContactResponse { Success = false, Message = nameError };
+            //if (!ContactValidator.ValidatePhone(request.Phone.Code.ToString(), request.Phone.Number.ToString(), out var phoneError))
+            //    return new SendContactResponse { Success = false, Message = phoneError };
 
-            return new SendContactResponse()
+            //return new SendContactResponse()
+            //{
+            //    Success = true,
+            //    Message = "Сообщение отправлено"
+            //};
+
+            var response = new SendContactResponse();
+
+            try
             {
-                Success = true,
-                Message = "Сообщение отправлено"
-            };
 
-            //var response = new SendContactResponse();
+                var payload = new
+                {
+                    messaging_product = "whatsapp",
+                    to = _settings.RecipientsPhone,
+                    type = "template",
+                    template = new
+                    {
+                        name = _settings.TemplateName,
+                        language = new { code = _settings.TemplateLanguageCode },
+                        components = new object[]
+                        {
+                            new
+                            {
+                                type = "body",
+                                parameters = new object[]
+                                {
+                                    new { type = "text", parameter_name = "customer_name", text = request.Name},
+                                    new { type = "text", parameter_name = "phone_number", text = request.Phone},
+                                    new { type = "text", parameter_name = "origin_city", text = request.Address},
+                                    new { type = "text", parameter_name = "cargo_type", text = request.CargoType},
+                                }
+                            }
+                        }
+                    }
+                };
 
-            //try
-            //{
+                var json = JsonSerializer.Serialize(payload);
+                using var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            //    var payload = new
-            //    {
-            //        messaging_product = "whatsapp",
-            //        to = _settings.RecipientsPhone,
-            //        type = "template",
-            //        template = new
-            //        {
-            //            name = _settings.TemplateName,
-            //            language = new { code = _settings.TemplateLanguageCode },
-            //            components = new object[]
-            //            {
-            //                new
-            //                {
-            //                    type = "body",
-            //                    parameters = new object[]
-            //                    {
-            //                        new { type = "text", parameter_name = "customer_name", text = request.Name},
-            //                        new { type = "text", parameter_name = "phone_number", text = request.Phone},
-            //                        new { type = "text", parameter_name = "origin_city", text = request.Address},
-            //                        new { type = "text", parameter_name = "cargo_type", text = request.CargoType},
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    };
+                using var httpRequest = new HttpRequestMessage(HttpMethod.Post, "")
+                {
+                    Content = content
+                };
+                httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _settings.AccessToken);
 
-            //    var json = JsonSerializer.Serialize(payload);
-            //    using var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var httpResponse = await _httpClient.SendAsync(httpRequest);
+                var responseBody = await httpResponse.Content.ReadAsStringAsync();
 
-            //    using var httpRequest = new HttpRequestMessage(HttpMethod.Post, "")
-            //    {
-            //        Content = content
-            //    };
-            //    httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _settings.AccessToken);
+                if (httpResponse.IsSuccessStatusCode)
+                {
+                    using var doc = JsonDocument.Parse(responseBody);
+                    var messageId = doc.RootElement
+                        .GetProperty("messages")[0]
+                        .GetProperty("id")
+                        .GetString();
 
-            //    var httpResponse = await _httpClient.SendAsync(httpRequest);
-            //    var responseBody = await httpResponse.Content.ReadAsStringAsync();
+                    response.Success = true;
+                    response.Message = $"Сообщение отправлено";
+                }
+                else
+                {
+                    response.Success = false;
+                    response.Message = $"Ошибка WhatsApp API: {responseBody}";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Success = false;
+                response.Message = $"Ошибка отправки: {ex.Message}";
+            }
 
-            //    if (httpResponse.IsSuccessStatusCode)
-            //    {
-            //        using var doc = JsonDocument.Parse(responseBody);
-            //        var messageId = doc.RootElement
-            //            .GetProperty("messages")[0]
-            //            .GetProperty("id")
-            //            .GetString();
+            return response;
 
-            //        response.Success = true;
-            //        response.Message = $"Сообщение отправлено";
-            //    }
-            //    else
-            //    {
-            //        response.Success = false;
-            //        response.Message = $"Ошибка WhatsApp API: {responseBody}";
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    response.Success = false;
-            //    response.Message = $"Ошибка отправки: {ex.Message}";
-            //}
 
-            //return response;
-        
-    
 
         }
     }
