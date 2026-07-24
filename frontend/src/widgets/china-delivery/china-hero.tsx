@@ -38,12 +38,11 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
             <FadeImage
               src={images.hero}
               alt={alt}
-              width={2400}
-              height={1500}
+              width={3840}
+              height={2400}
               priority
               fetchPriority="high"
               sizes="100vw"
-              quality={90}
               className="absolute top-[-4%] left-1/2 h-[126%] w-[126%] max-w-none -translate-x-1/2 object-cover object-[center_30%] md:object-center"
             />
           </div>
@@ -65,7 +64,6 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
             priority
             fetchPriority="high"
             sizes="100vw"
-            quality={90}
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/15 to-transparent" />

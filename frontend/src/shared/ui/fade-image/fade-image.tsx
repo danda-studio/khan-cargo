@@ -8,12 +8,22 @@ type FadeImageProps = ImageProps & {
   fadeClassName?: string;
 };
 
-export function FadeImage({ className, fadeClassName, onLoad, ...props }: FadeImageProps) {
+/** Photos serve as uploaded files — no Next optimizer re-encode/blur */
+export function FadeImage({
+  className,
+  fadeClassName,
+  onLoad,
+  quality = 100,
+  unoptimized = true,
+  ...props
+}: FadeImageProps) {
   const [loaded, setLoaded] = useState(false);
 
   return (
     <Image
       {...props}
+      quality={quality}
+      unoptimized={unoptimized}
       onLoad={event => {
         setLoaded(true);
         onLoad?.(event);

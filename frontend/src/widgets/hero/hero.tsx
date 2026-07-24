@@ -33,7 +33,6 @@ export function Hero() {
         priority
         fetchPriority="high"
         sizes="(min-width: 1024px) min(1220px, 58vw), 70vw"
-        quality={90}
         className="pointer-events-none absolute top-0 right-0 z-[1] hidden h-full w-auto max-w-[75%] object-contain object-right md:block lg:max-w-[62%]"
       />
 
@@ -67,7 +66,6 @@ export function Hero() {
             priority
             fetchPriority="high"
             sizes="100vw"
-            quality={90}
             className="object-contain object-top"
           />
         </div>

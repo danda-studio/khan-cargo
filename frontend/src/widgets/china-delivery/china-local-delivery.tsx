@@ -27,7 +27,6 @@ export function ChinaLocalDelivery({ variant = "china" }: { variant?: RouteDeliv
               alt=""
               fill
               sizes="100vw"
-              quality={90}
               loading="lazy"
               className="object-cover object-[center_32%]"
             />
@@ -56,7 +55,6 @@ export function ChinaLocalDelivery({ variant = "china" }: { variant?: RouteDeliv
             alt=""
             fill
             sizes="100vw"
-            quality={90}
             loading="lazy"
             className="object-cover object-center"
           />

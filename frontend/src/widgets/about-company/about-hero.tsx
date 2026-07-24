@@ -34,7 +34,6 @@ export function AboutHero() {
               priority
               fetchPriority="high"
               sizes="100vw"
-              quality={90}
               className="absolute top-[-4%] left-1/2 h-[126%] w-[126%] max-w-none -translate-x-1/2 object-cover object-center"
             />
           </div>
@@ -55,7 +54,6 @@ export function AboutHero() {
             priority
             fetchPriority="high"
             sizes="100vw"
-            quality={90}
             className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />

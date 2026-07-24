@@ -26,10 +26,9 @@ export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryV
             <FadeImage
               src={images.warehouse}
               alt=""
-              width={2400}
-              height={1345}
+              width={3840}
+              height={2144}
               sizes="100vw"
-              quality={90}
               loading="lazy"
               className="absolute top-[-6%] left-1/2 h-[126%] w-[126%] max-w-none -translate-x-1/2 object-cover object-center"
             />
@@ -55,7 +54,6 @@ export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryV
           alt=""
           fill
           sizes="100vw"
-          quality={90}
           loading="lazy"
           className="object-cover object-center"
         />
