@@ -65,7 +65,9 @@ namespace Khan_cargo.Services
                 var json = JsonSerializer.Serialize(payload);
                 using var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                using var httpRequest = new HttpRequestMessage(HttpMethod.Post, "")
+                var url = $"{_settings.BaseUrl}/v25.0/{_settings.PhoneNumberId}/messages";
+
+                using var httpRequest = new HttpRequestMessage(HttpMethod.Post, url)
                 {
                     Content = content
                 };
