@@ -33,7 +33,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
     {
-        policy.WithOrigins("https://danda-studio.github.io", "https://rcc-hrmo.vercel.app")
+        policy.WithOrigins("https://danda-studio.github.io", "https://khan-cargo.vercel.app")
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials();

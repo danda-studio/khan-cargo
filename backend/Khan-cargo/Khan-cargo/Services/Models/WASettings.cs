@@ -14,5 +14,6 @@
         public string AppSecret { get; set; } = string.Empty;
         public string TemplateName { get; set; } = string.Empty;
         public string TemplateLanguageCode { get; set; } = string.Empty;
+        public string RecipientsPhone { get; set; } = string.Empty;
     }
 }
