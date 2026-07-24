@@ -102,6 +102,7 @@ export default function RootLayout({
   return (
     <html lang="az" className={`${inter.variable} ${geist.variable}`}>
       <head>
+        <OrganizationJsonLd />
         <link
           rel="preload"
           as="image"
@@ -111,7 +112,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen overflow-x-hidden">
-        <OrganizationJsonLd />
         <LanguageProvider>
           <QueryProvider>{children}</QueryProvider>
         </LanguageProvider>

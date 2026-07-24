@@ -1,10 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { Button } from "@/shared/ui/button/button";
+import { FadeImage } from "@/shared/ui/fade-image/fade-image";
 import { chinaBtn, chinaPad } from "@/widgets/china-delivery/china-pad";
+
+const ABOUT_HERO_ALT = "Magistral yolda yük maşınları";
 
 export function AboutHero() {
   const t = useTranslations().aboutCompany;
@@ -23,9 +25,9 @@ export function AboutHero() {
           </p>
         </div>
         <div className="relative aspect-[360/352] w-full">
-          <Image
+          <FadeImage
             src="/images/about-company/hero-sm.webp"
-            alt=""
+            alt={ABOUT_HERO_ALT}
             fill
             priority
             fetchPriority="high"
@@ -42,9 +44,9 @@ export function AboutHero() {
 
       <section className="relative mt-[6rem] hidden h-[calc(100svh-6rem)] min-h-[37.5rem] w-full overflow-hidden bg-page md:flex">
         <div className="absolute inset-0">
-          <Image
+          <FadeImage
             src="/images/about-company/hero.webp"
-            alt=""
+            alt={ABOUT_HERO_ALT}
             fill
             priority
             fetchPriority="high"

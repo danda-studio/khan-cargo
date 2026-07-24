@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { Button } from "@/shared/ui/button/button";
 import { Container } from "@/shared/ui/container/container";
+import { FadeImage } from "@/shared/ui/fade-image/fade-image";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 
 export function Hero() {
@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[45rem] overflow-hidden bg-page md:min-h-[76.25rem]">
       <div className="absolute top-[24.5625rem] left-[calc(50%-3rem)] h-[15.75rem] w-[22.75rem] -translate-x-1/2 overflow-hidden rounded-[0.6667rem] md:top-0 md:left-[41.6667rem] md:h-[58rem] md:w-[84rem] md:translate-x-0">
-        <Image
+        <FadeImage
           src="/images/image-bg-sm.webp"
           alt=""
           fill
@@ -23,7 +23,7 @@ export function Hero() {
           loading="lazy"
         />
       </div>
-      <Image
+      <FadeImage
         src="/images/hero-img-sm.webp"
         alt="Khan Cargo konteyner daşınması"
         width={900}

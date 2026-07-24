@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "@/shared/config/i18n/language-context";
+import { FadeImage } from "@/shared/ui/fade-image/fade-image";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 import { chinaEyebrow, chinaPad } from "@/widgets/china-delivery/china-pad";
 import {
@@ -18,7 +18,7 @@ export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryV
     <section className="relative overflow-hidden">
       <div className="md:hidden">
         <div className="relative aspect-[360/281] w-full">
-          <Image
+          <FadeImage
             src={images.warehouseSm}
             alt=""
             fill
@@ -41,7 +41,7 @@ export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryV
       </div>
 
       <div className="relative hidden min-h-[47.5rem] md:flex">
-        <Image
+        <FadeImage
           src={images.warehouse}
           alt=""
           fill

@@ -45,7 +45,7 @@ export function Footer() {
             </a>
 
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(t.footer.addressCard)}`}
+              href="https://www.google.com/maps?q=40.318143,49.751090&ll=40.318143,49.751090&z=16"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex h-[5.375rem] w-full flex-row items-center justify-between rounded-[0.5rem] bg-surface-2 p-[1.5rem] transition-colors hover:bg-accent md:h-[21rem] md:max-w-[28rem] md:flex-col md:items-stretch md:justify-between md:rounded-[0.6667rem] md:p-[2rem]"

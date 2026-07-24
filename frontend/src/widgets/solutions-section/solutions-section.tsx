@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { Container } from "@/shared/ui/container/container";
+import { FadeImage } from "@/shared/ui/fade-image/fade-image";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 
 const IMAGES = [
@@ -38,7 +38,7 @@ export function SolutionsSection() {
               key={solution.title}
               className="flex flex-col gap-[1.5rem] rounded-[0.75rem] bg-surface-2 p-[0.5rem] md:flex-row md:items-stretch md:gap-[2rem] md:rounded-[1rem] md:p-[1rem]"
             >
-              <Image
+              <FadeImage
                 src={IMAGES[index]}
                 alt={solution.title}
                 width={900}

@@ -1,19 +1,25 @@
 "use client";
 
-import Image from "next/image";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { Button } from "@/shared/ui/button/button";
+import { FadeImage } from "@/shared/ui/fade-image/fade-image";
 import { chinaBtn, chinaPad } from "@/widgets/china-delivery/china-pad";
 import {
   routeDeliveryAssets,
   type RouteDeliveryVariant,
 } from "@/widgets/china-delivery/route-delivery-assets";
 
+const HERO_ALT = {
+  china: "Yolda hərəkət edən yük maşını",
+  turkey: "Anbarda yük maşını",
+} as const;
+
 export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVariant }) {
   const dict = useTranslations();
   const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
   const images = routeDeliveryAssets[variant];
+  const alt = HERO_ALT[variant];
 
   return (
     <>
@@ -23,9 +29,9 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
           <p className="text-[1rem] leading-[1.2] text-white">{t.hero.lead}</p>
         </div>
         <div className="relative aspect-[360/352] w-full">
-          <Image
+          <FadeImage
             src={images.heroSm}
-            alt=""
+            alt={alt}
             fill
             priority
             fetchPriority="high"
@@ -42,9 +48,9 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
 
       <section className="relative mt-[6rem] hidden h-[calc(100svh-6rem)] w-full overflow-hidden bg-page md:flex">
         <div className="absolute inset-0">
-          <Image
+          <FadeImage
             src={images.hero}
-            alt=""
+            alt={alt}
             fill
             priority
             fetchPriority="high"
