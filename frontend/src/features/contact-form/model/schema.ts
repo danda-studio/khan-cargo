@@ -11,6 +11,10 @@ export const contactFormSchema = z
     pickupLocation: z.string().trim().min(1, { error: "pickup" }),
     cargoType: z.string().trim().min(1, { error: "cargo" }),
     consent: z.boolean().refine(value => value === true, { error: "consent" }),
+    /** Cloudflare Turnstile response token */
+    turnstileToken: z.string().min(1, { error: "captcha" }),
+    /** Honeypot — must stay empty for real users */
+    website: z.string(),
   })
   .superRefine((data, ctx) => {
     const digits = stripDigits(data.phoneNumber);
@@ -43,4 +47,6 @@ export const contactFormDefaultValues: ContactFormValues = {
   pickupLocation: "",
   cargoType: "",
   consent: false,
+  turnstileToken: "",
+  website: "",
 };

@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef } from "react";
 import { useForm } from "@tanstack/react-form";
+import { useRef, useState } from "react";
 import {
   createContactRequest,
   useCreateContactRequest,
@@ -9,13 +9,14 @@ import {
 import { contactFormDefaultValues, contactFormSchema } from "./schema";
 import { toContactRequestInput } from "./to-contact-request";
 
-type UseContactFormOptions = {
+interface UseContactFormOptions {
   onSuccess?: () => void;
-};
+}
 
 export function useContactForm(options: UseContactFormOptions = {}) {
   const onSuccessRef = useRef(options.onSuccess);
   onSuccessRef.current = options.onSuccess;
+  const [captchaResetKey, setCaptchaResetKey] = useState(0);
 
   const { mutateAsync, isPending, isSuccess, isError, reset: resetMutation } = useCreateContactRequest({
     mutation: {
@@ -43,10 +44,13 @@ export function useContactForm(options: UseContactFormOptions = {}) {
         resetMutation();
         await mutateAsync({ data: toContactRequestInput(value) });
         form.reset();
+        setCaptchaResetKey(key => key + 1);
         onSuccessRef.current?.();
       }
       catch {
         // surfaced via `isError`
+        form.setFieldValue("turnstileToken", "");
+        setCaptchaResetKey(key => key + 1);
       }
       finally {
         requestAnimationFrame(() => {
@@ -56,5 +60,5 @@ export function useContactForm(options: UseContactFormOptions = {}) {
     },
   });
 
-  return { form, isPending, isSuccess, isError };
+  return { form, isPending, isSuccess, isError, captchaResetKey };
 }

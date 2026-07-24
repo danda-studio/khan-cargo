@@ -71,6 +71,7 @@ components:
         - address
         - phone
         - cargoType
+        - turnstileToken
       properties:
         name:
           type: string
@@ -83,6 +84,13 @@ components:
         cargoType:
           type: string
           minLength: 1
+        turnstileToken:
+          type: string
+          minLength: 1
+          description: Cloudflare Turnstile response token
+        website:
+          type: string
+          description: Honeypot field — must be empty for legitimate submissions
     ContactRequest:
       type: object
       required:

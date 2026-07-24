@@ -1,5 +1,5 @@
-import type { ContactRequestInput, Phone } from "@/shared/api/generated/models";
 import type { ContactFormValues } from "./schema";
+import type { ContactRequestInput, Phone } from "@/shared/api/generated/models";
 import { stripDigits } from "./phone-mask";
 
 export function toPhone(phoneCode: string, phoneNumber: string): Phone {
@@ -15,5 +15,7 @@ export function toContactRequestInput(values: ContactFormValues): ContactRequest
     address: values.pickupLocation.trim(),
     cargoType: values.cargoType.trim(),
     phone: toPhone(values.phoneCode, values.phoneNumber),
+    turnstileToken: values.turnstileToken,
+    website: values.website,
   };
 }
