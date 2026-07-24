@@ -53,7 +53,7 @@ namespace Khan_cargo.Services
                                 parameters = new object[]
                                 {
                                     new { type = "text", parameter_name = "customer_name", text = request.Name},
-                                    new { type = "text", parameter_name = "phone_number", text = request.Phone},
+                                    new { type = "text", parameter_name = "phone_number", text = $"+{request.Phone.Code}{request.Phone.Number}" },
                                     new { type = "text", parameter_name = "origin_city", text = request.Address},
                                     new { type = "text", parameter_name = "cargo_type", text = request.CargoType},
                                 }
