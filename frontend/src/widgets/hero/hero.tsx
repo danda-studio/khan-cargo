@@ -11,9 +11,9 @@ export function Hero() {
   const t = useTranslations();
 
   return (
-    <section className="relative mt-[3.75rem] flex h-[calc(100svh-3.75rem)] flex-col overflow-hidden bg-page lg:mt-[6rem] lg:h-[calc(100svh-6rem)]">
-      {/* Desktop map */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[58%] overflow-hidden lg:block">
+    <section className="relative mt-[3.75rem] flex flex-col overflow-hidden bg-page md:mt-[3.75rem] md:h-[calc(100svh-3.75rem)] lg:mt-[6rem] lg:h-[calc(100svh-6rem)]">
+      {/* Tablet + desktop map */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] overflow-hidden md:block lg:w-[58%]">
         <FadeImage
           src="/images/image-bg.webp"
           alt=""
@@ -24,7 +24,7 @@ export function Hero() {
         />
       </div>
 
-      {/* Desktop containers */}
+      {/* Tablet + desktop: h-full w-auto so square art reaches section top */}
       <FadeImage
         src="/images/hero-img.webp"
         alt="Khan Cargo konteyner daşınması"
@@ -32,26 +32,25 @@ export function Hero() {
         height={1800}
         priority
         fetchPriority="high"
-        sizes="min(1220px, 58vw)"
+        sizes="(min-width: 1024px) min(1220px, 58vw), 70vw"
         quality={90}
-        className="pointer-events-none absolute right-0 bottom-0 z-[1] hidden h-full w-[58%] object-contain object-right-bottom lg:block"
+        className="pointer-events-none absolute top-0 right-0 z-[1] hidden h-full w-auto max-w-[75%] object-contain object-right md:block lg:max-w-[62%]"
       />
 
-      {/* Mobile / tablet — Figma DEV mob: text → CTA, containers fill to bottom */}
-      <Container className="relative z-[2] flex min-h-0 flex-1 flex-col pt-[1.5rem] lg:hidden">
-        <p className="max-w-[17.4375rem] shrink-0 text-[1rem] leading-[1.2] font-medium text-white/48">
+      {/* Phone — height follows content (no 100svh gap under containers) */}
+      <Container className="relative z-[2] flex flex-col pt-[1.5rem] md:hidden">
+        <p className="max-w-[17.4375rem] text-[1rem] leading-[1.2] font-medium text-white/48">
           {t.hero.subtitle}
         </p>
-        <h1 className="mt-[1.5rem] max-w-[20.5rem] shrink-0 text-[2rem] leading-none font-medium text-white">
+        <h1 className="mt-[1.5rem] max-w-[20.5rem] text-[2rem] leading-none font-medium text-white">
           {t.hero.title}
         </h1>
-        <div className="relative z-10 mt-[1.5rem] shrink-0">
+        <div className="relative z-10 mt-[1.5rem]">
           <ContactFormDialog trigger={<Button className="w-full">{t.hero.cta}</Button>} />
         </div>
 
-        {/* Figma 51:13 — under CTA; cables tuck behind the button */}
-        <div className="relative z-0 -mt-[0.75rem] min-h-0 flex-1 overflow-hidden">
-          <div className="pointer-events-none absolute top-[6%] left-1/2 h-[55%] w-[min(22.75rem,101%)] -translate-x-1/2 overflow-hidden rounded-[0.6667rem]">
+        <div className="relative z-0 mx-auto -mt-[0.75rem] aspect-square w-full max-w-[22.5rem]">
+          <div className="pointer-events-none absolute top-[8%] left-1/2 h-[70%] w-[92%] -translate-x-1/2 overflow-hidden rounded-[0.6667rem]">
             <FadeImage
               src="/images/image-bg.webp"
               alt=""
@@ -69,20 +68,20 @@ export function Hero() {
             fetchPriority="high"
             sizes="100vw"
             quality={90}
-            className="object-cover object-top"
+            className="object-contain object-top"
           />
         </div>
       </Container>
 
-      {/* Desktop */}
-      <Container className="relative z-[2] hidden min-h-0 flex-1 flex-col py-[2.5rem] lg:flex">
-        <div className="flex min-h-0 max-w-[44%] flex-1 flex-col">
-          <p className="max-w-[34rem] shrink-0 text-[clamp(1rem,1.25vw,1.25rem)] leading-[1.2] font-medium text-white/48">
+      {/* Tablet + desktop copy */}
+      <Container className="relative z-[2] hidden min-h-0 flex-1 flex-col py-[2rem] md:flex lg:py-[2.5rem]">
+        <div className="flex min-h-0 max-w-[48%] flex-1 flex-col lg:max-w-[44%]">
+          <p className="max-w-[34rem] shrink-0 text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.2] font-medium text-white/48">
             {t.hero.subtitle}
           </p>
 
-          <div className="mt-auto flex flex-col gap-[2rem]">
-            <h1 className="text-[clamp(2.5rem,4.2vw,4rem)] leading-none font-medium text-white">
+          <div className="mt-auto flex flex-col gap-[1.5rem] lg:gap-[2rem]">
+            <h1 className="text-[clamp(2rem,3.8vw,4rem)] leading-none font-medium text-white">
               {t.hero.title}
             </h1>
             <ContactFormDialog trigger={<Button className="w-fit">{t.hero.cta}</Button>} />

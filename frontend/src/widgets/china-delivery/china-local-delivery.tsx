@@ -21,16 +21,15 @@ export function ChinaLocalDelivery({ variant = "china" }: { variant?: RouteDeliv
       {/* Mobile + tablet */}
       <div className="lg:hidden">
         <div className="relative aspect-[360/281] w-full overflow-hidden md:aspect-[16/10]">
-          <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-0 h-[126%] w-full">
             <FadeImage
-              src={images.local}
+              src={images.localSm}
               alt=""
-              width={2400}
-              height={1600}
+              fill
               sizes="100vw"
               quality={90}
               loading="lazy"
-              className="absolute top-[-6%] left-1/2 h-[126%] w-[126%] max-w-none -translate-x-1/2 object-cover object-[center_32%]"
+              className="object-cover object-[center_32%]"
             />
           </div>
         </div>
@@ -50,16 +49,18 @@ export function ChinaLocalDelivery({ variant = "china" }: { variant?: RouteDeliv
       </div>
 
       {/* Desktop */}
-      <div className="relative hidden aspect-[1440/760] w-full lg:block">
-        <FadeImage
-          src={images.local}
-          alt=""
-          fill
-          sizes="100vw"
-          quality={90}
-          loading="lazy"
-          className="object-cover object-center"
-        />
+      <div className="relative hidden aspect-[1440/760] w-full overflow-hidden lg:block">
+        <div className="absolute top-0 left-0 h-[126%] w-full">
+          <FadeImage
+            src={images.local}
+            alt=""
+            fill
+            sizes="100vw"
+            quality={90}
+            loading="lazy"
+            className="object-cover object-center"
+          />
+        </div>
         <div className={`absolute inset-0 flex items-end pb-[2.25rem] ${chinaPad}`}>
           <div className="flex w-full max-w-[34.6875rem] flex-col rounded-[0.375rem] bg-accent p-[1.5rem] lg:min-h-[13.3125rem]">
             <SectionEyebrow onAccent className={`${chinaEyebrow} mb-[2.25rem]`}>
