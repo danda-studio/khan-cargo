@@ -2,16 +2,18 @@
 
 import Image from "next/image";
 import { useTranslations } from "@/shared/config/i18n/language-context";
+import { useLocalizedHref } from "@/shared/config/i18n/use-localized-href";
 import { Container } from "@/shared/ui/container/container";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 
 export function Footer() {
   const t = useTranslations();
+  const href = useLocalizedHref();
 
   const navLinks = [
-    { label: t.footer.linkAbout, href: "/company" },
-    { label: t.footer.linkTurkey, href: "/turkey-delivery" },
-    { label: t.footer.linkChina, href: "/china-delivery" },
+    { label: t.footer.linkAbout, href: href("/company") },
+    { label: t.footer.linkTurkey, href: href("/turkey-delivery") },
+    { label: t.footer.linkChina, href: href("/china-delivery") },
   ];
 
   return (
@@ -93,8 +95,8 @@ export function Footer() {
             {t.footer.legalNotice}
           </p>
           <div className="ml-0 flex flex-col flex-nowrap gap-[1rem] md:ml-[2.1667rem] md:flex-row md:gap-0 md:whitespace-nowrap">
-            <a href="#" className="transition-colors hover:text-white">{t.footer.privacyPolicy}</a>
-            <a href="#" className="transition-colors hover:text-white md:ml-[11.0833rem]">{t.footer.dataConsent}</a>
+            <a href={href("/privacy-policy")} className="transition-colors hover:text-white">{t.footer.privacyPolicy}</a>
+            <a href={href("/personal-data")} className="transition-colors hover:text-white md:ml-[11.0833rem]">{t.footer.dataConsent}</a>
             <a href="#" className="transition-colors hover:text-white md:ml-[8.0833rem]">{t.footer.credit}</a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { aboutCompanyByLocale, type AboutCompanyDict } from "./about-company";
 import { chinaDeliveryByLocale, type ChinaDeliveryDict } from "./china-delivery";
+import { legalPagesByLocale, type LegalPagesDict } from "./legal-pages";
 import { turkeyDeliveryByLocale, type TurkeyDeliveryDict } from "./turkey-delivery";
 
 export const locales = ["az", "en", "ru"] as const;
@@ -116,6 +117,7 @@ export const dictionary = {
     chinaDelivery: chinaDeliveryByLocale.az,
     turkeyDelivery: turkeyDeliveryByLocale.az,
     aboutCompany: aboutCompanyByLocale.az,
+    legalPages: legalPagesByLocale.az,
   },
   en: {
     nav: {
@@ -219,6 +221,7 @@ export const dictionary = {
     chinaDelivery: chinaDeliveryByLocale.en,
     turkeyDelivery: turkeyDeliveryByLocale.en,
     aboutCompany: aboutCompanyByLocale.en,
+    legalPages: legalPagesByLocale.en,
   },
   ru: {
     nav: {
@@ -322,6 +325,7 @@ export const dictionary = {
     chinaDelivery: chinaDeliveryByLocale.ru,
     turkeyDelivery: turkeyDeliveryByLocale.ru,
     aboutCompany: aboutCompanyByLocale.ru,
+    legalPages: legalPagesByLocale.ru,
   },
 } satisfies Record<Locale, Dictionary>;
 
@@ -404,4 +408,5 @@ export interface Dictionary {
   chinaDelivery: ChinaDeliveryDict;
   turkeyDelivery: TurkeyDeliveryDict;
   aboutCompany: AboutCompanyDict;
+  legalPages: LegalPagesDict;
 }

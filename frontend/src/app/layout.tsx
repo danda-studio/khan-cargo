@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
+import { cookies, headers } from "next/headers";
 import { QueryProvider } from "@/app/providers/query-provider";
+import { defaultLocale, type Locale } from "@/shared/config/i18n/dictionary";
 import { LanguageProvider } from "@/shared/config/i18n/language-provider";
+import { isLocale, LOCALE_COOKIE, LOCALE_HEADER } from "@/shared/config/i18n/locale-path";
 import { OrganizationJsonLd } from "@/shared/ui/seo/organization-json-ld";
 import "./globals.css";
 
@@ -94,13 +97,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headerStore = await headers();
+  const cookieStore = await cookies();
+  const fromHeader = headerStore.get(LOCALE_HEADER);
+  const fromCookie = cookieStore.get(LOCALE_COOKIE)?.value;
+  const initialLocale: Locale = isLocale(fromHeader)
+    ? fromHeader
+    : isLocale(fromCookie)
+      ? fromCookie
+      : defaultLocale;
+
   return (
-    <html lang="az" className={`${inter.variable} ${geist.variable}`}>
+    <html lang={initialLocale} className={`${inter.variable} ${geist.variable}`}>
       <head>
         <OrganizationJsonLd />
         <link
@@ -112,7 +125,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen overflow-x-hidden">
-        <LanguageProvider>
+        <LanguageProvider initialLocale={initialLocale}>
           <QueryProvider>{children}</QueryProvider>
         </LanguageProvider>
       </body>

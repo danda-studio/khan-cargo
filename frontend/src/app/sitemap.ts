@@ -6,6 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const chinaUrl = `${siteUrl}/china-delivery`;
   const turkeyUrl = `${siteUrl}/turkey-delivery`;
   const companyUrl = `${siteUrl}/company`;
+  const privacyUrl = `${siteUrl}/privacy-policy`;
+  const personalDataUrl = `${siteUrl}/personal-data`;
 
   return [
     {
@@ -57,6 +59,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
           az: turkeyUrl,
           en: `${turkeyUrl}?lang=en`,
           ru: `${turkeyUrl}?lang=ru`,
+        },
+      },
+    },
+    {
+      url: privacyUrl,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          az: privacyUrl,
+          en: `${privacyUrl}?lang=en`,
+          ru: `${privacyUrl}?lang=ru`,
+        },
+      },
+    },
+    {
+      url: personalDataUrl,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.4,
+      alternates: {
+        languages: {
+          az: personalDataUrl,
+          en: `${personalDataUrl}?lang=en`,
+          ru: `${personalDataUrl}?lang=ru`,
         },
       },
     },

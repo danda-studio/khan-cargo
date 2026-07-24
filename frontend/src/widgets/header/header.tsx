@@ -6,25 +6,31 @@ import { useEffect, useState } from "react";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { LanguageSwitcher } from "@/features/language-switcher/ui/language-switcher";
 import { useTranslations } from "@/shared/config/i18n/language-context";
+import { useLocalizedHref } from "@/shared/config/i18n/use-localized-href";
 
 export function Header() {
   const t = useTranslations();
+  const href = useLocalizedHref();
   const pathname = usePathname();
   const homePrefix = pathname === "/" ? "" : "/";
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: t.nav.services, href: `${homePrefix}#xidmetler` },
-    { label: t.nav.company, href: "/company" },
-    { label: t.nav.contacts, href: `${homePrefix}#elaqe` },
-    { label: t.nav.chinaDelivery, href: "/china-delivery" },
-    { label: t.nav.turkeyDelivery, href: "/turkey-delivery" },
+    { label: t.nav.services, href: href(`${homePrefix}#xidmetler`) },
+    { label: t.nav.company, href: href("/company") },
+    { label: t.nav.contacts, href: href(`${homePrefix}#elaqe`) },
+    { label: t.nav.chinaDelivery, href: href("/china-delivery") },
+    { label: t.nav.turkeyDelivery, href: href("/turkey-delivery") },
   ];
 
-  const isActive = (href: string) =>
-    (href === "/company" && pathname === "/company")
-    || (href === "/china-delivery" && pathname === "/china-delivery")
-    || (href === "/turkey-delivery" && pathname === "/turkey-delivery");
+  const isActive = (linkHref: string) => {
+    const path = linkHref.split("?")[0].split("#")[0];
+    return (
+      (path === "/company" && pathname === "/company")
+      || (path === "/china-delivery" && pathname === "/china-delivery")
+      || (path === "/turkey-delivery" && pathname === "/turkey-delivery")
+    );
+  };
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -52,7 +58,7 @@ export function Header() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex h-[3.75rem] items-center justify-between border-b border-dashed border-white/28 bg-white/4 backdrop-blur-[1.6667rem] px-[1rem] md:h-[6rem] md:px-[3rem]">
         <div className="flex items-center gap-[3.6667rem]">
-          <a href="/" className="shrink-0" aria-label="Khan Cargo">
+          <a href={href("/")} className="shrink-0" aria-label="Khan Cargo">
             <Image
               src="/images/logo-sm.webp"
               alt="Khan Cargo"
@@ -115,7 +121,6 @@ export function Header() {
             aria-label="Close menu"
             onClick={() => setMenuOpen(false)}
           />
-          {/* Figma open menu: full width, fixed height 512 */}
           <div
             className="relative flex h-[32rem] w-full flex-col bg-black"
             role="dialog"
@@ -123,7 +128,7 @@ export function Header() {
             aria-label="Menu"
           >
             <div className="flex h-[3.75rem] shrink-0 items-center justify-between border-b border-dashed border-white/28 px-[1rem]">
-              <a href="/" className="shrink-0" aria-label="Khan Cargo" onClick={() => setMenuOpen(false)}>
+              <a href={href("/")} className="shrink-0" aria-label="Khan Cargo" onClick={() => setMenuOpen(false)}>
                 <Image
                   src="/images/logo-sm.webp"
                   alt="Khan Cargo"
