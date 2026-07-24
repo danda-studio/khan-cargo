@@ -23,10 +23,11 @@ export function ReviewsSection() {
           </div>
         </div>
 
-        <div className="scrollbar-hide flex flex-row gap-[0.75rem] overflow-x-auto md:gap-[1rem] md:overflow-visible">
+        <div className="scrollbar-hide -mx-[1rem] flex w-[calc(100%+2rem)] flex-row gap-[0.75rem] overflow-x-auto pl-[1rem] md:mx-0 md:w-full md:gap-[1rem] md:overflow-visible md:pl-0">
           {t.reviews.items.map(review => (
             <ReviewCard key={review.authorName} review={{ id: review.authorName, ...review }} />
           ))}
+          <div className="w-[0.25rem] shrink-0 md:hidden" aria-hidden />
         </div>
       </Container>
     </section>

@@ -49,7 +49,7 @@ export function Hero() {
           <ContactFormDialog trigger={<Button className="w-full">{t.hero.cta}</Button>} />
         </div>
 
-        <div className="relative z-0 mx-auto -mt-[0.75rem] aspect-square w-full max-w-[22.5rem]">
+        <div className="relative z-0 -mx-[1rem] -mt-[0.75rem] aspect-square w-[calc(100%+2rem)]">
           <div className="pointer-events-none absolute top-[8%] left-1/2 h-[70%] w-[92%] -translate-x-1/2 overflow-hidden rounded-[0.6667rem]">
             <FadeImage
               src="/images/image-bg.webp"

@@ -24,7 +24,7 @@ export function ChinaWorkflow({ variant = "china" }: { variant?: RouteDeliveryVa
           </h2>
         </div>
 
-        <div className="scrollbar-hide flex gap-[0.5rem] overflow-x-auto px-[1rem] lg:overflow-visible lg:px-[2.25rem]">
+        <div className="scrollbar-hide flex gap-[0.5rem] overflow-x-auto pl-[1rem] lg:overflow-visible lg:px-[2.25rem]">
           {t.workflow.steps.map((step, index) => (
             <div
               key={step}
@@ -34,6 +34,7 @@ export function ChinaWorkflow({ variant = "china" }: { variant?: RouteDeliveryVa
               <p className="text-[1.125rem] leading-[1.2] text-white lg:text-[1.25rem]">{step}</p>
             </div>
           ))}
+          <div className="w-[1rem] shrink-0 lg:hidden" aria-hidden />
         </div>
 
         <div className={chinaPad}>

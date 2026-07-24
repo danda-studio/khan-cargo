@@ -25,7 +25,7 @@ export function AboutWhy() {
         </h2>
       </div>
 
-      <div className="mt-[2rem] flex gap-[0.5rem] overflow-x-auto px-[1rem] lg:mt-[2.5rem] lg:overflow-visible lg:px-[2.25rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="mt-[2rem] flex gap-[0.5rem] overflow-x-auto pl-[1rem] lg:mt-[2.5rem] lg:overflow-visible lg:px-[2.25rem] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {t.why.items.map((item, i) => (
           <article
             key={item.title}
@@ -38,6 +38,7 @@ export function AboutWhy() {
             </div>
           </article>
         ))}
+        <div className="w-[1rem] shrink-0 lg:hidden" aria-hidden />
       </div>
 
       <div className={`mt-[2rem] lg:mt-[3.5rem] ${chinaPad}`}>

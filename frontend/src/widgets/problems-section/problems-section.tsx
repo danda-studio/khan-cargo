@@ -24,7 +24,7 @@ export function ProblemsSection() {
           </h2>
         </div>
 
-        <div className="scrollbar-hide flex flex-row gap-[0.5rem] overflow-x-auto md:gap-[0.6667rem] md:overflow-visible">
+        <div className="scrollbar-hide -mx-[1rem] flex w-[calc(100%+2rem)] flex-row gap-[0.5rem] overflow-x-auto pl-[1rem] md:mx-0 md:w-full md:gap-[0.6667rem] md:overflow-visible md:pl-0">
           {t.problems.items.map((problem, index) => (
             <div
               key={problem.title}
@@ -37,6 +37,7 @@ export function ProblemsSection() {
               </div>
             </div>
           ))}
+          <div className="w-[0.5rem] shrink-0 md:hidden" aria-hidden />
         </div>
 
         <p className="text-[1rem] leading-[1.2] font-medium text-white/48 md:text-[1.3333rem]">
