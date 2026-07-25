@@ -31,7 +31,7 @@ jobs:
         working-directory: ./frontend
 
       - name: Get API Schema
-        run: npm run generate-api
+        run: npm run generate:api
         working-directory: ./frontend
         env:
           API_URL: https://khan-cargo.onrender.com
