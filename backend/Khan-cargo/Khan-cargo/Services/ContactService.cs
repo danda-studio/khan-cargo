@@ -45,9 +45,9 @@ namespace Khan_cargo.Services
             }
 
             var (waSuccess, waMessage) = await SendWhatsAppMessage(request);
-            var (mailSuccess, mailMessage) = await SendEmailMessage(request);
+            var mailMessage = await SendEmailMessage(request);
 
-            if (waSuccess || mailSuccess)
+            if (waSuccess)
             {
                 response.Success = true;
                 response.Message = "Сообщение отправлено";
@@ -117,7 +117,7 @@ namespace Khan_cargo.Services
 
         }
 
-        private async Task<(bool Success, string Message)> SendEmailMessage(SendContactRequest request)
+        private async Task<string> SendEmailMessage(SendContactRequest request)
         {
 
             try
@@ -157,11 +157,11 @@ namespace Khan_cargo.Services
                 // Отправка email
                 await client.SendMailAsync(mailMessage);
 
-                return (true, "OK");
+                return ("OK");
             }
             catch (Exception ex)
             {
-                return (false, ex.Message);
+                return (ex.Message);
             }
         }
 
