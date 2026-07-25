@@ -11,6 +11,9 @@ interface TurnstileFieldProps {
 }
 
 export function TurnstileField({ onTokenChange, error, resetKey = 0 }: TurnstileFieldProps) {
+  if (!TURNSTILE_SITE_KEY) {
+    throw new Error("NEXT_PUBLIC_TURNSTILE_SITE_KEY is not set");
+  }
   return (
     <div className="hidden">
       <Turnstile
