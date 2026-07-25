@@ -28,7 +28,9 @@ namespace Khan_cargo.Controllers
             if (!string.IsNullOrWhiteSpace(request.Website))
                 return Ok(new SendContactResponse { Success = true, Message = "Сообщение отправлено" });
 
-            var remoteIp = HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+            var remoteIp = HttpContext.Request.Headers["CF-Connecting-IP"].FirstOrDefault()
+            ?? HttpContext.Connection.RemoteIpAddress?.ToString()
+            ?? "unknown";
             if (!await _turnstileService.VerifyAsync(request.TurnstileToken, remoteIp))
                 return BadRequest(new SendContactResponse { Success = false, Message = "Проверка на робота не пройдена" });
 
