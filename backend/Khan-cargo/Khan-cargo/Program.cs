@@ -22,6 +22,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.Configure<WASettings>(builder.Configuration.GetSection("WASettings"));
+builder.Services.Configure<EmailSetting>(builder.Configuration.GetSection("GmailSetting"));
 
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.Configure<RateLimitSettings>(builder.Configuration.GetSection("RateLimits"));
@@ -33,7 +34,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
     {
-        policy.WithOrigins("https://danda-studio.github.io", "https://khan-cargo.vercel.app")
+        policy.WithOrigins("https://danda-studio.github.io", "https://khan-cargo.vercel.app", "https://khan-cargo.com/")
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials();
