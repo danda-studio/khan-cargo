@@ -1,0 +1,102 @@
+openapi: 3.1.0
+info:
+  title: Khan Cargo API
+  version: 1.0.0
+servers:
+  - url: /api
+paths:
+  /Contact/contact:
+    post:
+      operationId: createContactRequest
+      summary: Submit a "calculate shipping cost" request from the landing page
+      tags:
+        - contact
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactRequestInput"
+      responses:
+        "200":
+          description: Request accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactRequest"
+  /Country/codes:
+    get:
+      operationId: getCountryCodes
+      summary: Country phone codes and input masks
+      tags:
+        - country
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CountryCode"
+components:
+  schemas:
+    CountryCode:
+      type: object
+      properties:
+        region:
+          type: string
+        countryPhoneCode:
+          type: string
+        countryName:
+          type: string
+        mask:
+          type: string
+    Phone:
+      type: object
+      required:
+        - code
+        - number
+      properties:
+        code:
+          type: integer
+          format: int32
+        number:
+          type: integer
+          format: int32
+    ContactRequestInput:
+      type: object
+      required:
+        - name
+        - address
+        - phone
+        - cargoType
+        - turnstileToken
+      properties:
+        name:
+          type: string
+          minLength: 1
+        address:
+          type: string
+          minLength: 1
+        phone:
+          $ref: "#/components/schemas/Phone"
+        cargoType:
+          type: string
+          minLength: 1
+        turnstileToken:
+          type: string
+          minLength: 1
+          description: Cloudflare Turnstile response token
+        website:
+          type: string
+          description: Honeypot field — must be empty for legitimate submissions
+    ContactRequest:
+      type: object
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
