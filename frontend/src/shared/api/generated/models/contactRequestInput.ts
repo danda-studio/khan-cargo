@@ -14,4 +14,11 @@ export interface ContactRequestInput {
   phone: Phone;
   /** @minLength 1 */
   cargoType: string;
+  /**
+     * Cloudflare Turnstile response token
+     * @minLength 1
+     */
+  turnstileToken: string;
+  /** Honeypot field — must be empty for legitimate submissions */
+  website?: string;
 }

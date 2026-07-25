@@ -1,20 +1,22 @@
 "use client";
 
 import type { ReactElement } from "react";
-import { useState } from "react";
 import { Dialog } from "@base-ui/react/dialog";
+import { useState } from "react";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { Button } from "@/shared/ui/button/button";
 import { Checkbox } from "@/shared/ui/checkbox/checkbox";
 import { TextField } from "@/shared/ui/input/text-field";
 import { resolveFieldError, shouldShowFieldError } from "../model/resolve-field-error";
 import { useContactForm } from "../model/use-contact-form";
+import { HoneypotField } from "./honeypot-field";
 import { PhoneField } from "./phone-field";
+import { TurnstileField } from "./turnstile-field";
 
 export function ContactFormDialog({ trigger }: { trigger: ReactElement }) {
   const t = useTranslations();
   const [open, setOpen] = useState(false);
-  const { form, isPending, isError } = useContactForm({
+  const { form, isPending, isError, captchaResetKey } = useContactForm({
     onSuccess: () => setOpen(false),
   });
   const errors = t.ctaForm.errors;
@@ -119,6 +121,15 @@ export function ContactFormDialog({ trigger }: { trigger: ReactElement }) {
               )}
             </form.Field>
 
+            <form.Field name="website">
+              {field => (
+                <HoneypotField
+                  value={field.state.value}
+                  onValueChange={value => field.handleChange(value)}
+                />
+              )}
+            </form.Field>
+
             <form.Field name="consent">
               {field => (
                 <Checkbox
@@ -136,6 +147,27 @@ export function ContactFormDialog({ trigger }: { trigger: ReactElement }) {
                 />
               )}
             </form.Field>
+
+            {open
+              ? (
+                  <form.Field name="turnstileToken">
+                    {field => (
+                      <TurnstileField
+                        resetKey={`${captchaResetKey}-${open}`}
+                        onTokenChange={(token) => {
+                          field.handleChange(token);
+                          field.handleBlur();
+                        }}
+                        error={
+                          field.state.meta.isBlurred || field.state.meta.errorMap?.onSubmit
+                            ? resolveFieldError(field.state.meta.errors, errors)
+                            : undefined
+                        }
+                      />
+                    )}
+                  </form.Field>
+                )
+              : null}
 
             <form.Subscribe selector={state => [state.canSubmit, state.isSubmitting] as const}>
               {([canSubmit, isSubmitting]) => (
