@@ -33,8 +33,9 @@ jobs:
         run: npm run generate:api
         working-directory: ./frontend
         env:
-          API_URL: https://khan-cargo.onrender.com
+          API_URL: https://api.khan-cargo.com
           NEXT_PUBLIC_SITE_URL: https://khan-cargo.com
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: 0x4AAAAAAD9IEU79BTCBB6ld
 
       - name: Build project
         run: npm run build
