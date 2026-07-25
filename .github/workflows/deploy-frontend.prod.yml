@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feature/HRrHPxJk
     paths:
       - "frontend/**"
       - ".github/workflows/deploy-frontend.prod.yml"
