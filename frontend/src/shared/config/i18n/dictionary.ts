@@ -97,6 +97,7 @@ export const dictionary = {
         pickup: "Çatdırılma yerini qeyd edin",
         cargo: "Yük növünü qeyd edin",
         consent: "Şərtləri qəbul etməlisiniz",
+        captcha: "Zəhmət olmasa, yoxlamanı tamamlayın",
       },
     },
     footer: {
@@ -201,6 +202,7 @@ export const dictionary = {
         pickup: "Enter the pickup location",
         cargo: "Enter the cargo type",
         consent: "You must accept the terms",
+        captcha: "Please complete the verification",
       },
     },
     footer: {
@@ -305,6 +307,7 @@ export const dictionary = {
         pickup: "Укажите место отправки",
         cargo: "Укажите тип груза",
         consent: "Необходимо принять условия",
+        captcha: "Пройдите проверку",
       },
     },
     footer: {
@@ -388,6 +391,7 @@ export interface Dictionary {
       pickup: string;
       cargo: string;
       consent: string;
+      captcha: string;
     };
   };
   footer: {

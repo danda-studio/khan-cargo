@@ -6,11 +6,13 @@ import { Checkbox } from "@/shared/ui/checkbox/checkbox";
 import { TextField } from "@/shared/ui/input/text-field";
 import { resolveFieldError, shouldShowFieldError } from "../model/resolve-field-error";
 import { useContactForm } from "../model/use-contact-form";
+import { HoneypotField } from "./honeypot-field";
 import { PhoneField } from "./phone-field";
+import { TurnstileField } from "./turnstile-field";
 
 export function ContactForm() {
   const t = useTranslations();
-  const { form, isPending, isSuccess, isError } = useContactForm();
+  const { form, isPending, isSuccess, isError, captchaResetKey } = useContactForm();
   const errors = t.ctaForm.errors;
 
   return (
@@ -109,6 +111,15 @@ export function ContactForm() {
           </div>
         </div>
 
+        <form.Field name="website">
+          {field => (
+            <HoneypotField
+              value={field.state.value}
+              onValueChange={value => field.handleChange(value)}
+            />
+          )}
+        </form.Field>
+
         <div className="flex flex-wrap items-center justify-between gap-[1.3333rem]">
           <form.Field name="consent">
             {field => (
@@ -128,6 +139,23 @@ export function ContactForm() {
             )}
           </form.Field>
         </div>
+
+        <form.Field name="turnstileToken">
+          {field => (
+            <TurnstileField
+              resetKey={captchaResetKey}
+              onTokenChange={(token) => {
+                field.handleChange(token);
+                field.handleBlur();
+              }}
+              error={
+                field.state.meta.isBlurred || field.state.meta.errorMap?.onSubmit
+                  ? resolveFieldError(field.state.meta.errors, errors)
+                  : undefined
+              }
+            />
+          )}
+        </form.Field>
 
         <div className="flex flex-col items-start gap-[1rem] md:flex-row md:flex-wrap md:items-center md:gap-[2rem]">
           <form.Subscribe selector={state => [state.canSubmit, state.isSubmitting] as const}>
