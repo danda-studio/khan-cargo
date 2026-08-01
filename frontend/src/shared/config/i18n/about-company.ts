@@ -39,7 +39,7 @@ export const aboutCompanyByLocale = {
       titleBefore: "Çindən və ya Türkiyədən mal alırsınız — ",
       titleAccent: "çatdırılma bizim işimizdir",
       lead: "Khan Cargo 2020-ci ildən Çindən və Türkiyədən Azərbaycana topdan yükdaşıma xidməti göstərir.",
-      leadMuted: "4 il ərzində 500-dən çox kommersiya yükü çatdırdıq.",
+      leadMuted: "5 il ərzində 500-dən çox kommersiya yükü çatdırdıq.",
       cta: "Konsultasiya alın",
       ctaMobile: "Dəyəri hesablayın",
     },
@@ -48,12 +48,12 @@ export const aboutCompanyByLocale = {
       body: "Çindən topdan idxal edən müştərilərin çoxu eyni problemlə üzləşir: mal yola çıxandan sonra mallarının harada olduğunu bilmirlər. Gömrükdə gözlənilməz xərclər yaranır. Yük zədəli gəlir, amma məsuliyyət heç kimdə olmur.",
       solution:
         "Bu problemi həll etmək üçün işləyirik — sifarişdən çatdırılmaya qədər hər mərhələni öz üzərimizə götürürük.",
-      cta: "Sınağ sifariş edin",
+      cta: "Sınaq göndərişi sifariş edin",
     },
     stats: [
-      { value: "500+", label: "çatdırılma 4 il ərzində", slashes: 1 },
-      { value: "50+", label: "şəhər aktiv çatdırılma", slashes: 2 },
-      { value: "4 il", label: "fəaliyyət Azərbaycanda", slashes: 3 },
+      { value: "500+", label: "çatdırılma 5 il ərzində", slashes: 1 },
+      { value: "50+", label: "şəhərə aktiv çatdırılma", slashes: 2 },
+      { value: "5", label: "Komandanın illərlə təcrübəsi", slashes: 3 },
       { value: "100%", label: "sığorta hər yük üçün", slashes: 4 },
     ],
     why: {
@@ -95,7 +95,7 @@ export const aboutCompanyByLocale = {
       titleBefore: "Buying goods from China or Turkey — ",
       titleAccent: "delivery is our job",
       lead: "Since 2020 Khan Cargo has been providing wholesale freight from China and Turkey to Azerbaijan.",
-      leadMuted: "In 4 years we delivered 500+ commercial shipments.",
+      leadMuted: "In 5 years we delivered 500+ commercial shipments.",
       cta: "Get a consultation",
       ctaMobile: "Calculate the cost",
     },
@@ -107,9 +107,9 @@ export const aboutCompanyByLocale = {
       cta: "Place a trial order",
     },
     stats: [
-      { value: "500+", label: "deliveries in 4 years", slashes: 1 },
+      { value: "500+", label: "deliveries in 5 years", slashes: 1 },
       { value: "50+", label: "cities with active delivery", slashes: 2 },
-      { value: "4 yrs", label: "operating in Azerbaijan", slashes: 3 },
+      { value: "5", label: "Years of team experience", slashes: 3 },
       { value: "100%", label: "insurance on every shipment", slashes: 4 },
     ],
     why: {
@@ -151,7 +151,7 @@ export const aboutCompanyByLocale = {
       titleBefore: "Покупаете товар из Китая или Турции — ",
       titleAccent: "доставка наше дело",
       lead: "С 2020 года Khan Cargo возит оптовые грузы из Китая и Турции в Азербайджан.",
-      leadMuted: "За 4 года доставили более 500 коммерческих партий.",
+      leadMuted: "За 5 лет доставили более 500 коммерческих партий.",
       cta: "Получить консультацию",
       ctaMobile: "Рассчитать стоимость",
     },
@@ -163,9 +163,9 @@ export const aboutCompanyByLocale = {
       cta: "Оформить пробный заказ",
     },
     stats: [
-      { value: "500+", label: "доставок за 4 года", slashes: 1 },
+      { value: "500+", label: "доставок за 5 лет", slashes: 1 },
       { value: "50+", label: "городов с активной доставкой", slashes: 2 },
-      { value: "4 года", label: "работы в Азербайджане", slashes: 3 },
+      { value: "5", label: "Лет опыта команды", slashes: 3 },
       { value: "100%", label: "страховка на каждый груз", slashes: 4 },
     ],
     why: {

@@ -29,10 +29,10 @@ export function AboutWhy() {
         {t.why.items.map((item, i) => (
           <article
             key={item.title}
-            className="flex h-[17.375rem] w-[19.5rem] shrink-0 flex-col justify-between rounded-[0.375rem] bg-[#151515] p-[1.25rem] lg:h-auto lg:min-h-[17.375rem] lg:w-auto lg:min-w-0 lg:flex-1"
+            className="flex h-[17.375rem] w-[19.5rem] shrink-0 flex-col gap-[1.5rem] rounded-[0.375rem] bg-[#151515] p-[1.25rem] lg:h-auto lg:min-h-[17.375rem] lg:w-auto lg:min-w-0 lg:flex-1"
           >
-            <img src={ICONS[i]!} alt="" className="size-[3rem]" />
-            <div className="flex flex-col gap-[1rem]">
+            <img src={ICONS[i]!} alt="" className="size-[3rem] shrink-0" />
+            <div className="flex min-h-0 flex-1 flex-col gap-[1rem]">
               <h3 className="text-[1.25rem] leading-[1.2] text-white">{item.title}</h3>
               <p className="text-[1rem] leading-[1.2] text-white/48">{item.body}</p>
             </div>

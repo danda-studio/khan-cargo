@@ -49,7 +49,7 @@ export const dictionary = {
         { title: "Nəqliyyat vasitəsinin seçimi və səfər koordinasiyası", description: "Sürücünü və nəqliyyat vasitəsini konkret tapşırıq, marşrut və yük spesifikasiyalarına uyğun olaraq seçirik. Sorğu dəyişərsə, şərtləri dərhal tənzimləyir, lazım olduqda marşrutu dəyişir və lazım olduqda əlavə yüklərin daşınmasını təşkil edirik." },
         { title: "Daşınma zamanı monitorinq", description: "Sürücü ilə əlaqə saxlayırıq və marşrut boyunca irəliləyişi izləyirik. Nəqliyyat vasitəsi cədvəldən geri qalarsa, çatma vaxtı dəyişərsə və ya gözlənilməz bir problem yaranarsa, müştəriyə məlumat veririk və məsələni dərhal həll edirik." },
         { title: "Yükləmə prosesinin təşkili", description: "Biz paylama mərkəzlərində qeydiyyatı həyata keçiririk və sürücü, anbar və yükləmə məntəqələrini əlaqələndiririk. Əgər marşrut birdən çox yeri əhatə edirsə, biz onları sinxronizasiya edirik və gecikmələrdən tutmuş qablaşdırma və ya yükün vəziyyəti ilə bağlı narahatlıqlara qədər hər hansı bir problemi proaktiv şəkildə həll edirik." },
-        { title: "Malların qebulu ve bağlanması", description: "Biz boşaltma işlərinə nəzarət edirik, qəbul statusu barədə yeniliklər təqdim edirik və yekun sənədləri əldə edirik. Gözləməli, geri qaytarılmanı emal etməli və ya problemi yerində həll etməli olduğumuz təqdirdə, məsələ tam həll olunana qədər prosesdə iştirak edirik." },
+        { title: "Malların qəbulu və bağlanması", description: "Biz boşaltma işlərinə nəzarət edirik, qəbul statusu barədə yeniliklər təqdim edirik və yekun sənədləri əldə edirik. Gözləməli, geri qaytarılmanı emal etməli və ya problemi yerində həll etməli olduğumuz təqdirdə, məsələ tam həll olunana qədər prosesdə iştirak edirik." },
       ],
     },
     stats: {
@@ -57,7 +57,7 @@ export const dictionary = {
       titleHighlight: "Biz Azərbaycan daxilində",
       titleRest: " və beynəlxalq səviyyədə — sifarişdən çatdırılmaya qədər — daşımaları həyata keçiririk.",
       paragraph: "Biz müştərinin biznes proseslərinə çevik şəkildə uyğunlaşırıq və başlanğıcda uzunmüddətli öhdəliklər tələb etmirik. Xidmətimizin keyfiyyətini və sürətini birbaşa qiymətləndirmək üçün tək bir sınaq göndərişini sifariş etməklə başlaya bilərsiniz.",
-      cta: "Sınağ sifariş edin",
+      cta: "Sınaq göndərişi sifariş edin",
       mapAlt: "Azərbaycan xəritəsi",
       items: [
         { value: "500+", label: "2026-cı ildə nəqliyyat əməliyyatları" },

@@ -47,12 +47,12 @@ export function SolutionsSection() {
                 loading="lazy"
                 className="h-[11rem] w-full rounded-[0.5rem] object-cover md:aspect-[660/302] md:h-auto md:w-[58%] md:max-w-[55rem] md:shrink-0 md:rounded-[0.6667rem]"
               />
-              <div className="flex min-w-0 flex-1 flex-col justify-between gap-[1.5rem] py-0 md:flex-row md:gap-[2rem] md:py-[1.75rem]">
-                <div className="flex h-full min-w-0 max-w-[34.6667rem] flex-1 flex-col justify-between gap-[1rem] md:gap-[1.3333rem]">
+              <div className="flex min-w-0 flex-1 flex-col justify-center gap-[1.5rem] py-0 md:flex-row md:items-stretch md:gap-[2rem] md:py-[1.75rem]">
+                <div className="flex min-w-0 max-w-[34.6667rem] flex-1 flex-col justify-center gap-[1rem] md:gap-[1.3333rem]">
                   <h3 className="text-[1.25rem] leading-[1.1] text-white md:text-[1.6667rem]">{solution.title}</h3>
                   <p className="text-[0.875rem] leading-[1.2] text-white/48 md:text-[1.3333rem]">{solution.description}</p>
                 </div>
-                <div className="flex flex-row justify-between text-right md:flex-col md:self-stretch">
+                <div className="flex flex-row justify-between text-right md:flex-col md:justify-between md:self-stretch">
                   <span className="text-[1rem] text-white/48 md:text-[1.3333rem]">{INDEXES[index]}</span>
                   <span className="font-mono text-[0.75rem] tracking-[-0.075rem] text-white/12 uppercase md:text-[1rem] md:tracking-[-0.1rem]">
                     {"/".repeat(index + 1)}

@@ -72,7 +72,7 @@ export const chinaDeliveryByLocale = {
       titleMuted:
         "Hava şəraiti əlverişli olduqda cədvəl qorunur. Təbii amillərlə bağlı gecikmə baş verdikdə hər mərhələdə sizə məlumat veririk.",
       side: "Təcili yük üçün sürətləndirilmiş marşrut hazırlanır. Menecerimiz yükün həcminə, çəkisinə və vacibliyinə uyğun alternativ variant təklif edir, dəyəri və müddəti əvvəlcədən razılaşdırır. Bu, Çindən sürətli çatdırılma tələb edən müştərilər üçün fərdi həll yoludur.",
-      cta: "Sınağ sifariş edin",
+      cta: "Sınaq göndərişi sifariş edin",
     },
     warehouse: {
       eyebrow: "Çindəki öz anbarımız",
