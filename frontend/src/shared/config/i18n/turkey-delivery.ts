@@ -21,7 +21,7 @@ export const turkeyDeliveryByLocale: Record<"az" | "en" | "ru", TurkeyDeliveryDi
       titleMuted:
         "Türkiyə-Gürcüstan-Azərbaycan quru yolu sabit tezliklə işlədiyi üçün çatdırılma proqnozlaşdırılır.",
       side: "Vaxt kritikdirsə, Türkiyədən sürətli çatdırılma sxemi işə düşür. Fərdi qiymət və müddət menecerlə birbaşa razılaşdırılır. Kiçik topdan partiyadan tam TIR yükünə qədər hər həcmə uyğun marşrut seçirik.",
-      cta: "Sınağ sifariş edin",
+      cta: "Sınaq göndərişi sifariş edin",
     },
     warehouse: {
       eyebrow: "Türkiyə anbarımız",
