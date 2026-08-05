@@ -74,7 +74,7 @@ export const turkeyDeliveryByLocale: Record<"az" | "en" | "ru", TurkeyDeliveryDi
       ],
       bannerTitle: "Çindən və ya Türkiyədən yük daşımaq istəyirsiniz?",
       bannerSubtitle: "Əlaqə saxlayın — marşrut, müddət və xərci birlikdə hesablayaq.",
-      callLabel: "Zəng edin +994 70 210 10 39",
+      callLabel: "Zəng edin +90 537 254 30 00",
       emailLabel: "Yazın info@khan.az",
     },
     clients: {
@@ -119,7 +119,7 @@ export const turkeyDeliveryByLocale: Record<"az" | "en" | "ru", TurkeyDeliveryDi
         },
         {
           q: "Yükün statusunu necə izləyəcəm?",
-          a: "Menecer hər mərhələdə məlumat verir. Əlavə olaraq +994 70 210 10 39 nömrəsi ilə birbaşa əlaqə saxlaya bilərsiniz.",
+          a: "Menecer hər mərhələdə məlumat verir. Əlavə olaraq +90 537 254 30 00 nömrəsi ilə birbaşa əlaqə saxlaya bilərsiniz.",
         },
       ],
     },
@@ -194,7 +194,7 @@ export const turkeyDeliveryByLocale: Record<"az" | "en" | "ru", TurkeyDeliveryDi
       ],
       bannerTitle: "Need to ship cargo from China or Turkey?",
       bannerSubtitle: "Get in touch — we’ll calculate route, timing and cost together.",
-      callLabel: "Call +994 70 210 10 39",
+      callLabel: "Call +90 537 254 30 00",
       emailLabel: "Write to info@khan.az",
     },
     clients: {
@@ -239,7 +239,7 @@ export const turkeyDeliveryByLocale: Record<"az" | "en" | "ru", TurkeyDeliveryDi
         },
         {
           q: "How will I track cargo status?",
-          a: "A manager updates you at every stage. You can also contact us directly at +994 70 210 10 39.",
+          a: "A manager updates you at every stage. You can also contact us directly at +90 537 254 30 00.",
         },
       ],
     },
@@ -315,7 +315,7 @@ export const turkeyDeliveryByLocale: Record<"az" | "en" | "ru", TurkeyDeliveryDi
       ],
       bannerTitle: "Нужно перевезти груз из Китая или Турции?",
       bannerSubtitle: "Свяжитесь с нами — вместе посчитаем маршрут, срок и стоимость.",
-      callLabel: "Позвоните +994 70 210 10 39",
+      callLabel: "Позвоните +90 537 254 30 00",
       emailLabel: "Напишите info@khan.az",
     },
     clients: {
@@ -360,7 +360,7 @@ export const turkeyDeliveryByLocale: Record<"az" | "en" | "ru", TurkeyDeliveryDi
         },
         {
           q: "Как отслеживать статус груза?",
-          a: "Менеджер сообщает на каждом этапе. Дополнительно можно связаться напрямую по номеру +994 70 210 10 39.",
+          a: "Менеджер сообщает на каждом этапе. Дополнительно можно связаться напрямую по номеру +90 537 254 30 00.",
         },
       ],
     },

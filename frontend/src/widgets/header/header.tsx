@@ -7,11 +7,13 @@ import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialo
 import { LanguageSwitcher } from "@/features/language-switcher/ui/language-switcher";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { useLocalizedHref } from "@/shared/config/i18n/use-localized-href";
+import { usePageContactPhone } from "@/shared/config/use-page-contact-phone";
 
 export function Header() {
   const t = useTranslations();
   const href = useLocalizedHref();
   const pathname = usePathname();
+  const phone = usePageContactPhone();
   const homePrefix = pathname === "/" ? "" : "/";
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -169,8 +171,8 @@ export function Header() {
             </nav>
 
             <div className="flex flex-col items-center gap-[1rem] border-t border-dashed border-white/28 px-[1rem] pt-[2.25rem] pb-[2.5rem] text-[1.5rem] leading-[1.1] tracking-[-0.0125rem]">
-              <a href="tel:+994702101039" className="text-accent transition-opacity hover:opacity-80">
-                {t.footer.phone}
+              <a href={`tel:${phone.tel}`} className="text-accent transition-opacity hover:opacity-80">
+                {phone.display}
               </a>
               <a href="mailto:info@khan.az" className="text-white transition-opacity hover:opacity-80">
                 {t.footer.email}
