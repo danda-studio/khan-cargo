@@ -1,5 +1,6 @@
 "use client";
 
+import { contactPhones } from "@/shared/config/contacts";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 import { chinaEyebrow, chinaPad } from "@/widgets/china-delivery/china-pad";
@@ -13,6 +14,7 @@ export function ChinaWorkflow({ variant = "china" }: { variant?: RouteDeliveryVa
   const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
   const images = routeDeliveryAssets[variant];
   const icons = images.workflowIcons;
+  const phone = variant === "turkey" ? contactPhones.tr : contactPhones.cn;
 
   return (
     <section className="overflow-x-clip bg-black pt-[3.25rem] pb-[3.25rem] lg:pt-[3.6875rem] lg:pb-[5rem]">
@@ -61,7 +63,7 @@ export function ChinaWorkflow({ variant = "china" }: { variant?: RouteDeliveryVa
 
                 <div className="flex w-full flex-col gap-[0.5rem] lg:w-[20.5rem] lg:shrink-0">
                   <a
-                    href="tel:+994702101039"
+                    href={`tel:${phone.tel}`}
                     className="flex h-[4.25rem] items-center justify-between rounded-[0.5rem] bg-white px-[1.5rem] transition-opacity hover:opacity-90"
                   >
                     <span className="text-[1rem] leading-[1.2] font-medium text-black">

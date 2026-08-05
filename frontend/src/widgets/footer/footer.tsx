@@ -3,12 +3,14 @@
 import Image from "next/image";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { useLocalizedHref } from "@/shared/config/i18n/use-localized-href";
+import { usePageContactPhone } from "@/shared/config/use-page-contact-phone";
 import { Container } from "@/shared/ui/container/container";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 
 export function Footer() {
   const t = useTranslations();
   const href = useLocalizedHref();
+  const phone = usePageContactPhone();
 
   const navLinks = [
     { label: t.footer.linkAbout, href: href("/company") },
@@ -39,7 +41,7 @@ export function Footer() {
         <div className="flex flex-col gap-[3.25rem] md:flex-row md:items-start md:gap-[0.6667rem]">
           <div className="flex flex-col gap-[0.5rem] md:contents">
             <a
-              href="tel:+994702101039"
+              href={`tel:${phone.tel}`}
               className="group flex h-[4.25rem] w-full flex-row items-center justify-between rounded-[0.5rem] bg-accent p-[1.5rem] transition-colors hover:bg-white md:h-[21rem] md:max-w-[28rem] md:flex-col md:items-stretch md:justify-between md:rounded-[0.6667rem] md:p-[2rem]"
             >
               <span className="text-[1rem] font-medium text-black md:text-[1.3333rem]">{t.footer.contactCard}</span>
@@ -72,7 +74,7 @@ export function Footer() {
 
           <div className="flex flex-col gap-[2rem] py-0 pl-0 md:gap-[2.3333rem] md:py-[0.6667rem] md:pl-[1.3333rem]">
             <div className="flex flex-col gap-[1rem] text-[1.75rem] leading-[1.1] tracking-[-0.0125rem] text-white md:gap-[1.3333rem] md:text-[2.3333rem] md:tracking-[-0.0167rem]">
-              <a href="tel:+994702101039" className="transition-colors hover:text-accent">{t.footer.phone}</a>
+              <a href={`tel:${phone.tel}`} className="transition-colors hover:text-accent">{phone.display}</a>
               <a href="mailto:info@khan.az" className="transition-colors hover:text-accent">{t.footer.email}</a>
             </div>
 
