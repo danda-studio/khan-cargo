@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { contactEmail } from "@/shared/config/contacts";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { useLocalizedHref } from "@/shared/config/i18n/use-localized-href";
 import { usePageContactPhone } from "@/shared/config/use-page-contact-phone";
@@ -75,7 +76,7 @@ export function Footer() {
           <div className="flex flex-col gap-[2rem] py-0 pl-0 md:gap-[2.3333rem] md:py-[0.6667rem] md:pl-[1.3333rem]">
             <div className="flex flex-col gap-[1rem] text-[1.75rem] leading-[1.1] tracking-[-0.0125rem] text-white md:gap-[1.3333rem] md:text-[2.3333rem] md:tracking-[-0.0167rem]">
               <a href={`tel:${phone.tel}`} className="transition-colors hover:text-accent">{phone.display}</a>
-              <a href="mailto:info@khan.az" className="transition-colors hover:text-accent">{t.footer.email}</a>
+              <a href={contactEmail.mailto} className="transition-colors hover:text-accent">{contactEmail.display}</a>
             </div>
 
             <nav aria-label="Footer" className="flex flex-col gap-[1rem] text-[1rem] leading-[1.25rem] text-white md:gap-[1.75rem]">

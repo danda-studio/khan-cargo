@@ -7,7 +7,7 @@ import { Container } from "@/shared/ui/container/container";
 import { Footer } from "@/widgets/footer/footer";
 import { Header } from "@/widgets/header/header";
 
-const ACCENT_PATTERN = /(www\.khan\.az|info@khan\.az)/g;
+const ACCENT_PATTERN = /(www\.khan\.az|info@khan-cargo\.com)/g;
 
 function RichText({ text }: { text: string }) {
   const parts = text.split(ACCENT_PATTERN);
@@ -26,14 +26,14 @@ function RichText({ text }: { text: string }) {
             </a>
           );
         }
-        if (part === "info@khan.az") {
+        if (part === "info@khan-cargo.com") {
           return (
             <a
               key={index}
-              href="mailto:info@khan.az"
+              href="mailto:info@khan-cargo.com"
               className="text-accent transition-colors hover:text-white"
             >
-              info@khan.az
+              info@khan-cargo.com
             </a>
           );
         }

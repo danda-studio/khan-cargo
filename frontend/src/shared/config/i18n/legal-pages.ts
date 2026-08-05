@@ -118,7 +118,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
           paragraphs: [
             "Şəxsi məlumatların işlənməsi ilə bağlı sual, sorğu və şikayətlər üçün Khan Kargo ilə əlaqə saxlaya bilərsiniz:",
             "Şirkət: “Khan Kargo” MMC",
-            "Elektron poçt: info@khan.az",
+            "Elektron poçt: info@khan-cargo.com",
             "Telefon: (+994) 70 210 10 39",
             "Ünvan: Abşeron T/M sıra 2, korpus 2, Mağaza 10",
           ],
@@ -186,7 +186,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
         {
           title: "Məlumat subyektinin hüquqları",
           paragraphs: [
-            "Azərbaycan Respublikasının “Fərdi məlumatlar haqqında” Qanununa əsasən müştəri: Öz məlumatlarının emalı barədə informasiya almaq hüququna malikdir. Qeyri-dəqiq və ya köhnəlmiş məlumatların düzəldilməsini tələb edə bilər. Qanuni əsaslar olmadıqda məlumatların silinməsini tələb edə bilər. Şəxsi məlumatların emalına verilmiş razılığı istənilən vaxt geri götürə bilər. Marketinq xarakterli bildirişlərdən imtina edə bilər. Şəxsi məlumatların emalı qaydalarının pozulması ilə bağlı səlahiyyətli dövlət orqanına şikayət verə bilər. Bu hüquqları həyata keçirmək üçün müştəri info@khan.az elektron poçt ünvanına və ya Şirkətin rəsmi ünvanına yazılı müraciət göndərə bilər. Sorğular 30 iş günü ərzində baxılır.",
+            "Azərbaycan Respublikasının “Fərdi məlumatlar haqqında” Qanununa əsasən müştəri: Öz məlumatlarının emalı barədə informasiya almaq hüququna malikdir. Qeyri-dəqiq və ya köhnəlmiş məlumatların düzəldilməsini tələb edə bilər. Qanuni əsaslar olmadıqda məlumatların silinməsini tələb edə bilər. Şəxsi məlumatların emalına verilmiş razılığı istənilən vaxt geri götürə bilər. Marketinq xarakterli bildirişlərdən imtina edə bilər. Şəxsi məlumatların emalı qaydalarının pozulması ilə bağlı səlahiyyətli dövlət orqanına şikayət verə bilər. Bu hüquqları həyata keçirmək üçün müştəri info@khan-cargo.com elektron poçt ünvanına və ya Şirkətin rəsmi ünvanına yazılı müraciət göndərə bilər. Sorğular 30 iş günü ərzində baxılır.",
           ],
         },
         {
@@ -206,7 +206,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
           paragraphs: [
             "Şəxsi məlumatların işlənməsi ilə bağlı sual, sorğu və şikayətlər üçün Khan Kargo ilə əlaqə saxlaya bilərsiniz:",
             "Şirkət: “Khan Kargo” MMC",
-            "Elektron poçt: info@khan.az",
+            "Elektron poçt: info@khan-cargo.com",
             "Telefon: (+994) 70 210 10 39",
             "Ünvan: Abşeron T/M sıra 2, korpus 2, Mağaza 10",
           ],
@@ -314,7 +314,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
           paragraphs: [
             "For questions, requests, and complaints about personal data processing, contact Khan Cargo:",
             "Company: “Khan Cargo” LLC",
-            "Email: info@khan.az",
+            "Email: info@khan-cargo.com",
             "Phone: (+994) 70 210 10 39",
             "Address: Absheron Trade Center, row 2, building 2, Shop 10",
           ],
@@ -382,7 +382,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
         {
           title: "Rights of the data subject",
           paragraphs: [
-            "Under the Law of the Republic of Azerbaijan “On Personal Data”, the customer may: obtain information about processing of their data; request correction of inaccurate or outdated data; request deletion when there is no legal basis; withdraw consent at any time; opt out of marketing notices; complain to the competent state authority. Requests may be sent to info@khan.az or the Company’s official address and are reviewed within 30 business days.",
+            "Under the Law of the Republic of Azerbaijan “On Personal Data”, the customer may: obtain information about processing of their data; request correction of inaccurate or outdated data; request deletion when there is no legal basis; withdraw consent at any time; opt out of marketing notices; complain to the competent state authority. Requests may be sent to info@khan-cargo.com or the Company’s official address and are reviewed within 30 business days.",
           ],
         },
         {
@@ -402,7 +402,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
           paragraphs: [
             "For questions, requests, and complaints about personal data processing, contact Khan Cargo:",
             "Company: “Khan Cargo” LLC",
-            "Email: info@khan.az",
+            "Email: info@khan-cargo.com",
             "Phone: (+994) 70 210 10 39",
             "Address: Absheron Trade Center, row 2, building 2, Shop 10",
           ],
@@ -510,7 +510,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
           paragraphs: [
             "По вопросам, запросам и жалобам, связанным с обработкой персональных данных, свяжитесь с Khan Cargo:",
             "Компания: “Khan Cargo” MMC",
-            "Электронная почта: info@khan.az",
+            "Электронная почта: info@khan-cargo.com",
             "Телефон: (+994) 70 210 10 39",
             "Адрес: Абшерон Т/Ц, ряд 2, корпус 2, Магазин 10",
           ],
@@ -578,7 +578,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
         {
           title: "Права субъекта данных",
           paragraphs: [
-            "В соответствии с Законом АР «О персональных данных» клиент вправе: получать информацию об обработке своих данных; требовать исправления неточных или устаревших данных; требовать удаления при отсутствии законных оснований; в любое время отозвать согласие; отказаться от маркетинговых уведомлений; подать жалобу в уполномоченный госорган. Для реализации прав можно направить письменное обращение на info@khan.az или на официальный адрес Компании. Запросы рассматриваются в течение 30 рабочих дней.",
+            "В соответствии с Законом АР «О персональных данных» клиент вправе: получать информацию об обработке своих данных; требовать исправления неточных или устаревших данных; требовать удаления при отсутствии законных оснований; в любое время отозвать согласие; отказаться от маркетинговых уведомлений; подать жалобу в уполномоченный госорган. Для реализации прав можно направить письменное обращение на info@khan-cargo.com или на официальный адрес Компании. Запросы рассматриваются в течение 30 рабочих дней.",
           ],
         },
         {
@@ -598,7 +598,7 @@ export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
           paragraphs: [
             "По вопросам, запросам и жалобам, связанным с обработкой персональных данных, свяжитесь с Khan Cargo:",
             "Компания: “Khan Cargo” MMC",
-            "Электронная почта: info@khan.az",
+            "Электронная почта: info@khan-cargo.com",
             "Телефон: (+994) 70 210 10 39",
             "Адрес: Абшерон Т/Ц, ряд 2, корпус 2, Магазин 10",
           ],

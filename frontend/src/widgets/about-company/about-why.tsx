@@ -1,6 +1,6 @@
 "use client";
 
-import { contactPhones } from "@/shared/config/contacts";
+import { contactEmail, contactPhones } from "@/shared/config/contacts";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 import { chinaEyebrow, chinaPad } from "@/widgets/china-delivery/china-pad";
@@ -75,7 +75,7 @@ export function AboutWhy() {
                   <img src="/images/arrow-top-right-1.svg" alt="" className="size-[1.25rem]" />
                 </a>
                 <a
-                  href="mailto:info@khan.az"
+                  href={contactEmail.mailto}
                   className="flex h-[4.25rem] items-center justify-between rounded-[0.5rem] bg-surface-2 px-[1.5rem] transition-opacity hover:opacity-90"
                 >
                   <span className="text-[1rem] leading-[1.2] font-medium text-white">

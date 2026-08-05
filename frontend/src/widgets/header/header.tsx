@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { LanguageSwitcher } from "@/features/language-switcher/ui/language-switcher";
+import { contactEmail } from "@/shared/config/contacts";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { useLocalizedHref } from "@/shared/config/i18n/use-localized-href";
 import { usePageContactPhone } from "@/shared/config/use-page-contact-phone";
@@ -174,8 +175,8 @@ export function Header() {
               <a href={`tel:${phone.tel}`} className="text-accent transition-opacity hover:opacity-80">
                 {phone.display}
               </a>
-              <a href="mailto:info@khan.az" className="text-white transition-opacity hover:opacity-80">
-                {t.footer.email}
+              <a href={contactEmail.mailto} className="text-white transition-opacity hover:opacity-80">
+                {contactEmail.display}
               </a>
             </div>
           </div>
