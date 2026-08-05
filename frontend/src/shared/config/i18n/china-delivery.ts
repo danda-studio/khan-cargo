@@ -127,7 +127,7 @@ export const chinaDeliveryByLocale = {
       bannerTitle: "Çindən və ya Türkiyədən yük daşımaq istəyirsiniz?",
       bannerSubtitle: "Əlaqə saxlayın — marşrut, müddət və xərci birlikdə hesablayaq.",
       callLabel: "Zəng edin +86 181 0579 6454",
-      emailLabel: "Yazın info@khan.az",
+      emailLabel: "Yazın info@khan-cargo.com",
     },
     clients: {
       eyebrow: "Müştərilər",
@@ -249,7 +249,7 @@ export const chinaDeliveryByLocale = {
       bannerTitle: "Need to ship cargo from China or Turkey?",
       bannerSubtitle: "Get in touch — we’ll calculate route, timing and cost together.",
       callLabel: "Call +86 181 0579 6454",
-      emailLabel: "Write to info@khan.az",
+      emailLabel: "Write to info@khan-cargo.com",
     },
     clients: {
       eyebrow: "Customers",
@@ -371,7 +371,7 @@ export const chinaDeliveryByLocale = {
       bannerTitle: "Нужно перевезти груз из Китая или Турции?",
       bannerSubtitle: "Свяжитесь с нами — вместе посчитаем маршрут, срок и стоимость.",
       callLabel: "Позвоните +86 181 0579 6454",
-      emailLabel: "Напишите info@khan.az",
+      emailLabel: "Напишите info@khan-cargo.com",
     },
     clients: {
       eyebrow: "Клиенты",

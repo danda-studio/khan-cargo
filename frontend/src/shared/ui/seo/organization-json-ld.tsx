@@ -12,7 +12,7 @@ const organizationJsonLd = {
       description:
         "Khan Cargo Azərbaycan daxilində, eləcə də Azərbaycan, Türkiyə və Çin arasında beynəlxalq yükdaşıma və logistika xidmətləri göstərir.",
       telephone: "+994702101039",
-      email: "info@khan.az",
+      email: "info@khan-cargo.com",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Abşeron T/M sıra 2, korpus 2, Mağaza 10",

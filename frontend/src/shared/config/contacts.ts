@@ -1,3 +1,8 @@
+export const contactEmail = {
+  display: "info@khan-cargo.com",
+  mailto: "mailto:info@khan-cargo.com",
+} as const;
+
 export const contactPhones = {
   az: {
     display: "(+994) 70 210 10 39",

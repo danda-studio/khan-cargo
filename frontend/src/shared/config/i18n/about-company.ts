@@ -82,7 +82,7 @@ export const aboutCompanyByLocale = {
       title: "Çindən və ya Türkiyədən yük daşımaq istəyirsiniz?",
       lead: "Əlaqə saxlayın — marşrut, müddət və xərci birlikdə hesablayaq.",
       call: "Zəng edin +994 70 210 10 39",
-      write: "Yazın info@khan.az",
+      write: "Yazın info@khan-cargo.com",
     },
   },
   en: {
@@ -138,7 +138,7 @@ export const aboutCompanyByLocale = {
       title: "Want to ship cargo from China or Turkey?",
       lead: "Get in touch — we’ll calculate the route, timing, and cost together.",
       call: "Call +994 70 210 10 39",
-      write: "Write info@khan.az",
+      write: "Write info@khan-cargo.com",
     },
   },
   ru: {
@@ -194,7 +194,7 @@ export const aboutCompanyByLocale = {
       title: "Хотите везти груз из Китая или Турции?",
       lead: "Свяжитесь с нами — вместе посчитаем маршрут, срок и стоимость.",
       call: "Позвоните +994 70 210 10 39",
-      write: "Напишите info@khan.az",
+      write: "Напишите info@khan-cargo.com",
     },
   },
 } as const satisfies Record<"az" | "en" | "ru", AboutCompanyDict>;
