@@ -5,6 +5,7 @@ import { QueryProvider } from "@/app/providers/query-provider";
 import { defaultLocale, type Locale } from "@/shared/config/i18n/dictionary";
 import { LanguageProvider } from "@/shared/config/i18n/language-provider";
 import { isLocale, LOCALE_COOKIE, LOCALE_HEADER } from "@/shared/config/i18n/locale-path";
+import { GoogleTagManager } from "@/shared/ui/seo/google-tag-manager";
 import { OrganizationJsonLd } from "@/shared/ui/seo/organization-json-ld";
 import "./globals.css";
 
@@ -48,6 +49,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Khan Cargo", url: siteUrl }],
   creator: "Khan Cargo",
   publisher: "Khan Cargo",
+  verification: {
+    google: "v_GjF74OMQ0-QPpi3yAiquEJJiOOxrh2JYSTej-dVqg",
+  },
   robots: {
     index: true,
     follow: true,
@@ -128,6 +132,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="min-h-screen overflow-x-hidden">
+        <GoogleTagManager />
         <LanguageProvider initialLocale={initialLocale}>
           <QueryProvider>{children}</QueryProvider>
         </LanguageProvider>
