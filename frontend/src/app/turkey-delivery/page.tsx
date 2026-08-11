@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { Metadata } from "next";
 import { TurkeyDeliveryPage } from "@/views/turkey-delivery-page/turkey-delivery-page";
 import { dictionary, defaultLocale } from "@/shared/config/i18n/dictionary";

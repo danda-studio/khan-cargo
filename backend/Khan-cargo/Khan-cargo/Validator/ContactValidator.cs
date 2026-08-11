@@ -1,4 +1,11 @@
-﻿using System.Text.RegularExpressions;
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+using System.Text.RegularExpressions;
 
 namespace Khan_cargo.Validator
 {

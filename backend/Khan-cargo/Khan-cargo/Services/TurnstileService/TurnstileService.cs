@@ -1,4 +1,11 @@
-﻿using Microsoft.Extensions.Options;
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+using Microsoft.Extensions.Options;
 
 namespace Khan_cargo.Services.TurnstileService
 {

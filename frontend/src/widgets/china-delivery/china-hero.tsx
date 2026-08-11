@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
@@ -23,7 +30,7 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
 
   return (
     <>
-      {/* Mobile + tablet (< lg): stacked layout */}
+      {}
       <section className="bg-page pt-[3.75rem] lg:hidden">
         <div className={`flex flex-col gap-[1.5rem] pt-[2.5rem] pb-[1.5rem] ${chinaPad}`}>
           <h1 className="max-w-[28rem] text-[2rem] leading-[1] font-medium text-white md:text-[2.5rem]">
@@ -54,7 +61,7 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
         </div>
       </section>
 
-      {/* Desktop (≥ lg): full-bleed 100svh − header */}
+      
       <section className="relative mt-[6rem] hidden h-[calc(100svh-6rem)] w-full overflow-hidden bg-page lg:flex">
         <div className="absolute inset-0">
           <FadeImage

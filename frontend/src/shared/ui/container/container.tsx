@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { ReactNode } from "react";
 import { cn } from "@/shared/lib/cn";
 

@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useTranslations } from "@/shared/config/i18n/language-context";
@@ -51,7 +58,6 @@ function StageColumns({
   );
 }
 
-/** Mobile 66:763 — copy → map → stages · Desktop — copy | map */
 export function ChinaInsurance({ variant = "china" }: { variant?: RouteDeliveryVariant }) {
   const dict = useTranslations();
   const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
@@ -61,7 +67,7 @@ export function ChinaInsurance({ variant = "china" }: { variant?: RouteDeliveryV
 
   return (
     <section className="overflow-x-clip bg-page pt-[3.25rem] pb-[5rem] md:pt-[3.875rem]">
-      {/* Mobile: copy padded · map full-bleed like Figma 66:806 (−15 / 388 on 360) · stages padded */}
+      {}
       <div className={`flex flex-col gap-[2.5rem] md:hidden ${chinaPad}`}>
         <div className="flex flex-col gap-[1rem]">
           <SectionEyebrow className={chinaEyebrow}>{t.insurance.eyebrow}</SectionEyebrow>
@@ -70,7 +76,7 @@ export function ChinaInsurance({ variant = "china" }: { variant?: RouteDeliveryV
         <p className="text-[1rem] leading-[1.2] text-white/48">{t.insurance.body}</p>
       </div>
 
-      {/* Figma 66:806 — 388×333 @ x=-15 on 360 frame */}
+      
       <div className="relative mt-[2.5rem] w-[107.7778%] -translate-x-[4.1667%] md:hidden">
         <AzerbaijanMap alt={t.insurance.mapAlt} pinLayout="china" className="w-full" />
       </div>
@@ -82,7 +88,7 @@ export function ChinaInsurance({ variant = "china" }: { variant?: RouteDeliveryV
         <StageColumns left={left} right={right} mid={mid} total={t.insurance.stages.length} />
       </div>
 
-      {/* Desktop/tablet — PC layout */}
+      
       <div
         className={`hidden flex-col gap-[2.5rem] md:flex md:flex-row md:items-start md:justify-between md:gap-[2rem] ${chinaPad}`}
       >

@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 export type ChinaDeliveryDict = {
   meta: { title: string; description: string };
   hero: { title: string; lead: string; cta: string };

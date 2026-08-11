@@ -1,4 +1,11 @@
-﻿using Khan_cargo.Services.Models;
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+using Khan_cargo.Services.Models;
 using Khan_cargo.Validator;
 using Microsoft.Extensions.Options;
 using System.Net;
@@ -59,7 +66,6 @@ namespace Khan_cargo.Services
             }
 
             return response;
-
 
         }
 
@@ -140,7 +146,6 @@ namespace Khan_cargo.Services
                     SubjectEncoding = Encoding.UTF8
                 };
 
-                // Добавление адресов получателей из конфигурации
                 if (_emailSetting.Recipients != null && _emailSetting.Recipients.Count != 0)
                 {
                     foreach (var recipient in _emailSetting.Recipients)
@@ -154,7 +159,6 @@ namespace Khan_cargo.Services
                     mailMessage.To.Add(_emailSetting.Email);
                 }
 
-                // Отправка email
                 await client.SendMailAsync(mailMessage);
 
                 return ("OK");

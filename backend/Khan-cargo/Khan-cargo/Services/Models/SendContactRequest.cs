@@ -1,4 +1,11 @@
-﻿using System.Numerics;
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+using System.Numerics;
 
 namespace Khan_cargo.Services.Models
 {

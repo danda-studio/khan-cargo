@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { ComponentProps } from "react";
 import { Field } from "@base-ui/react/field";
 import { Input } from "@base-ui/react/input";

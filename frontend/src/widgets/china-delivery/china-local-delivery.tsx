@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useTranslations } from "@/shared/config/i18n/language-context";
@@ -18,7 +25,7 @@ export function ChinaLocalDelivery({ variant = "china" }: { variant?: RouteDeliv
 
   return (
     <section className="relative overflow-hidden">
-      {/* Mobile + tablet */}
+      {}
       <div className="lg:hidden">
         <div className="relative aspect-[360/281] w-full overflow-hidden md:aspect-[16/10]">
           <div className="absolute top-0 left-0 h-[126%] w-full">
@@ -47,7 +54,7 @@ export function ChinaLocalDelivery({ variant = "china" }: { variant?: RouteDeliv
         </div>
       </div>
 
-      {/* Desktop */}
+      
       <div className="relative hidden aspect-[1440/760] w-full overflow-hidden lg:block">
         <div className="absolute top-0 left-0 h-[126%] w-full">
           <FadeImage

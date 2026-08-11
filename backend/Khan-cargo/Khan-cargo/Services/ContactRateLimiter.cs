@@ -1,4 +1,11 @@
-﻿using Khan_cargo.Data;
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+using Khan_cargo.Data;
 using Khan_cargo.Services.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -20,7 +27,6 @@ namespace Khan_cargo.Services
         {
             var today = DateOnly.FromDateTime(DateTime.UtcNow);
 
-            // 1. Глобальный дневной бюджет — атомарный инкремент
             var globalSql = @"
             INSERT INTO ""DailyMessageBudgets"" (""Date"", ""SentCount"")
             VALUES ({0}, 1)
@@ -34,7 +40,6 @@ namespace Khan_cargo.Services
             if (globalCount > _settings.GlobalDailyMessageBudget)
                 return (false, "Дневной лимит заявок исчерпан, попробуйте завтра");
 
-            // 2. Лимит по IP — атомарный инкремент
             var ipSql = @"
             INSERT INTO ""ContactRequestLimits"" (""Identifier"", ""RequestDate"", ""Count"")
             VALUES ({0}, {1}, 1)

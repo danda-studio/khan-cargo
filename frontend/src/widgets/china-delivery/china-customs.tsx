@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useTranslations } from "@/shared/config/i18n/language-context";
@@ -10,7 +17,7 @@ export function ChinaCustoms({ variant = "china" }: { variant?: RouteDeliveryVar
   const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
 
   return (
-    /* Mobile 66:900 — stacked · Desktop 66:539 — 3 equal cards */
+
     <section className="bg-black pt-[3.25rem] pb-[3.25rem] md:pt-[4.6875rem] md:pb-[3.6875rem]">
       <div className={`flex flex-col gap-[2.5rem] ${chinaPad}`}>
         <div className="flex flex-col gap-[1rem]">

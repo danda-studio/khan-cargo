@@ -1,8 +1,14 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { Dictionary } from "@/shared/config/i18n/dictionary";
 
 type ErrorDict = Dictionary["ctaForm"]["errors"];
 
-/** Show errors only after the user edited the field and then left it. */
 export function shouldShowFieldError(meta: {
   isBlurred: boolean;
   isDirty: boolean;
@@ -10,7 +16,6 @@ export function shouldShowFieldError(meta: {
   return meta.isBlurred && meta.isDirty;
 }
 
-/** Resolve TanStack Form / Zod error payloads into a localized string. */
 export function resolveFieldError(
   errors: unknown[],
   dict: ErrorDict,

@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { ComponentProps, ReactNode } from "react";
 import { Checkbox as BaseCheckbox } from "@base-ui/react/checkbox";
 import { cn } from "@/shared/lib/cn";

@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
@@ -12,7 +19,7 @@ export function Hero() {
 
   return (
     <section className="relative mt-[3.75rem] flex flex-col overflow-hidden bg-page md:mt-[3.75rem] md:h-[calc(100svh-3.75rem)] lg:mt-[6rem] lg:h-[calc(100svh-6rem)]">
-      {/* Tablet + desktop map */}
+      {}
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[55%] overflow-hidden md:block lg:w-[58%]">
         <FadeImage
           src="/images/image-bg.webp"
@@ -24,7 +31,7 @@ export function Hero() {
         />
       </div>
 
-      {/* Tablet + desktop: h-full w-auto so square art reaches section top */}
+      {}
       <FadeImage
         src="/images/hero-img.webp"
         alt="Khan Cargo konteyner daşınması"
@@ -36,7 +43,7 @@ export function Hero() {
         className="pointer-events-none absolute top-0 right-0 z-[1] hidden h-full w-auto max-w-[75%] object-contain object-right md:block lg:max-w-[62%]"
       />
 
-      {/* Phone — height follows content (no 100svh gap under containers) */}
+      {}
       <Container className="relative z-[2] flex flex-col pt-[1.5rem] md:hidden">
         <p className="max-w-[17.4375rem] text-[1rem] leading-[1.2] font-medium text-white/48">
           {t.hero.subtitle}
@@ -71,7 +78,7 @@ export function Hero() {
         </div>
       </Container>
 
-      {/* Tablet + desktop copy */}
+      {}
       <Container className="relative z-[2] hidden min-h-0 flex-1 flex-col py-[2rem] md:flex lg:py-[2.5rem]">
         <div className="flex min-h-0 max-w-[48%] flex-1 flex-col lg:max-w-[44%]">
           <p className="max-w-[34rem] shrink-0 text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.2] font-medium text-white/48">

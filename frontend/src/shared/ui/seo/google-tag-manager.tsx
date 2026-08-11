@@ -1,8 +1,14 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import Script from "next/script";
 
 const GTM_ID = "GTM-N87ZSP59";
 
-/** Google Tag Manager — head script + body noscript. */
 export function GoogleTagManager() {
   return (
     <>

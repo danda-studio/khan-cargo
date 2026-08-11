@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { Metadata } from "next";
 import { PersonalDataPage } from "@/views/personal-data-page/personal-data-page";
 import { dictionary, defaultLocale } from "@/shared/config/i18n/dictionary";

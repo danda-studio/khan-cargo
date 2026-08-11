@@ -1,4 +1,9 @@
-﻿name: Build & Deploy Backend (.NET)
+﻿# Copyright © 2026 Khan Cargo.
+# All rights reserved.
+#
+# Developed by Danda Team.
+
+name: Build & Deploy Backend (.NET)
 
 on:
   push:

@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { contactEmail, contactPhones } from "@/shared/config/contacts";
@@ -42,7 +49,7 @@ export function ChinaWorkflow({ variant = "china" }: { variant?: RouteDeliveryVa
         <div className={chinaPad}>
           <div className="relative lg:pt-[2.75rem]">
             <div className="relative flex flex-col overflow-hidden rounded-[0.375rem] bg-accent lg:min-h-[12rem] lg:overflow-visible">
-              {/* Desktop truck — Figma absolute crop */}
+              
               <div className="pointer-events-none absolute bottom-0 left-[38.38%] z-[1] hidden h-[14.75rem] w-[28.75rem] overflow-hidden lg:block">
                 <img
                   src={images.truck}
@@ -83,7 +90,7 @@ export function ChinaWorkflow({ variant = "china" }: { variant?: RouteDeliveryVa
                 </div>
               </div>
 
-              {/* Phone — Figma mobile crop */}
+              
               <div className="relative h-[11.5rem] w-[109.756%] shrink-0 overflow-hidden md:hidden">
                 <img
                   src={images.truck}
@@ -92,7 +99,7 @@ export function ChinaWorkflow({ variant = "china" }: { variant?: RouteDeliveryVa
                 />
               </div>
 
-              {/* Tablet — fixed crop window like desktop */}
+              
               <div className="relative mx-auto hidden h-[14.75rem] w-full max-w-[28.75rem] shrink-0 overflow-hidden md:block lg:hidden">
                 <img
                   src={images.truck}

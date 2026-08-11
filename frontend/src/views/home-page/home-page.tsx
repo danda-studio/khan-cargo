@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import { CtaSection } from "@/widgets/cta-section/cta-section";
 import { Footer } from "@/widgets/footer/footer";
 import { Header } from "@/widgets/header/header";

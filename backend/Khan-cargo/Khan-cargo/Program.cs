@@ -1,11 +1,17 @@
-﻿using Khan_cargo.Data;
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+using Khan_cargo.Data;
 using Khan_cargo.Services;
 using Khan_cargo.Services.Models;
 using Khan_cargo.Services.TurnstileService;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using System.Threading.RateLimiting;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +22,6 @@ if (builder.Environment.IsDevelopment())
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 }
-
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -57,9 +62,9 @@ builder.Services.AddRateLimiter(options =>
 
         return RateLimitPartition.GetSlidingWindowLimiter(ip, _ => new SlidingWindowRateLimiterOptions
         {
-            PermitLimit = 10,                    
-            Window = TimeSpan.FromMinutes(30),   
-            SegmentsPerWindow = 3,          
+            PermitLimit = 10,
+            Window = TimeSpan.FromMinutes(30),
+            SegmentsPerWindow = 3,
             QueueLimit = 0
         });
     });
@@ -70,7 +75,6 @@ builder.Services.AddRateLimiter(options =>
         await context.HttpContext.Response.WriteAsJsonAsync(new { message = "Слишком много запросов, попробуйте позже" }, cancellationToken: token);
     };
 });
-
 
 var app = builder.Build();
 
@@ -84,7 +88,7 @@ if (app.Environment.IsDevelopment())
         options.Title = "Cargo API Documentation";
     });
 
-    app.MapGet("/", context => 
+    app.MapGet("/", context =>
     {
         context.Response.Redirect("/scalar");
         return Task.CompletedTask;

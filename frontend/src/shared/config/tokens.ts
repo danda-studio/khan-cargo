@@ -1,7 +1,10 @@
 /**
- * UI-kit design tokens sourced from Figma (Khan Cargo DEV, node 1:4).
- * Mirrors the CSS variables defined in `src/app/globals.css` — keep both in sync.
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
  */
+
 export const colors = {
   black: "#000000",
   bgPage: "#131313",

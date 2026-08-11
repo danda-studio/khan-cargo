@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
@@ -79,8 +86,7 @@ export function PhoneField({
 
   useEffect(() => {
     onPhoneSlotsChange?.(countMaskSlots(nationalMask));
-    // Intentionally sync slots from mask only; parent callback may be unstable.
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- onPhoneSlotsChange
+
   }, [nationalMask]);
 
   const close = () => {

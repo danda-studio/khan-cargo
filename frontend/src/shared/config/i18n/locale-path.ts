@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import { defaultLocale, locales, type Locale } from "./dictionary";
 
 export const LOCALE_COOKIE = "khan-cargo-locale";
@@ -8,7 +15,6 @@ export function isLocale(value: string | null | undefined): value is Locale {
   return value !== null && value !== undefined && (locales as readonly string[]).includes(value);
 }
 
-/** Append or strip `?lang=` so navigation keeps the active locale. */
 export function withLocale(href: string, locale: Locale): string {
   if (locale === defaultLocale) {
     return stripLocaleParam(href);

@@ -1,7 +1,13 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import { z } from "zod";
 import { stripDigits } from "./phone-mask";
 
-/** Stable keys — mapped to `t.ctaForm.errors` in the UI. */
 export const contactFormSchema = z
   .object({
     name: z.string().trim().min(2, { error: "name" }),
@@ -11,9 +17,9 @@ export const contactFormSchema = z
     pickupLocation: z.string().trim().min(1, { error: "pickup" }),
     cargoType: z.string().trim().min(1, { error: "cargo" }),
     consent: z.boolean().refine(value => value === true, { error: "consent" }),
-    /** Cloudflare Turnstile response token */
+
     turnstileToken: z.string().min(1, { error: "captcha" }),
-    /** Honeypot — must stay empty for real users */
+
     website: z.string(),
   })
   .superRefine((data, ctx) => {

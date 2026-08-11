@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import { cookies, headers } from "next/headers";

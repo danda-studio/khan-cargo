@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import { aboutCompanyByLocale, type AboutCompanyDict } from "./about-company";
 import { chinaDeliveryByLocale, type ChinaDeliveryDict } from "./china-delivery";
 import { legalPagesByLocale, type LegalPagesDict } from "./legal-pages";

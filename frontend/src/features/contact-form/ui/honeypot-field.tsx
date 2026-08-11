@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 interface HoneypotFieldProps {
@@ -5,7 +12,6 @@ interface HoneypotFieldProps {
   onValueChange: (value: string) => void;
 }
 
-/** Invisible spam trap — bots often autofill fields named "website". */
 export function HoneypotField({ value, onValueChange }: HoneypotFieldProps) {
   return (
     <div

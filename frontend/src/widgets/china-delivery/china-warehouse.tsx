@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useTranslations } from "@/shared/config/i18n/language-context";
@@ -9,7 +16,6 @@ import {
   type RouteDeliveryVariant,
 } from "@/widgets/china-delivery/route-delivery-assets";
 
-/** Bottom padding under yellow cards so mobile sticky CTA doesn't cover copy */
 const stickySafePad = "pb-[calc(1rem+4.5rem)] lg:pb-[2.25rem]";
 
 export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryVariant }) {
@@ -19,7 +25,7 @@ export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryV
 
   return (
     <section className="relative overflow-hidden">
-      {/* Mobile + tablet */}
+      {}
       <div className="lg:hidden">
         <div className="relative aspect-[360/281] w-full overflow-hidden md:aspect-[16/10]">
           <div className="absolute inset-0 overflow-hidden">
@@ -47,7 +53,7 @@ export function ChinaWarehouse({ variant = "china" }: { variant?: RouteDeliveryV
         </div>
       </div>
 
-      {/* Desktop */}
+      
       <div className="relative hidden aspect-[1440/760] w-full lg:block">
         <FadeImage
           src={images.warehouse}

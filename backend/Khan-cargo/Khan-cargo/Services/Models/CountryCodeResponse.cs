@@ -1,28 +1,22 @@
-﻿namespace Khan_cargo.Services.Models
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+namespace Khan_cargo.Services.Models
 {
-    /// <summary>
-    /// Ответ с информацией о коде страны и формате номера телефона.
-    /// </summary>
+
     public class CountryCodeResponse
     {
-        /// <summary>
-        /// Регион или континент, к которому относится страна.
-        /// </summary>
+
         public string Region { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Телефонный код страны (например, "7" для России).
-        /// </summary>
         public string CountryPhoneCode { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Название страны.
-        /// </summary>
         public string CountryName { get; set; } = string.Empty;
 
-        /// <summary>
-        /// Маска телефонного номера для данной страны.
-        /// </summary>
         public string Mask { get; set; } = string.Empty;
     }
 }

@@ -1,4 +1,11 @@
-﻿using Khan_cargo.Services;
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+using Khan_cargo.Services;
 using Khan_cargo.Services.Models;
 using Khan_cargo.Services.TurnstileService;
 using Microsoft.AspNetCore.Mvc;

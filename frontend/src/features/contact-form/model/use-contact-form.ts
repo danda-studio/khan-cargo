@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useForm } from "@tanstack/react-form";
@@ -48,7 +55,7 @@ export function useContactForm(options: UseContactFormOptions = {}) {
         onSuccessRef.current?.();
       }
       catch {
-        // surfaced via `isError`
+
         form.setFieldValue("turnstileToken", "");
         setCaptchaResetKey(key => key + 1);
       }

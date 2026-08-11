@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { ReactNode } from "react";
 import { cn } from "@/shared/lib/cn";
 
@@ -10,7 +17,7 @@ export function SectionEyebrow({
   children: ReactNode;
   className?: string;
   muted?: boolean;
-  /** Black square + dark text for yellow cards */
+
   onAccent?: boolean;
 }) {
   return (

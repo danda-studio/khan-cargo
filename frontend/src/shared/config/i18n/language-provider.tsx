@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import type { ReactNode } from "react";
@@ -53,7 +60,6 @@ export function LanguageProvider({
           ? initialLocale
           : defaultLocale;
 
-    // eslint-disable-next-line react/set-state-in-effect -- hydrate from URL/storage after SSR cookie
     setLocaleValue(next);
     window.localStorage.setItem(LOCALE_STORAGE_KEY, next);
     writeLocaleCookie(next);

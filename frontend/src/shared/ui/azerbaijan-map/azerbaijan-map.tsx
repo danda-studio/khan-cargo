@@ -1,8 +1,15 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import Image from "next/image";
 import { cn } from "@/shared/lib/cn";
 
 const pinLayouts = {
-  /** Homepage stats map */
+
   default: {
     className: "absolute top-[23%] left-[21%] h-[55.11%] w-[59%]",
     src: "/images/map-pin-illustration.svg",
@@ -10,11 +17,7 @@ const pinLayouts = {
     mapObject: "object-contain",
     aspect: "aspect-[779/668]",
   },
-  /**
-   * China delivery insurance
-   * Desktop: map 66:435 800×686 · pins 66:436
-   * Mobile:  map 66:806 388×333 · pins 66:807 263×210 @ (49,2422) → relative to map (-15,2360)
-   */
+
   china: {
     className:
       "absolute top-[18.6186%] left-[16.4948%] h-[63.0631%] w-[67.7835%] md:top-[15.17%] md:left-[17.92%] md:h-[63.58%] md:w-[68.07%]",

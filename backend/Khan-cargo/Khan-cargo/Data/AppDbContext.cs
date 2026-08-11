@@ -1,4 +1,11 @@
-﻿using Khan_cargo.Services.Models;
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
+using Khan_cargo.Services.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Khan_cargo.Data

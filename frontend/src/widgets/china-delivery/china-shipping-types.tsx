@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useTranslations } from "@/shared/config/i18n/language-context";
@@ -28,7 +35,7 @@ function MatrixSection({
         </h2>
       </div>
 
-      {/* Mobile 66:867+ — yellow label then vertical chips · Desktop — H matrix */}
+      {}
       <div className="relative flex flex-col">
         <div
           aria-hidden
@@ -93,7 +100,7 @@ export function ChinaClients({ variant = "china" }: { variant?: RouteDeliveryVar
   const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
 
   return (
-    /* Figma: 80px under note before local-delivery photo */
+
     <section className="bg-page pt-[3.25rem] pb-[3.25rem] md:pt-[5rem] md:pb-[5rem]">
       <div className={`flex flex-col gap-[2rem] ${chinaPad}`}>
         <MatrixSection

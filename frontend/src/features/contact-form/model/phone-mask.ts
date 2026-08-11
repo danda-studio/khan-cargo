@@ -1,4 +1,10 @@
-/** National part of mask after the country-code digit placeholders. */
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 export function getNationalMask(countryPhoneCode: string, mask: string): string {
   const codeLen = countryPhoneCode.replace(/\D/g, "").length;
   let xCount = 0;
@@ -21,7 +27,6 @@ export function countMaskSlots(mask: string): number {
   return (mask.match(/X/gi) ?? []).length;
 }
 
-/** Apply digit string onto an `X`-mask (non-X chars are kept as separators). */
 export function applyMask(digits: string, mask: string): string {
   let result = "";
   let di = 0;

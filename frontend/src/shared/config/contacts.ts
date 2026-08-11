@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 export const contactEmail = {
   display: "info@khan-cargo.com",
   mailto: "mailto:info@khan-cargo.com",

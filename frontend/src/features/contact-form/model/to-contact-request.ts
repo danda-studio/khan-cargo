@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { ContactFormValues } from "./schema";
 import type { ContactRequestInput, Phone } from "@/shared/api/generated/models";
 import { stripDigits } from "./phone-mask";

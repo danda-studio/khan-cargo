@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useState } from "react";
@@ -13,7 +20,7 @@ export function ChinaFaq({ variant = "china" }: { variant?: RouteDeliveryVariant
   const [openIndex, setOpenIndex] = useState(1);
 
   return (
-    /* Mobile 66:1006/1046 — title above accordion · Desktop sticky side-by-side */
+
     <section className="bg-page pt-[3.25rem] pb-[3.25rem] md:pt-[5rem] md:pb-[5rem]">
       <div
         className={`flex flex-col gap-[2rem] md:flex-row md:items-start md:justify-between md:gap-[3rem] ${chinaPad}`}

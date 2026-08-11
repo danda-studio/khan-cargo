@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
@@ -14,7 +21,7 @@ export function StatsSection() {
     <section id="sirket" className="scroll-mt-[4rem] bg-page pt-[3.25rem] pb-[2.25rem] md:scroll-mt-[6rem] md:pt-[5rem]">
       <Container className="flex flex-col gap-0 md:gap-[3.5rem]">
         <div className="flex flex-col gap-[2.25rem] md:flex-row md:items-start md:justify-between md:gap-[2rem] xl:gap-[4rem]">
-          {/* Title + copy stay one column so the headline can use full left width and scale with rem. */}
+          {}
           <div className="relative z-20 flex w-full min-w-0 flex-col gap-[1.5rem] md:max-w-[49.6667rem] md:flex-1 md:gap-[2.25rem]">
             <div className="flex flex-col gap-[1rem] md:gap-[1.3333rem]">
               <SectionEyebrow>{t.stats.eyebrow}</SectionEyebrow>

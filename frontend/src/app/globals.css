@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 @import "tailwindcss";
 
 @theme {
@@ -13,11 +20,6 @@
   --font-mono: var(--font-inter);
 }
 
-/*
- * Fully fluid (rubber) root font-size.
- * 1rem == 16px at the 360px (mobile) and 1920px (desktop) reference viewports.
- * Mobile scale must be capped — otherwise ~700px becomes ~31px root and everything blows up.
- */
 @layer base {
   html {
     font-size: min(16px, calc(16 / 360 * 100vw));
@@ -49,7 +51,6 @@
   }
 }
 
-/* Country code dropdown — dark scrollbar. color-scheme is required on Windows. */
 .phone-code-scroll {
   color-scheme: dark;
   scrollbar-width: thin;

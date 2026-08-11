@@ -1,3 +1,8 @@
+# Copyright © 2026 Khan Cargo.
+# All rights reserved.
+#
+# Developed by Danda Team.
+
 name: Deploy Frontend to Production
 
 on:

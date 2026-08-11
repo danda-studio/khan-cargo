@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -8,7 +15,6 @@ import { cn } from "@/shared/lib/cn";
 
 const SHOW_AFTER_PX = 800;
 
-/** Fixed mobile/tablet CTA — appears after scrolling 800px, hidden from lg up. */
 export function MobileStickyCta() {
   const t = useTranslations();
   const [visible, setVisible] = useState(false);

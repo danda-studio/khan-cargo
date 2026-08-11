@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 import type { ComponentProps } from "react";
 import { Button as BaseButton } from "@base-ui/react/button";
 import { cn } from "@/shared/lib/cn";

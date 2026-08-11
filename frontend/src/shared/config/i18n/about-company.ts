@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 export type AboutCompanyDict = {
   meta: { title: string; description: string };
   hero: {

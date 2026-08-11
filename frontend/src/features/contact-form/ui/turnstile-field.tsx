@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import { Turnstile } from "@marsidev/react-turnstile";
@@ -6,7 +13,7 @@ import { TURNSTILE_SITE_KEY } from "@/shared/config/turnstile";
 interface TurnstileFieldProps {
   onTokenChange: (token: string) => void;
   error?: string;
-  /** Remount key — e.g. dialog open state — so the widget reloads cleanly */
+
   resetKey?: string | number | boolean;
 }
 

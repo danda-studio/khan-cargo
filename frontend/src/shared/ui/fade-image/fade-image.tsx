@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import Image, { type ImageProps } from "next/image";
@@ -8,7 +15,6 @@ type FadeImageProps = ImageProps & {
   fadeClassName?: string;
 };
 
-/** Photos serve as uploaded files — no Next optimizer re-encode/blur */
 export function FadeImage({
   className,
   fadeClassName,

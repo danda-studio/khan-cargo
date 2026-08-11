@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2026 Khan Cargo.
+ * All rights reserved.
+ *
+ * Developed by Danda Team.
+ */
+
 "use client";
 
 import Image from "next/image";
@@ -92,7 +99,7 @@ export function Header() {
         <div className="flex h-full items-center lg:gap-[1.6667rem]">
           <LanguageSwitcher />
 
-          {/* Mobile/tablet — dashed strip between language and hamburger */}
+          
           <span aria-hidden className="mx-[0.75rem] h-full border-l border-dashed border-white/28 lg:hidden" />
 
           <ContactFormDialog
