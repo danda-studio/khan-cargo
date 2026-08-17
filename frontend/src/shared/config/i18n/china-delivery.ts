@@ -77,7 +77,7 @@ export const chinaDeliveryByLocale = {
       title:
         "Çindən Azərbaycana yük müntəzəm cədvəllə hərəkət edir. Marşruta Cənubi Çin limanlarından Xəzərə qədər dəniz mərhələsi, tranzit ölkələr üzrə quru daşıma, gömrük prosedurları və anbarımıza qəbul daxildir.",
       titleMuted:
-        "Hava şəraiti əlverişli olduqda cədvəl qorunur. Təbii amillərlə bağlı gecikmə baş verdikdə hər mərhələdə sizə məlumat veririk.",
+        "Dəniz reyslərini hava şəraitinə uyğun planlaşdırır və vəziyyəti bütün marşrut boyu izləyirik. Şərait dəyişəndə cədvəli operativ tənzimləyir, yeni çatma vaxtını dərhal təsdiqləyirik.",
       side: "Təcili yük üçün sürətləndirilmiş marşrut hazırlanır. Menecerimiz yükün həcminə, çəkisinə və vacibliyinə uyğun alternativ variant təklif edir, dəyəri və müddəti əvvəlcədən razılaşdırır. Bu, Çindən sürətli çatdırılma tələb edən müştərilər üçün fərdi həll yoludur.",
       cta: "Sınaq göndərişi sifariş edin",
     },
@@ -96,10 +96,10 @@ export const chinaDeliveryByLocale = {
         "Çin anbarımızda qəbul və yoxlama",
         "Konsolidasiya və konteynerə yükləmə",
         "Sığorta",
-        "Dəniz, hava və ya dəmir yolu marşrutu",
+        "Dəniz və ya dəmir yolu marşrutu",
         "Gömrük rəsmiləşdirilməsi",
         "Sənəd axını",
-        "Yükün izlənməsi",
+        "Menecer vasitəsilə izləmə",
         "Azərbaycanda müştəriyə təhvil",
       ],
       mapAlt: "Azərbaycan xəritəsi",
@@ -112,7 +112,6 @@ export const chinaDeliveryByLocale = {
         ["Konteyner (FCL / LCL)", "İri partiya, avadanlıq, mebel", "Ən əlverişli qiymət"],
         ["Dəniz yolu ilə yükdaşıma", "Böyük həcm, ağır yük", "Müntəzəm cədvəl"],
         ["Dəmir yolu yükdaşıma", "Orta partiya, sürət prioriteti", "Dəniz variantından qısa müddət"],
-        ["Hava nəqliyyatı", "Elektronika, nümunə, təcili sifariş", "Xidmət müddəti dəfələrlə qısadır"],
       ],
     },
     customs: {
@@ -144,7 +143,7 @@ export const chinaDeliveryByLocale = {
       rows: [
         ["Mağaza sahibləri", "Sənaye sahibkarları", "Mebel və HoReCa biznesi", "Elektronika satıcıları", "Fərdi alıcılar"],
         ["Topdan geyim, tekstil", "Avadanlıq, xammal", "Cihazlar, gadget", "Alibaba, Taobao, 1688 sifarişləri"],
-        ["Müntəzəm konteyner tədarükü", "FCL konteyner", "İrihəcmli yükdaşıma", "Hava marşrutu və ya konteyner"],
+        ["Müntəzəm konteyner tədarükü", "FCL konteyner", "İrihəcmli yükdaşıma"],
       ],
     },
     localDelivery: {
@@ -199,7 +198,7 @@ export const chinaDeliveryByLocale = {
       title:
         "Cargo from China to Azerbaijan moves on a regular schedule. The route includes a sea leg from South China ports to the Caspian, overland transit, customs procedures, and intake at our warehouse.",
       titleMuted:
-        "When weather conditions allow, the schedule holds. If natural factors cause delays, we update you at every stage.",
+        "We plan sea sailings around weather and monitor conditions along the entire route. When conditions change, we adjust the schedule promptly and confirm the new arrival time immediately.",
       side: "For urgent cargo we prepare an accelerated route. Our manager offers an alternative based on volume, weight and priority, and agrees cost and timing in advance — a tailored option for customers who need fast delivery from China.",
       cta: "Place a trial order",
     },
@@ -218,10 +217,10 @@ export const chinaDeliveryByLocale = {
         "Intake and inspection at our China warehouse",
         "Consolidation and container loading",
         "Insurance",
-        "Sea, air or rail route",
+        "Sea or rail route",
         "Customs clearance",
         "Document flow",
-        "Cargo tracking",
+        "Tracking via manager",
         "Handover to the customer in Azerbaijan",
       ],
       mapAlt: "Map of Azerbaijan",
@@ -234,7 +233,6 @@ export const chinaDeliveryByLocale = {
         ["Container (FCL / LCL)", "Large lots, equipment, furniture", "Best price"],
         ["Sea freight", "High volume, heavy cargo", "Regular schedule"],
         ["Rail freight", "Medium lots, speed priority", "Faster than sea"],
-        ["Air freight", "Electronics, samples, urgent orders", "Much shorter transit time"],
       ],
     },
     customs: {
@@ -266,7 +264,7 @@ export const chinaDeliveryByLocale = {
       rows: [
         ["Store owners", "Industrial businesses", "Furniture & HoReCa", "Electronics sellers", "Individual buyers"],
         ["Wholesale apparel, textiles", "Equipment, raw materials", "Devices, gadgets", "Alibaba, Taobao, 1688 orders"],
-        ["Regular container supply", "FCL container", "Oversized freight", "Air route or container"],
+        ["Regular container supply", "FCL container", "Oversized freight"],
       ],
     },
     localDelivery: {
@@ -321,7 +319,7 @@ export const chinaDeliveryByLocale = {
       title:
         "Груз из Китая в Азербайджан идёт по регулярному графику. В маршрут входят морской участок от портов Южного Китая до Каспия, сухопутный транзит, таможенные процедуры и приём на наш склад.",
       titleMuted:
-        "При благоприятной погоде график сохраняется. Если из‑за природных факторов возникают задержки, мы сообщаем вам на каждом этапе.",
+        "Морские рейсы планируем с учётом погоды и отслеживаем обстановку по всему маршруту. Если условия меняются, оперативно корректируем график и сразу подтверждаем новое время прибытия.",
       side: "Для срочного груза готовим ускоренный маршрут. Менеджер предлагает альтернативу по объёму, весу и приоритету и заранее согласовывает стоимость и сроки — индивидуальное решение для тех, кому нужна быстрая доставка из Китая.",
       cta: "Заказать пробную отправку",
     },
@@ -340,10 +338,10 @@ export const chinaDeliveryByLocale = {
         "Приём и проверка на нашем складе в Китае",
         "Консолидация и загрузка в контейнер",
         "Страхование",
-        "Морской, воздушный или железнодорожный маршрут",
+        "Морской или железнодорожный маршрут",
         "Таможенное оформление",
         "Документооборот",
-        "Отслеживание груза",
+        "Отслеживание через менеджера",
         "Выдача клиенту в Азербайджане",
       ],
       mapAlt: "Карта Азербайджана",
@@ -356,7 +354,6 @@ export const chinaDeliveryByLocale = {
         ["Контейнер (FCL / LCL)", "Крупные партии, оборудование, мебель", "Самая выгодная цена"],
         ["Морские перевозки", "Большой объём, тяжёлый груз", "Регулярный график"],
         ["Железнодорожные перевозки", "Средние партии, приоритет скорости", "Короче морского варианта"],
-        ["Авиаперевозки", "Электроника, образцы, срочные заказы", "Срок в разы короче"],
       ],
     },
     customs: {
@@ -388,7 +385,7 @@ export const chinaDeliveryByLocale = {
       rows: [
         ["Владельцы магазинов", "Промышленные предприниматели", "Мебель и HoReCa", "Продавцы электроники", "Частные покупатели"],
         ["Оптовая одежда, текстиль", "Оборудование, сырьё", "Устройства, гаджеты", "Заказы Alibaba, Taobao, 1688"],
-        ["Регулярные контейнерные поставки", "FCL-контейнер", "Крупногабаритные перевозки", "Авиамаршрут или контейнер"],
+        ["Регулярные контейнерные поставки", "FCL-контейнер", "Крупногабаритные перевозки"],
       ],
     },
     localDelivery: {
