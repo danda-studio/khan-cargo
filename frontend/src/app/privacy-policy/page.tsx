@@ -14,9 +14,11 @@ const copy = dictionary[defaultLocale].legalPages.privacyPolicy;
 export const metadata: Metadata = {
   title: copy.meta.title,
   description: copy.meta.description,
+  alternates: { canonical: "/privacy-policy" },
   openGraph: {
     title: copy.meta.title,
     description: copy.meta.description,
+    url: "/privacy-policy",
   },
 };
 

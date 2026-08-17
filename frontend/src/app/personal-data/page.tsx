@@ -14,9 +14,11 @@ const copy = dictionary[defaultLocale].legalPages.personalData;
 export const metadata: Metadata = {
   title: copy.meta.title,
   description: copy.meta.description,
+  alternates: { canonical: "/personal-data" },
   openGraph: {
     title: copy.meta.title,
     description: copy.meta.description,
+    url: "/personal-data",
   },
 };
 

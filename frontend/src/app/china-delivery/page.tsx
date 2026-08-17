@@ -14,9 +14,11 @@ const copy = dictionary[defaultLocale].chinaDelivery;
 export const metadata: Metadata = {
   title: copy.meta.title,
   description: copy.meta.description,
+  alternates: { canonical: "/china-delivery" },
   openGraph: {
     title: copy.meta.title,
     description: copy.meta.description,
+    url: "/china-delivery",
   },
 };
 

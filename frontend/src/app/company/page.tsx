@@ -14,9 +14,11 @@ const copy = dictionary[defaultLocale].aboutCompany;
 export const metadata: Metadata = {
   title: copy.meta.title,
   description: copy.meta.description,
+  alternates: { canonical: "/company" },
   openGraph: {
     title: copy.meta.title,
     description: copy.meta.description,
+    url: "/company",
   },
 };
 

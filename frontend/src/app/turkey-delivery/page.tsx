@@ -14,9 +14,11 @@ const copy = dictionary[defaultLocale].turkeyDelivery;
 export const metadata: Metadata = {
   title: copy.meta.title,
   description: copy.meta.description,
+  alternates: { canonical: "/turkey-delivery" },
   openGraph: {
     title: copy.meta.title,
     description: copy.meta.description,
+    url: "/turkey-delivery",
   },
 };
 
