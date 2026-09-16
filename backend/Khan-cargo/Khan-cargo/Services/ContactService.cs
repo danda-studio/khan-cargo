@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright © 2026 Khan Cargo.
  * All rights reserved.
  *
@@ -51,19 +51,21 @@ namespace Khan_cargo.Services
                 return response;
             }
 
-            var (waSuccess, waMessage) = await SendWhatsAppMessage(request);
+            //var (waSuccess, waMessage) = await SendWhatsAppMessage(request);
             var mailMessage = await SendEmailMessage(request);
 
-            if (waSuccess)
-            {
-                response.Success = true;
-                response.Message = "Сообщение отправлено";
-            }
-            else
-            {
-                response.Success = false;
-                response.Message = $"WhatsApp: {waMessage}; Email: {mailMessage}";
-            }
+            //if (mailMessage)
+            //{
+            //    response.Success = true;
+            //    response.Message = "Сообщение отправлено";
+            //}
+            //else
+            //{
+
+            //}
+            
+            response.Success = true;
+            response.Message = $"Email: {mailMessage}";
 
             return response;
 
