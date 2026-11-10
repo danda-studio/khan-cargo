@@ -26,14 +26,37 @@ export const contactPhones = {
     plain: "+90 537 254 30 00",
     tel: "+905372543000",
   },
+  uz: {
+    display: "(+998) 77 351 53 83",
+    plain: "+998 77 351 53 83",
+    tel: "+998773515383",
+  },
 } as const;
 
 export type ContactMarket = keyof typeof contactPhones;
 
 export function contactMarketFromPathname(pathname: string): ContactMarket {
-  if (pathname.startsWith("/china-delivery")) return "cn";
-  if (pathname.startsWith("/turkey-delivery")) return "tr";
+  if (pathname.startsWith("/china-delivery"))
+    return "cn";
+  if (pathname.startsWith("/turkey-delivery"))
+    return "tr";
+  if (pathname.startsWith("/uzbekistan-delivery"))
+    return "uz";
   return "az";
+}
+
+export const contactEmails = {
+  az: contactEmail,
+  cn: contactEmail,
+  tr: contactEmail,
+  uz: {
+    display: "info@khan.az",
+    mailto: "mailto:info@khan.az",
+  },
+} as const;
+
+export function getContactEmail(pathname: string) {
+  return contactEmails[contactMarketFromPathname(pathname)];
 }
 
 export function getContactPhone(pathname: string) {
