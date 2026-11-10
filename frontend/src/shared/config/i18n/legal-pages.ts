@@ -5,24 +5,24 @@
  * Developed by Danda Team.
  */
 
-export type LegalSection = {
+export interface LegalSection {
   title: string;
   paragraphs: string[];
-};
+}
 
-export type LegalDocDict = {
+export interface LegalDocDict {
   meta: { title: string; description: string };
   title: string;
   companyLine: string;
   backHome: string;
   intro: string[];
   sections: LegalSection[];
-};
+}
 
-export type LegalPagesDict = {
+export interface LegalPagesDict {
   privacyPolicy: LegalDocDict;
   personalData: LegalDocDict;
-};
+}
 
 export const legalPagesByLocale: Record<"az" | "en" | "ru", LegalPagesDict> = {
   az: {

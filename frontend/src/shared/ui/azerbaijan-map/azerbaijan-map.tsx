@@ -44,40 +44,42 @@ export function AzerbaijanMap({
 
   return (
     <div className={cn("relative w-full", pins.aspect, className)}>
-      {hasMdAssets ? (
-        <>
-          <Image
-            src={pins.mapSrc}
-            alt={alt}
-            fill
-            sizes="360px"
-            loading="lazy"
-            className={cn(pins.mapObject, "md:hidden")}
-          />
-          <Image
-            src={pins.mapSrcMd}
-            alt={alt}
-            fill
-            sizes="800px"
-            loading="lazy"
-            className="hidden object-contain object-left-top md:block"
-          />
-          <img src={pins.src} alt="" className={cn(pins.className, "md:hidden")} />
-          <img src={pins.srcMd} alt="" className={cn(pins.className, "hidden md:block")} />
-        </>
-      ) : (
-        <>
-          <Image
-            src={pins.mapSrc}
-            alt={alt}
-            fill
-            sizes="(max-width: 768px) 360px, 800px"
-            loading="lazy"
-            className={pins.mapObject}
-          />
-          <img src={pins.src} alt="" className={pins.className} />
-        </>
-      )}
+      {hasMdAssets
+        ? (
+            <>
+              <Image
+                src={pins.mapSrc}
+                alt={alt}
+                fill
+                sizes="360px"
+                loading="lazy"
+                className={cn(pins.mapObject, "md:hidden")}
+              />
+              <Image
+                src={pins.mapSrcMd}
+                alt={alt}
+                fill
+                sizes="800px"
+                loading="lazy"
+                className="hidden object-contain object-left-top md:block"
+              />
+              <img src={pins.src} alt="" className={cn(pins.className, "md:hidden")} />
+              <img src={pins.srcMd} alt="" className={cn(pins.className, "hidden md:block")} />
+            </>
+          )
+        : (
+            <>
+              <Image
+                src={pins.mapSrc}
+                alt={alt}
+                fill
+                sizes="(max-width: 768px) 360px, 800px"
+                loading="lazy"
+                className={pins.mapObject}
+              />
+              <img src={pins.src} alt="" className={pins.className} />
+            </>
+          )}
     </div>
   );
 }

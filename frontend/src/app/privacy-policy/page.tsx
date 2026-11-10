@@ -6,8 +6,8 @@
  */
 
 import type { Metadata } from "next";
+import { defaultLocale, dictionary } from "@/shared/config/i18n/dictionary";
 import { PrivacyPolicyPage } from "@/views/privacy-policy-page/privacy-policy-page";
-import { dictionary, defaultLocale } from "@/shared/config/i18n/dictionary";
 
 const copy = dictionary[defaultLocale].legalPages.privacyPolicy;
 

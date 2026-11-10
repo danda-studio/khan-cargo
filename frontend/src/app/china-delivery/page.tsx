@@ -6,8 +6,8 @@
  */
 
 import type { Metadata } from "next";
+import { defaultLocale, dictionary } from "@/shared/config/i18n/dictionary";
 import { ChinaDeliveryPage } from "@/views/china-delivery-page/china-delivery-page";
-import { dictionary, defaultLocale } from "@/shared/config/i18n/dictionary";
 
 const copy = dictionary[defaultLocale].chinaDelivery;
 

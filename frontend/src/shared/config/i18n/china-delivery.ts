@@ -5,7 +5,7 @@
  * Developed by Danda Team.
  */
 
-export type ChinaDeliveryDict = {
+export interface ChinaDeliveryDict {
   meta: { title: string; description: string };
   hero: { title: string; lead: string; cta: string };
   process: {
@@ -58,7 +58,7 @@ export type ChinaDeliveryDict = {
     title: string;
     items: { q: string; a: string }[];
   };
-};
+}
 
 export const chinaDeliveryByLocale = {
   az: {
