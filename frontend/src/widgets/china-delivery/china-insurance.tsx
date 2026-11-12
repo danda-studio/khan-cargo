@@ -7,12 +7,13 @@
 
 "use client";
 
+import type { RouteDeliveryVariant } from "@/widgets/china-delivery/route-delivery-assets";
 import { useTranslations } from "@/shared/config/i18n/language-context";
+import { cn } from "@/shared/lib/cn";
 import { AzerbaijanMap } from "@/shared/ui/azerbaijan-map/azerbaijan-map";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
-import { cn } from "@/shared/lib/cn";
 import { chinaEyebrow, chinaPad } from "@/widgets/china-delivery/china-pad";
-import type { RouteDeliveryVariant } from "@/widgets/china-delivery/route-delivery-assets";
+import { routeDeliveryCopy } from "@/widgets/china-delivery/route-delivery-assets";
 
 function StageColumns({
   left,
@@ -26,7 +27,7 @@ function StageColumns({
   total: number;
 }) {
   return (
-    <div className="mt-[2rem] flex flex-col gap-[0.75rem] md:flex-row">
+    <div className="mt-[1.75rem] flex flex-col gap-[0.75rem] md:mt-[2rem] md:flex-row">
       {[left, right].map((column, colIndex) => (
         <div key={colIndex} className="flex min-w-0 flex-1 flex-col gap-[0.75rem]">
           {column.map((stage, index) => {
@@ -48,7 +49,7 @@ function StageColumns({
                 >
                   {String(n).padStart(2, "0")}
                 </span>
-                <span className="text-[0.75rem] leading-[1.1]">{stage}</span>
+                <span className="font-display text-[0.75rem] leading-[1.1]">{stage}</span>
               </div>
             );
           })}
@@ -60,35 +61,33 @@ function StageColumns({
 
 export function ChinaInsurance({ variant = "china" }: { variant?: RouteDeliveryVariant }) {
   const dict = useTranslations();
-  const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
+  const t = routeDeliveryCopy(dict, variant);
   const mid = Math.ceil(t.insurance.stages.length / 2);
   const left = t.insurance.stages.slice(0, mid);
   const right = t.insurance.stages.slice(mid);
 
   return (
-    <section className="overflow-x-clip bg-page pt-[3.25rem] pb-[5rem] md:pt-[3.875rem]">
+    <section className="overflow-x-clip bg-page pt-[3.25rem] pb-[3.5rem] md:pt-[3.875rem] md:pb-[5rem]">
       {}
-      <div className={`flex flex-col gap-[2.5rem] md:hidden ${chinaPad}`}>
+      <div className={`flex flex-col gap-[1.5rem] md:hidden ${chinaPad}`}>
         <div className="flex flex-col gap-[1rem]">
           <SectionEyebrow className={chinaEyebrow}>{t.insurance.eyebrow}</SectionEyebrow>
-          <h2 className="text-[1.5rem] leading-[1.1] tracking-[-0.0125rem] text-white">{t.insurance.title}</h2>
+          <h2 className="text-[1.75rem] leading-[1.1] tracking-[-0.0125rem] text-white">{t.insurance.title}</h2>
         </div>
         <p className="text-[1rem] leading-[1.2] text-white/48">{t.insurance.body}</p>
       </div>
 
-      
       <div className="relative mt-[2.5rem] w-[107.7778%] -translate-x-[4.1667%] md:hidden">
         <AzerbaijanMap alt={t.insurance.mapAlt} pinLayout="china" className="w-full" />
       </div>
 
       <div className={`mt-[2.5rem] md:hidden ${chinaPad}`}>
-        <h3 className="text-[1.5rem] leading-[1.1] tracking-[-0.0125rem] text-white">
+        <h3 className="text-[1.75rem] leading-[1.1] tracking-[-0.0125rem] text-white">
           {t.insurance.stagesTitle}
         </h3>
         <StageColumns left={left} right={right} mid={mid} total={t.insurance.stages.length} />
       </div>
 
-      
       <div
         className={`hidden flex-col gap-[2.5rem] md:flex md:flex-row md:items-start md:justify-between md:gap-[2rem] ${chinaPad}`}
       >

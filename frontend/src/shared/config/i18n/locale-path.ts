@@ -5,7 +5,8 @@
  * Developed by Danda Team.
  */
 
-import { defaultLocale, locales, type Locale } from "./dictionary";
+import type { Locale } from "./dictionary";
+import { defaultLocale, locales } from "./dictionary";
 
 export const LOCALE_COOKIE = "khan-cargo-locale";
 export const LOCALE_STORAGE_KEY = "khan-cargo-locale";

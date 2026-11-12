@@ -7,6 +7,7 @@
 
 "use client";
 
+import type { RouteDeliveryVariant } from "@/widgets/china-delivery/route-delivery-assets";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { Button } from "@/shared/ui/button/button";
@@ -14,43 +15,58 @@ import { FadeImage } from "@/shared/ui/fade-image/fade-image";
 import { chinaBtn, chinaPad } from "@/widgets/china-delivery/china-pad";
 import {
   routeDeliveryAssets,
-  type RouteDeliveryVariant,
+  routeDeliveryCopy,
 } from "@/widgets/china-delivery/route-delivery-assets";
 
 const HERO_ALT = {
   china: "Yolda hərəkət edən yük maşını",
   turkey: "Anbarda yük maşını",
+  uzbekistan: "Yolda hərəkət edən iki TIR",
 } as const;
+
+function splitFirstSentence(text: string) {
+  const index = text.search(/[.!?](?=\s)/);
+  if (index < 0) {
+    return [text, ""] as const;
+  }
+  return [text.slice(0, index + 1), text.slice(index + 1).trim()] as const;
+}
 
 export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVariant }) {
   const dict = useTranslations();
-  const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
+  const t = routeDeliveryCopy(dict, variant);
   const images = routeDeliveryAssets[variant];
   const alt = HERO_ALT[variant];
+  const [leadFirst, leadRest] = splitFirstSentence(t.hero.lead);
 
   return (
     <>
       {}
       <section className="bg-page pt-[3.75rem] lg:hidden">
-        <div className={`flex flex-col gap-[1.5rem] pt-[2.5rem] pb-[1.5rem] ${chinaPad}`}>
+        <div className={`flex flex-col gap-[1.5rem] pt-[2.5rem] pb-[2.125rem] ${chinaPad}`}>
           <h1 className="max-w-[28rem] text-[2rem] leading-[1] font-medium text-white md:text-[2.5rem]">
             {t.hero.title}
           </h1>
-          <p className="max-w-[36rem] text-[1rem] leading-[1.2] text-white md:text-[1.125rem]">
-            {t.hero.lead}
+          <p className="max-w-[36rem] text-[1rem] leading-[1.2] font-medium text-white md:text-[1.125rem]">
+            <span>{leadFirst}</span>
+            {leadRest ? <span className="text-white/48">{` ${leadRest}`}</span> : null}
           </p>
         </div>
         <div className="relative aspect-[360/352] w-full overflow-hidden md:aspect-[16/10]">
           <div className="absolute inset-0 overflow-hidden">
             <FadeImage
-              src={images.hero}
+              src={images.heroMobile ?? images.hero}
               alt={alt}
               width={3840}
               height={2400}
               priority
               fetchPriority="high"
               sizes="100vw"
-              className="absolute top-[-4%] left-1/2 h-[126%] w-[126%] max-w-none -translate-x-1/2 object-cover object-[center_30%] md:object-center"
+              className={
+                images.heroMobile
+                  ? "absolute inset-0 size-full max-w-none object-cover object-center"
+                  : "absolute top-[-4%] left-1/2 h-[126%] w-[126%] max-w-none -translate-x-1/2 object-cover object-[center_30%] md:object-center"
+              }
             />
           </div>
           <div className={`absolute inset-x-0 bottom-0 z-10 pb-[1rem] ${chinaPad}`}>
@@ -61,7 +77,6 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
         </div>
       </section>
 
-      
       <section className="relative mt-[6rem] hidden h-[calc(100svh-6rem)] w-full overflow-hidden bg-page lg:flex">
         <div className="absolute inset-0">
           <FadeImage
@@ -80,7 +95,9 @@ export function ChinaHero({ variant = "china" }: { variant?: RouteDeliveryVarian
           <h1 className="max-w-[46.6875rem] text-[clamp(2.75rem,5.5vw,5.5rem)] leading-none font-medium text-white">
             {t.hero.title}
           </h1>
-          <p className="mt-auto max-w-[30.8125rem] text-[clamp(1rem,1.25vw,1.25rem)] leading-[1.25] text-white">
+          <p
+            className={`mt-auto text-[1rem] leading-[1.25] text-white ${variant === "uzbekistan" ? "max-w-[26.5rem]" : "max-w-[30.8125rem]"}`}
+          >
             {t.hero.lead}
           </p>
           <div className="mt-[2rem] mb-[2.25rem] flex self-start">

@@ -5,10 +5,16 @@
  * Developed by Danda Team.
  */
 
-import { aboutCompanyByLocale, type AboutCompanyDict } from "./about-company";
-import { chinaDeliveryByLocale, type ChinaDeliveryDict } from "./china-delivery";
-import { legalPagesByLocale, type LegalPagesDict } from "./legal-pages";
-import { turkeyDeliveryByLocale, type TurkeyDeliveryDict } from "./turkey-delivery";
+import type { AboutCompanyDict } from "./about-company";
+import type { ChinaDeliveryDict } from "./china-delivery";
+import type { LegalPagesDict } from "./legal-pages";
+import type { TurkeyDeliveryDict } from "./turkey-delivery";
+import type { UzbekistanDeliveryDict } from "./uzbekistan-delivery";
+import { aboutCompanyByLocale } from "./about-company";
+import { chinaDeliveryByLocale } from "./china-delivery";
+import { legalPagesByLocale } from "./legal-pages";
+import { turkeyDeliveryByLocale } from "./turkey-delivery";
+import { uzbekistanDeliveryByLocale } from "./uzbekistan-delivery";
 
 export const locales = ["az", "en", "ru"] as const;
 export type Locale = (typeof locales)[number];
@@ -29,6 +35,7 @@ export const dictionary = {
       contacts: "Əlaqə məlumatları",
       chinaDelivery: "Çindən çatdırılma",
       turkeyDelivery: "Türkiyədən çatdırılma",
+      uzbekistanDelivery: "Özbəkistandan çatdırılma",
       cta: "Dəyəri hesablayın",
     },
     hero: {
@@ -124,6 +131,7 @@ export const dictionary = {
     },
     chinaDelivery: chinaDeliveryByLocale.az,
     turkeyDelivery: turkeyDeliveryByLocale.az,
+    uzbekistanDelivery: uzbekistanDeliveryByLocale.az,
     aboutCompany: aboutCompanyByLocale.az,
     legalPages: legalPagesByLocale.az,
   },
@@ -134,6 +142,7 @@ export const dictionary = {
       contacts: "Contacts",
       chinaDelivery: "Delivery from China",
       turkeyDelivery: "Delivery from Turkey",
+      uzbekistanDelivery: "Delivery from Uzbekistan",
       cta: "Calculate the cost",
     },
     hero: {
@@ -229,6 +238,7 @@ export const dictionary = {
     },
     chinaDelivery: chinaDeliveryByLocale.en,
     turkeyDelivery: turkeyDeliveryByLocale.en,
+    uzbekistanDelivery: uzbekistanDeliveryByLocale.en,
     aboutCompany: aboutCompanyByLocale.en,
     legalPages: legalPagesByLocale.en,
   },
@@ -239,6 +249,7 @@ export const dictionary = {
       contacts: "Контакты",
       chinaDelivery: "Доставка из Китая",
       turkeyDelivery: "Доставка из Турции",
+      uzbekistanDelivery: "Доставка из Узбекистана",
       cta: "Рассчитать стоимость",
     },
     hero: {
@@ -334,6 +345,7 @@ export const dictionary = {
     },
     chinaDelivery: chinaDeliveryByLocale.ru,
     turkeyDelivery: turkeyDeliveryByLocale.ru,
+    uzbekistanDelivery: uzbekistanDeliveryByLocale.ru,
     aboutCompany: aboutCompanyByLocale.ru,
     legalPages: legalPagesByLocale.ru,
   },
@@ -346,6 +358,7 @@ export interface Dictionary {
     contacts: string;
     chinaDelivery: string;
     turkeyDelivery: string;
+    uzbekistanDelivery: string;
     cta: string;
   };
   hero: { subtitle: string; title: string; cta: string; bullet: string };
@@ -418,6 +431,7 @@ export interface Dictionary {
   };
   chinaDelivery: ChinaDeliveryDict;
   turkeyDelivery: TurkeyDeliveryDict;
+  uzbekistanDelivery: UzbekistanDeliveryDict;
   aboutCompany: AboutCompanyDict;
   legalPages: LegalPagesDict;
 }

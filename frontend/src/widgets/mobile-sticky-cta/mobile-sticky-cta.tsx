@@ -10,8 +10,8 @@
 import { useEffect, useState } from "react";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { useTranslations } from "@/shared/config/i18n/language-context";
-import { Button } from "@/shared/ui/button/button";
 import { cn } from "@/shared/lib/cn";
+import { Button } from "@/shared/ui/button/button";
 
 const SHOW_AFTER_PX = 800;
 
