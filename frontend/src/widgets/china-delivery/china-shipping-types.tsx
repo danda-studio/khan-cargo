@@ -8,11 +8,48 @@
 "use client";
 
 import type { RouteDeliveryVariant } from "@/widgets/china-delivery/route-delivery-assets";
+import { useLayoutEffect, useRef } from "react";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { cn } from "@/shared/lib/cn";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 import { chinaEyebrow, chinaPad } from "@/widgets/china-delivery/china-pad";
 import { routeDeliveryCopy } from "@/widgets/china-delivery/route-delivery-assets";
+
+function MatrixChip({ className, children }: { className: string; children: string }) {
+  const chipRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const chip = chipRef.current;
+    const parent = chip?.parentElement;
+    const label = chip?.firstElementChild;
+    if (!chip || !parent || !label) {
+      return;
+    }
+
+    const fit = () => {
+      chip.style.width = "";
+      const range = document.createRange();
+      range.selectNodeContents(label);
+      const style = getComputedStyle(chip);
+      const padding = Number.parseFloat(style.paddingLeft) + Number.parseFloat(style.paddingRight);
+      const textWidth = range.getBoundingClientRect().width;
+      if (textWidth > 0 && textWidth + padding < chip.getBoundingClientRect().width) {
+        chip.style.width = `${Math.ceil(textWidth + padding)}px`;
+      }
+    };
+
+    fit();
+    const observer = new ResizeObserver(fit);
+    observer.observe(parent);
+    return () => observer.disconnect();
+  }, [children]);
+
+  return (
+    <div ref={chipRef} className={className}>
+      <span className="text-left text-[1rem] leading-none font-semibold text-white">{children}</span>
+    </div>
+  );
+}
 
 function withUniqueKeys(items: string[]) {
   const seen = new Map<string, number>();
@@ -30,9 +67,7 @@ function MatrixSection({
   rows,
   chipBg = "bg-[#151515]",
   titleMaxW = "max-w-[23.75rem]",
-  mobileCount,
-  mobileChipGaps = ["max-md:gap-[0.75rem]"],
-  mobileRowPad = "max-md:py-[1.375rem]",
+  mobileChipGaps = ["max-md:gap-[0.5rem]", "max-md:gap-[0.75rem]", "max-md:gap-[0.75rem]"],
   mobileLastPad = "max-md:pb-0",
 }: {
   eyebrow: string;
@@ -41,9 +76,7 @@ function MatrixSection({
   rows: string[][];
   chipBg?: string;
   titleMaxW?: string;
-  mobileCount?: number;
   mobileChipGaps?: string[];
-  mobileRowPad?: string;
   mobileLastPad?: string;
 }) {
   return (
@@ -66,31 +99,29 @@ function MatrixSection({
           <div
             key={label}
             className={cn(
-              "flex flex-col gap-[1.5rem] md:flex-row md:items-center md:gap-[3.75rem] md:py-[1.75rem]",
-              mobileRowPad,
+              "flex flex-col gap-[1.5rem] py-[1.375rem] md:flex-row md:items-center md:gap-[3.75rem] md:py-[1.75rem]",
               rowIndex === 0 && "max-md:pt-0",
               rowIndex === rowLabels.length - 1 && mobileLastPad,
               rowIndex < rowLabels.length - 1 && "border-b border-solid border-white/20",
             )}
           >
-            <div className="flex w-full shrink-0 self-start md:w-[11.25rem]">
-              <div className="flex h-12 w-full items-center justify-center rounded-[0.25rem] bg-accent px-[1rem] md:w-full">
+            <div className="flex w-auto shrink-0 self-start md:w-[11.25rem]">
+              <div className="flex h-12 items-center justify-center rounded-[0.25rem] bg-accent px-[1.9375rem] md:w-full md:px-[1rem]">
                 <span className="text-center whitespace-nowrap text-[1rem] leading-none font-semibold text-black">{label}</span>
               </div>
             </div>
 
             <div className={cn("flex min-w-0 flex-1 flex-col md:flex-row md:flex-wrap md:gap-[0.75rem]", mobileChipGaps[rowIndex] ?? mobileChipGaps[0])}>
-              {withUniqueKeys(rows[rowIndex] ?? []).map(({ item, key }, itemIndex) => (
-                <div
+              {withUniqueKeys(rows[rowIndex] ?? []).map(({ item, key }) => (
+                <MatrixChip
                   key={key}
                   className={cn(
-                    "flex min-h-12 w-full items-center justify-center rounded-[0.25rem] px-[1.9375rem] py-4 md:inline-flex md:h-12 md:w-auto md:self-start md:py-0",
-                    mobileCount !== undefined && itemIndex >= mobileCount && "max-md:hidden",
+                    "inline-flex min-h-12 items-center justify-center self-start rounded-[0.25rem] px-[1.9375rem] py-4",
                     chipBg,
                   )}
                 >
-                  <span className="text-center text-[1rem] leading-none font-semibold text-white">{item}</span>
-                </div>
+                  {item}
+                </MatrixChip>
               ))}
             </div>
           </div>
@@ -109,7 +140,7 @@ export function ChinaShippingTypes({ variant = "china" }: { variant?: RouteDeliv
   const titleMaxW = variant === "uzbekistan" ? "max-w-[31.75rem]" : undefined;
 
   return (
-    <section className="bg-black pt-[3.25rem] pb-[1.5rem] md:pt-[5rem] md:pb-[5rem]">
+    <section className="bg-black pt-[3.25rem] pb-0 md:pt-[5rem] md:pb-[5rem]">
       <div className={chinaPad}>
         <MatrixSection
           eyebrow={t.shippingTypes.eyebrow}
@@ -117,8 +148,6 @@ export function ChinaShippingTypes({ variant = "china" }: { variant?: RouteDeliv
           rowLabels={t.shippingTypes.rowLabels}
           rows={rows}
           titleMaxW={titleMaxW}
-          mobileCount={Math.min(...rows.map(row => row.length))}
-          mobileChipGaps={variant === "uzbekistan" ? ["max-md:gap-[0.5rem]", "max-md:gap-[0.75rem]", "max-md:gap-[0.75rem]"] : undefined}
         />
       </div>
     </section>

@@ -44,7 +44,7 @@ export function ChinaCustoms({ variant = "china" }: { variant?: RouteDeliveryVar
           ))}
         </div>
 
-        <p className="max-w-[53.0625rem] md:max-w-[72.5rem] text-[1rem] leading-[1.2] font-medium text-white/48 md:text-[1rem]">
+        <p className="max-w-[53.0625rem] max-md:-mt-[0.5rem] md:max-w-[72.5rem] text-[1rem] leading-[1.2] font-medium text-white/48 md:text-[1rem]">
           {t.customs.note}
         </p>
       </div>
