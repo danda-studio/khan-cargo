@@ -92,7 +92,7 @@ function MatrixSection({
       <div className="relative flex flex-col">
         <div
           aria-hidden
-          className="pointer-events-none absolute top-0 bottom-0 left-[13.125rem] hidden w-px bg-[#1f1f1f] md:block"
+          className="pointer-events-none absolute top-0 bottom-0 left-[13.125rem] hidden w-px bg-white/20 md:block"
         />
 
         {rowLabels.map((label, rowIndex) => (
@@ -102,7 +102,7 @@ function MatrixSection({
               "flex flex-col gap-[1.5rem] py-[1.375rem] md:flex-row md:items-center md:gap-[3.75rem] md:py-[1.75rem]",
               rowIndex === 0 && "max-md:pt-0",
               rowIndex === rowLabels.length - 1 && mobileLastPad,
-              rowIndex < rowLabels.length - 1 && "border-b border-solid border-[#1f1f1f]",
+              rowIndex < rowLabels.length - 1 && "border-b border-solid border-white/20",
             )}
           >
             <div className="flex w-auto shrink-0 self-start md:w-[11.25rem]">
