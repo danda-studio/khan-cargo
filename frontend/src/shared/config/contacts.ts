@@ -12,9 +12,9 @@ export const contactEmail = {
 
 export const contactPhones = {
   az: {
-    display: "(+944) 55 123 34 44",
-    plain: "+944 55 123 34 44",
-    tel: "+944551233444",
+    display: "(+994) 55 123 34 44",
+    plain: "+994 55 123 34 44",
+    tel: "+994551233444",
   },
   cn: {
     display: "+86 181 0579 6454",
