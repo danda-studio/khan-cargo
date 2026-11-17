@@ -24,7 +24,7 @@ export function ChinaProcess({ variant = "china" }: { variant?: RouteDeliveryVar
       <div className={`flex flex-col ${chinaPad}`}>
         <SectionEyebrow className={chinaEyebrow}>{t.process.eyebrow}</SectionEyebrow>
 
-        <div className="mt-[1rem] flex flex-col gap-[2rem] md:mt-[2.25rem] md:grid md:grid-cols-[minmax(0,47.25rem)_minmax(0,35.75rem)] md:items-start md:gap-0">
+        <div className="mt-[1rem] flex flex-col gap-[2rem] md:mt-[1rem] md:grid md:grid-cols-[55.26%_41.81%] md:items-start md:gap-0">
           <p className="text-[1.25rem] md:pr-[2.5rem] leading-[1.1] tracking-[-0.0125rem] text-white md:text-[clamp(1.5rem,1.75vw,1.75rem)]">
             <span>
               {t.process.title}
@@ -37,7 +37,7 @@ export function ChinaProcess({ variant = "china" }: { variant?: RouteDeliveryVar
             <p className="text-[1rem] leading-[1.2] text-white/48 md:text-[clamp(1rem,1.25vw,1.25rem)]">
               {t.process.side}
             </p>
-            <div className="mt-[2rem] mb-[3.25rem] flex self-start md:mt-[3.125rem] md:mb-[5rem]">
+            <div className="mt-[2rem] mb-[3.25rem] flex self-start md:mt-[4.125rem] md:mb-[5rem]">
               <ContactFormDialog trigger={<Button className={chinaBtn}>{t.process.cta}</Button>} />
             </div>
           </div>
