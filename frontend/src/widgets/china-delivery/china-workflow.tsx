@@ -74,7 +74,7 @@ export function ChinaWorkflow({ variant = "china" }: { variant?: RouteDeliveryVa
               </div>
 
               <div className="relative z-10 flex w-full flex-col justify-between gap-[1.75rem] p-[1.5rem] max-lg:pb-[0.75rem] lg:flex-row lg:items-start lg:gap-[1.5rem]">
-                <div className="flex flex-col gap-[1rem] lg:max-w-[31.6875rem]">
+                <div className="flex flex-col gap-[1rem] lg:max-w-[34rem]">
                   <p className="font-display max-md:w-[17.875rem] lg:max-w-[24.5625rem] text-[1.5rem] leading-none tracking-[-0.0125rem] text-black lg:text-[clamp(1.5rem,2.25vw,2.25rem)] lg:leading-9">
                     {t.workflow.bannerTitle}
                   </p>
