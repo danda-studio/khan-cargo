@@ -7,16 +7,17 @@
 
 "use client";
 
+import type { RouteDeliveryVariant } from "@/widgets/china-delivery/route-delivery-assets";
 import { ContactFormDialog } from "@/features/contact-form/ui/contact-form-dialog";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { Button } from "@/shared/ui/button/button";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 import { chinaBtn, chinaEyebrow, chinaPad } from "@/widgets/china-delivery/china-pad";
-import type { RouteDeliveryVariant } from "@/widgets/china-delivery/route-delivery-assets";
+import { routeDeliveryCopy } from "@/widgets/china-delivery/route-delivery-assets";
 
 export function ChinaProcess({ variant = "china" }: { variant?: RouteDeliveryVariant }) {
   const dict = useTranslations();
-  const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
+  const t = routeDeliveryCopy(dict, variant);
 
   return (
     <section className="bg-page pt-[3.25rem] md:pt-[5rem]">
@@ -25,7 +26,10 @@ export function ChinaProcess({ variant = "china" }: { variant?: RouteDeliveryVar
 
         <div className="mt-[1rem] flex flex-col gap-[2rem] md:mt-[2.25rem] md:flex-row md:items-start md:justify-between md:gap-[4.5rem]">
           <p className="max-w-[43rem] flex-1 text-[1.25rem] leading-[1.1] tracking-[-0.0125rem] text-white md:text-[clamp(1.5rem,1.75vw,1.75rem)]">
-            <span>{t.process.title} </span>
+            <span>
+              {t.process.title}
+              {" "}
+            </span>
             <span className="text-white/48">{t.process.titleMuted}</span>
           </p>
 

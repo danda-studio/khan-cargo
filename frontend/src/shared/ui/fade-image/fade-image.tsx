@@ -7,7 +7,8 @@
 
 "use client";
 
-import Image, { type ImageProps } from "next/image";
+import type { ImageProps } from "next/image";
+import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/shared/lib/cn";
 
@@ -30,7 +31,7 @@ export function FadeImage({
       {...props}
       quality={quality}
       unoptimized={unoptimized}
-      onLoad={event => {
+      onLoad={(event) => {
         setLoaded(true);
         onLoad?.(event);
       }}

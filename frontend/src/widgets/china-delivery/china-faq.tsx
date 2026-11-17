@@ -7,16 +7,17 @@
 
 "use client";
 
+import type { RouteDeliveryVariant } from "@/widgets/china-delivery/route-delivery-assets";
 import { useState } from "react";
 import { useTranslations } from "@/shared/config/i18n/language-context";
-import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 import { cn } from "@/shared/lib/cn";
+import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 import { chinaEyebrow, chinaPad } from "@/widgets/china-delivery/china-pad";
-import type { RouteDeliveryVariant } from "@/widgets/china-delivery/route-delivery-assets";
+import { routeDeliveryCopy } from "@/widgets/china-delivery/route-delivery-assets";
 
 export function ChinaFaq({ variant = "china" }: { variant?: RouteDeliveryVariant }) {
   const dict = useTranslations();
-  const t = variant === "turkey" ? dict.turkeyDelivery : dict.chinaDelivery;
+  const t = routeDeliveryCopy(dict, variant);
   const [openIndex, setOpenIndex] = useState(1);
 
   return (
@@ -27,7 +28,7 @@ export function ChinaFaq({ variant = "china" }: { variant?: RouteDeliveryVariant
       >
         <div className="flex flex-col gap-[1rem] md:sticky md:top-[7rem] md:max-w-[23.75rem]">
           <SectionEyebrow className={chinaEyebrow}>{t.faq.eyebrow}</SectionEyebrow>
-          <h2 className="text-[1.5rem] leading-[1.1] tracking-[-0.0125rem] text-white md:text-[clamp(2rem,3.5vw,3.5rem)]">
+          <h2 className="text-[1.75rem] leading-[1.1] tracking-[-0.0125rem] text-white md:text-[clamp(2rem,3.5vw,3.5rem)]">
             {t.faq.title}
           </h2>
         </div>
@@ -49,14 +50,14 @@ export function ChinaFaq({ variant = "china" }: { variant?: RouteDeliveryVariant
                 <div className="flex min-w-0 flex-1 flex-col gap-[0.75rem]">
                   <span
                     className={cn(
-                      "text-[1.125rem] leading-none font-medium md:text-[1.25rem]",
+                      "text-[1rem] leading-none font-medium md:text-[1.25rem]",
                       open ? "text-black" : "text-white",
                     )}
                   >
                     {item.q}
                   </span>
                   {open && (
-                    <span className="text-[1rem] leading-[1.2] font-medium text-black/48 md:text-[1.1875rem]">
+                    <span className="text-[0.875rem] leading-[1.2] font-medium text-black/48 md:text-[1rem]">
                       {item.a}
                     </span>
                   )}

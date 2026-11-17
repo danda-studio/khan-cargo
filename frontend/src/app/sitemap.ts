@@ -12,6 +12,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://khan.az";
 export default function sitemap(): MetadataRoute.Sitemap {
   const chinaUrl = `${siteUrl}/china-delivery`;
   const turkeyUrl = `${siteUrl}/turkey-delivery`;
+  const uzbekistanUrl = `${siteUrl}/uzbekistan-delivery`;
   const companyUrl = `${siteUrl}/company`;
   const privacyUrl = `${siteUrl}/privacy-policy`;
   const personalDataUrl = `${siteUrl}/personal-data`;
@@ -66,6 +67,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
           az: turkeyUrl,
           en: `${turkeyUrl}?lang=en`,
           ru: `${turkeyUrl}?lang=ru`,
+        },
+      },
+    },
+    {
+      url: uzbekistanUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+      alternates: {
+        languages: {
+          az: uzbekistanUrl,
+          en: `${uzbekistanUrl}?lang=en`,
+          ru: `${uzbekistanUrl}?lang=ru`,
         },
       },
     },

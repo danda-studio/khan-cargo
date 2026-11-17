@@ -8,10 +8,9 @@
 "use client";
 
 import Image from "next/image";
-import { contactEmail } from "@/shared/config/contacts";
 import { useTranslations } from "@/shared/config/i18n/language-context";
 import { useLocalizedHref } from "@/shared/config/i18n/use-localized-href";
-import { usePageContactPhone } from "@/shared/config/use-page-contact-phone";
+import { usePageContactEmail, usePageContactPhone } from "@/shared/config/use-page-contact-phone";
 import { Container } from "@/shared/ui/container/container";
 import { SectionEyebrow } from "@/shared/ui/section-eyebrow/section-eyebrow";
 
@@ -19,6 +18,7 @@ export function Footer() {
   const t = useTranslations();
   const href = useLocalizedHref();
   const phone = usePageContactPhone();
+  const contactEmail = usePageContactEmail();
 
   const navLinks = [
     { label: t.footer.linkAbout, href: href("/company") },
@@ -80,7 +80,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="flex flex-col gap-[2rem] py-0 pl-0 md:gap-[2.3333rem] md:py-[0.6667rem] md:pl-[1.3333rem]">
+          <div className="flex flex-col gap-[1.5rem] py-0 pl-0 md:gap-[2.3333rem] md:py-[0.6667rem] md:pl-[1.3333rem]">
             <div className="flex flex-col gap-[1rem] text-[1.75rem] leading-[1.1] tracking-[-0.0125rem] text-white md:gap-[1.3333rem] md:text-[2.3333rem] md:tracking-[-0.0167rem]">
               <a href={`tel:${phone.tel}`} className="transition-colors hover:text-accent">{phone.display}</a>
               <a href={contactEmail.mailto} className="transition-colors hover:text-accent">{contactEmail.display}</a>
@@ -100,7 +100,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-[2rem] pt-[3.25rem] text-[0.75rem] text-white/48 md:gap-[1.3333rem] md:pt-[2rem] md:text-[1rem] md:flex-row md:flex-nowrap md:items-center">
+        <div className="flex flex-col gap-[2rem] pt-[0.5625rem] text-[0.75rem] text-white/48 md:gap-[1.3333rem] md:pt-[2rem] md:text-[1rem] md:flex-row md:flex-nowrap md:items-center">
           <p className="shrink-0 leading-[1.2]">
             {t.footer.legalNotice}
           </p>
