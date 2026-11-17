@@ -6,10 +6,11 @@
  */
 
 import type { Metadata } from "next";
-import { Geist, Inter } from "next/font/google";
+import type { Locale } from "@/shared/config/i18n/dictionary";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { cookies, headers } from "next/headers";
 import { QueryProvider } from "@/app/providers/query-provider";
-import { defaultLocale, type Locale } from "@/shared/config/i18n/dictionary";
+import { defaultLocale } from "@/shared/config/i18n/dictionary";
 import { LanguageProvider } from "@/shared/config/i18n/language-provider";
 import { isLocale, LOCALE_COOKIE, LOCALE_HEADER } from "@/shared/config/i18n/locale-path";
 import {
@@ -28,6 +29,13 @@ const inter = Inter({
 
 const geist = Geist({
   variable: "--font-geist",
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  display: "swap",
+  preload: false,
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin", "latin-ext", "cyrillic"],
   display: "swap",
   preload: false,
@@ -84,9 +92,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: {
-      az: "/",
-      en: "/?lang=en",
-      ru: "/?lang=ru",
+      "az": "/",
+      "en": "/?lang=en",
+      "ru": "/?lang=ru",
       "x-default": "/",
     },
   },
@@ -133,7 +141,7 @@ export default async function RootLayout({
       : defaultLocale;
 
   return (
-    <html lang={initialLocale} className={`${inter.variable} ${geist.variable}`}>
+    <html lang={initialLocale} className={`${inter.variable} ${geist.variable} ${geistMono.variable}`}>
       <head>
         <GoogleTagManagerScript />
         <OrganizationJsonLd />

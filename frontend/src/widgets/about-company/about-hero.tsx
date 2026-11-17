@@ -27,7 +27,10 @@ export function AboutHero() {
             <span className="text-accent">{t.hero.titleAccent}</span>
           </h1>
           <p className="max-w-[36rem] text-[1rem] leading-[1.2] text-white/48 md:text-[1.125rem]">
-            <span className="text-white">{t.hero.lead} </span>
+            <span className="text-white">
+              {t.hero.lead}
+              {" "}
+            </span>
             {t.hero.leadMuted}
           </p>
         </div>
@@ -72,7 +75,9 @@ export function AboutHero() {
             <span className="text-accent">{t.hero.titleAccent}</span>
           </h1>
           <p className="mt-auto max-w-[24.5rem] text-[1rem] leading-[1.25] text-white">
-            {t.hero.lead} {t.hero.leadMuted}
+            {t.hero.lead}
+            {" "}
+            {t.hero.leadMuted}
           </p>
           <div className="mt-[2rem] mb-[2.25rem] flex self-start">
             <ContactFormDialog trigger={<Button className={chinaBtn}>{t.hero.cta}</Button>} />

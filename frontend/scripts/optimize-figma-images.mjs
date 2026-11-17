@@ -5,9 +5,9 @@
  * Developed by Danda Team.
  */
 
+import fs from "node:fs";
+import path from "node:path";
 import sharp from "sharp";
-import fs from "fs";
-import path from "path";
 
 const root = process.cwd();
 const dl = path.join(root, "_figma_dl");
@@ -16,7 +16,8 @@ const images = path.join(pub, "images");
 
 async function toWebp(input, output, { width, quality = 82 } = {}) {
   let pipeline = sharp(input).rotate();
-  if (width) pipeline = pipeline.resize({ width, withoutEnlargement: true });
+  if (width)
+    pipeline = pipeline.resize({ width, withoutEnlargement: true });
   await pipeline.webp({ quality }).toFile(output);
   const kb = (fs.statSync(output).size / 1024).toFixed(0);
   const meta = await sharp(output).metadata();
@@ -24,7 +25,6 @@ async function toWebp(input, output, { width, quality = 82 } = {}) {
 }
 
 async function main() {
-
   await toWebp(path.join(dl, "hero_raw1.png"), path.join(images, "hero-img.webp"), { width: 1800, quality: 85 });
   await toWebp(path.join(dl, "hero_raw1.png"), path.join(images, "hero-img-sm.webp"), { width: 720, quality: 80 });
 

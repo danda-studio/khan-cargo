@@ -55,7 +55,6 @@ export function useContactForm(options: UseContactFormOptions = {}) {
         onSuccessRef.current?.();
       }
       catch {
-
         form.setFieldValue("turnstileToken", "");
         setCaptchaResetKey(key => key + 1);
       }

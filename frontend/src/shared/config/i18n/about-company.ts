@@ -5,7 +5,7 @@
  * Developed by Danda Team.
  */
 
-export type AboutCompanyDict = {
+export interface AboutCompanyDict {
   meta: { title: string; description: string };
   hero: {
     titleBefore: string;
@@ -33,7 +33,7 @@ export type AboutCompanyDict = {
     call: string;
     write: string;
   };
-};
+}
 
 export const aboutCompanyByLocale = {
   az: {
