@@ -27,7 +27,7 @@ export const contactPhones = {
     tel: "+905372543000",
   },
   uz: {
-    display: "(+998) 77 351 53 83",
+    display: "+998 77 351 53 83",
     plain: "+998 77 351 53 83",
     tel: "+998773515383",
   },
