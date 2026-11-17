@@ -94,7 +94,7 @@ export const uzbekistanDeliveryByLocale: Record<"az" | "en" | "ru", UzbekistanDe
       bannerTitle: "Özbəkistandan Azərbaycana yük göndərməlisiniz?",
       bannerSubtitle: "Bizimlə əlaqə saxlayın — marşrutu, müddəti və qiyməti hesablayaq.",
       callLabel: "Zəng edin +998 77 351 53 83",
-      emailLabel: "Yazın info@khan.az",
+      emailLabel: "Yazın info@khan-cargo.com",
     },
     clients: {
       eyebrow: "Müştərilər",
@@ -237,7 +237,7 @@ export const uzbekistanDeliveryByLocale: Record<"az" | "en" | "ru", UzbekistanDe
       bannerTitle: "Need to ship cargo from Uzbekistan to Azerbaijan?",
       bannerSubtitle: "Get in touch — we’ll calculate the route, timing and price.",
       callLabel: "Call +998 77 351 53 83",
-      emailLabel: "Write to info@khan.az",
+      emailLabel: "Write to info@khan-cargo.com",
     },
     clients: {
       eyebrow: "Customers",
@@ -380,7 +380,7 @@ export const uzbekistanDeliveryByLocale: Record<"az" | "en" | "ru", UzbekistanDe
       bannerTitle: "Нужно отправить груз из Узбекистана в Азербайджан?",
       bannerSubtitle: "Свяжитесь с нами — вместе рассчитаем маршрут, срок и стоимость.",
       callLabel: "Позвоните +998 77 351 53 83",
-      emailLabel: "Напишите info@khan.az",
+      emailLabel: "Напишите info@khan-cargo.com",
     },
     clients: {
       eyebrow: "Клиенты",

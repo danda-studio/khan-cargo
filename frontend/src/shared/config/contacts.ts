@@ -49,10 +49,7 @@ export const contactEmails = {
   az: contactEmail,
   cn: contactEmail,
   tr: contactEmail,
-  uz: {
-    display: "info@khan.az",
-    mailto: "mailto:info@khan.az",
-  },
+  uz: contactEmail,
 } as const;
 
 export function getContactEmail(pathname: string) {
